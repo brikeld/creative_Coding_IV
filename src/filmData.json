@@ -6,9 +6,7 @@
   },
   "character_analysis": {
     "metadata": {
-      "character_name": "string",
-      "movie_title": "string",
-      "year": "number"
+      "character_name": "string"
     },
     "demographics": {
       "gender": ["male", "female", "non-binary", "unknown"],
