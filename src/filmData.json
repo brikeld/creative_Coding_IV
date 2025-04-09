@@ -1,0 +1,55 @@
+{
+  "film_info": {
+    "film_name": "string",
+    "year": "number",
+    "genre": ["drama", "comedy", "action", "romance", "sci-fi", "fantasy", "thriller", "documentary", "animation", "horror", "other"]
+  },
+  "character_analysis": {
+    "metadata": {
+      "character_name": "string",
+      "movie_title": "string",
+      "year": "number"
+    },
+    "demographics": {
+      "gender": ["male", "female", "non-binary", "unknown"],
+      "age_range": ["child", "teen", "young_adult", "adult", "senior", "unknown"],
+      "ethnicity": ["white", "black", "asian", "latinx", "indigenous", "other", "unknown"],
+      "origin": ["small_town", "big_city", "rural", "foreign_country", "fantasy_world", "unknown"]
+    },
+    "personality_traits": {
+      "introvert_extrovert": ["introvert", "extrovert", "ambivert", "unknown"],
+      "happiness_level": 0,  
+      "biggest_fear": "string",
+      "moral_ambiguity": {
+        "cheats_on_partner": ["yes", "no", "implied", "unknown"],
+        "betrays_others": ["yes", "no", "implied", "unknown"]
+      }
+    },
+    "relationships_family": {
+      "parental_status": ["parent", "not_parent", "lost_child", "unknown"],
+      "siblings_status": ["only_child", "siblings", "orphan", "unknown"],
+      "pet_ownership": ["yes", "no", "symbolic", "unknown"]
+    },
+    "dialogue_analysis": {
+      "swear_frequency": ["never", "rare", "occasional", "frequent", "excessive"],
+      "catchphrases": ["string"]
+    },
+    "background_history": {
+      "tragic_past": ["explicit", "implied", "none", "unknown"],
+      "betrayal_experienced": ["yes", "no", "implied", "unknown"]
+    },
+    "socioeconomic": {
+      "occupation": "string",
+      "income_level": ["poor", "middle_class", "rich", "varies", "unknown"],
+      "financial_success": ["achieves_wealth", "loses_wealth", "neutral", "unknown"]
+    },
+    "narrative_arc": {
+      "primary_goal": "string",
+      "goal_achievement": ["fully", "partially", "not_at_all", "ambiguous"],
+      "success_metrics": {
+        "professional_success": 0,
+        "emotional_success": 0
+      }
+    }
+  }
+}
