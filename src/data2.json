@@ -1,0 +1,58 @@
+
+  {
+    "film_info": {
+      "film_name": "string",
+      "year": "number",
+      "genre": ["drama", "comedy", "action", "romance", "sci-fi", "fantasy", "thriller", "documentary", "animation", "horror", "other"],
+      "protagonist_name": "string"
+    },
+  "character_profile": {
+    "personality_archetypes": {
+      "social_energy": ["introvert", "extrovert", "ambivert"],
+      "outlook": ["optimist", "pessimist", "realist"],
+      "leadership_style": ["leader", "follower", "reluctant_leader"],
+      "rule_attitude": ["rule_breaker", "rule_follower", "pragmatist"]
+    },
+    "core_motivations": {
+      "primary": ["love", "power", "survival", "revenge", "freedom", "acceptance"],
+      "secondary": ["guilt", "curiosity", "duty", "ambition", "fear"]
+    },
+    "moral_compass": {
+      "ethical_flexibility": ["rigid", "pragmatic", "corruptible"],
+      "sacrifice_tendency": ["selfless", "balanced", "selfish"]
+    },
+    "fears_insecurities": {
+      "greatest_fear": ["failure", "abandonment", "exposure", "powerlessness", "irrelevance"],
+      "emotional_triggers": ["betrayal", "confinement", "public_shame", "loss"]
+    },
+    "social_identity": {
+      "occupation_stereotype": ["rebel_cop", "genius_inventor", "broken_soldier", "everyman"],
+      "class_perception": ["working_class", "middle_class", "elite", "outsider"],
+      "cultural_tells": ["accent_references", "traditions", "food_habits", "regional_slang"]
+    },
+    "relationships": {
+      "parental_dynamics": ["nurturing", "absent", "abusive", "complicated"],
+      "romantic_patterns": ["serial_monogamist", "lonely_heart", "player", "celibate"],
+      "loyalty_tendency": ["loyal", "pragmatic", "betrayer"]
+    },
+    "speech_patterns": {
+      "confidence_tells": ["hesitant", "declarative", "apologetic"],
+      "humor_style": ["self_deprecating", "sarcastic", "dark", "none"],
+      "swear_intensity": ["never", "casual", "aggressive"]
+    },
+    "narrative_role": {
+      "story_function": ["hero", "anti_hero", "villain", "victim", "catalyst"],
+      "character_arc": ["redeemed", "corrupted", "static", "enlightened"],
+      "legacy_impact": ["inspirational", "forgotten", "legendary", "infamous"]
+    },
+    "symbolism": {
+      "animal_metaphor": ["lion", "fox", "tortoise", "wolf", "dove"],
+      "color_symbolism": ["black", "red", "white", "grey", "gold"],
+      "obsessive_object": ["weapon", "heirloom", "book", "photo", "tool"]
+    },
+    "contradictions": {
+      "hidden_traits": ["kind_villain", "cowardly_hero", "wise_fool", "sensitive_warrior"],
+      "public_private_self": ["confident_facade", "vulnerable_core", "dual_identity"]
+    }
+  }
+}

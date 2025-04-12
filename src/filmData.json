@@ -6,9 +6,17 @@
   },
   "character_analysis": {
     "metadata": {
-      "character_name": "string",
-      "movie_title": "string",
-      "year": "number"
+      "character_name": "string"
+    },
+    "performance_metrics": {
+      "screen_presence": {
+        "total_minutes_on_screen": "number"
+      },
+      "dialogue_dominance": {
+        "word_count": "number",
+        "percentage_of_total_dialogue": "percentage",
+        "profanity_count": "number"
+      }
     },
     "demographics": {
       "gender": ["male", "female", "non-binary", "unknown"],
@@ -18,8 +26,11 @@
     },
     "personality_traits": {
       "introvert_extrovert": ["introvert", "extrovert", "ambivert", "unknown"],
-      "happiness_level": 0,  
-      "biggest_fear": "string",
+      "happiness_level": 0,
+      "biggest_fear": {
+        "category": ["death", "failure", "loneliness", "betrayal", "love_loss", "poverty", "power_loss", "other"],
+        "specific_description": "string"
+      },
       "moral_ambiguity": {
         "cheats_on_partner": ["yes", "no", "implied", "unknown"],
         "betrays_others": ["yes", "no", "implied", "unknown"]
@@ -40,8 +51,7 @@
     },
     "socioeconomic": {
       "occupation": "string",
-      "income_level": ["poor", "middle_class", "rich", "varies", "unknown"],
-      "financial_success": ["achieves_wealth", "loses_wealth", "neutral", "unknown"]
+      "income_level": ["poor", "middle_class", "rich", "varies", "unknown"]
     },
     "narrative_arc": {
       "primary_goal": "string",
