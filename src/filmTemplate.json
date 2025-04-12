@@ -1,0 +1,54 @@
+{
+  "film_info": {
+    "film_name": "string",
+    "year": "number",
+    "genre": ["drama", "comedy", "action", "romance", "sci-fi", "fantasy", "thriller", "documentary", "animation", "horror", "other"]
+  },
+  "character_analysis": {
+    "metadata": {
+      "character_name": "string"
+    },
+    "demographics": {
+      "gender": ["male", "female", "non-binary"],
+      "age_range": ["child","adult", "senior"],
+      "ethnicity": ["white", "black", "asian", "latinx", "indigenous", "other"]
+    },
+    "personality_traits": {
+      "introvert_extrovert": ["introvert", "extrovert", "ambivert"],
+      "biggest_fear": {
+        "category": ["death", "failure", "loneliness", "betrayal", "love_loss", "poverty", "power_loss"],
+        "reason_specific_description": "string"
+      },
+      "biggest_strength": {
+        "category": ["intelligence", "empathy", "strength", "creativity", "determination", "charisma", "resourcefulness", "courage", "humor", "loyalty"],
+        "reason_specific_description": "string"
+      },
+
+      "moral_ambiguity": {
+        "betrays_others": ["yes", "no","unknown"],
+        "reason_betrays_others": ["string"]
+      }
+    },
+    "relationships_family": {
+      "parental_status": ["parent", "not_parent", "lost_child", "unknown"],
+      "siblings_status": ["only_child", "siblings", "orphan", "unknown"]
+    },
+    "dialogue_analysis": {
+      "swear_frequency": ["never", "rare", "occasional", "frequent", "excessive"],
+      "most_used_swear_word": ["string"]
+    },
+    "background_history": {
+      "tragic_past": ["explicit", "implied", "none", "unknown"],
+      "tragic_past_reason": ["string"]
+    },
+    "socioeconomic": {
+      "income_level": ["poor", "middle_class", "rich","unknown"],
+      "occupation": "string"
+    },
+    "narrative_arc": {
+      "goal_achievement": ["fully", "partially", "not_at_all", "ambiguous"],
+      "success_metrics": ["fully", "partially", "not_at_all", "ambiguous"],
+      "primary_goal": "string"
+      }
+    }
+  }
