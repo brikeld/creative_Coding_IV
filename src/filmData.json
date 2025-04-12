@@ -7,6 +7,7 @@
   "character_analysis": {
     "metadata": {
       "character_name": "string"
+<<<<<<< HEAD
     },
     "performance_metrics": {
       "screen_presence": {
@@ -17,6 +18,8 @@
         "percentage_of_total_dialogue": "percentage",
         "profanity_count": "number"
       }
+=======
+>>>>>>> 5211a9959b0b4ce746383a7d06d8865fa8d28c92
     },
     "demographics": {
       "gender": ["male", "female", "non-binary", "unknown"],
