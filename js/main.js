@@ -1,0 +1,198 @@
+/**
+ * main.js - Main initialization
+ * Sets up and initializes the Film Visualizer application
+ */
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the container
+    const container = document.querySelector('#container');
+    
+    // Clear any existing content
+    container.innerHTML = '';
+    
+    // Create loading indicator
+    const loadingEl = document.createElement('div');
+    loadingEl.className = 'loading-indicator';
+    loadingEl.textContent = 'Loading character data...';
+    container.appendChild(loadingEl);
+    
+    // Clear image caches
+    FilmData.clearImageCache();
+    
+    // Load character data first
+    FilmData.loadCharacterData().then(() => {
+        // Remove loading indicator
+        if (loadingEl.parentNode) {
+            loadingEl.parentNode.removeChild(loadingEl);
+        }
+        
+        // Initialize - create all parallelepipeds
+        // Use DocumentFragment for better performance
+        const fragment = document.createDocumentFragment();
+        const films = FilmData.getAllFilms();
+        
+        // Batch process creation of elements
+        requestAnimationFrame(() => {
+            films.forEach(film => {
+                const element = Parallelepiped.create(film);
+                fragment.appendChild(element);
+                FilmData.elements[film.id] = element;
+            });
+            
+            // Append all elements at once
+            container.appendChild(fragment);
+            
+            // Set up smooth drag scrolling
+            Scroll.setup(container);
+            
+            // Expose API globally
+            API.exposeGlobally();
+            
+            // Setup filter controls
+            createFilterUI();
+            
+            console.log('Film Visualizer initialized successfully');
+        });
+    }).catch(error => {
+        // Show error message
+        loadingEl.className = 'error-message';
+        loadingEl.textContent = 'Error loading character data. Please check if testDoing.json is available.';
+        console.error('Error initializing application:', error);
+    });
+});
+
+/**
+ * Creates the filter UI at the bottom of the page
+ */
+function createFilterUI() {
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'filter-container';
+    
+    // Get filter categories
+    const categories = FilmData.getFilterCategories();
+    
+    // First add a reset button
+    const resetBtn = document.createElement('button');
+    resetBtn.className = 'filter-button reset-filter';
+    resetBtn.textContent = 'Reset Filters';
+    resetBtn.addEventListener('click', () => {
+        FilmData.clearFilter();
+        resetFilterUI();
+        arrangeFilms();
+    });
+    filterContainer.appendChild(resetBtn);
+    
+    // Priority order for categories - most important first
+    const priorityOrder = [
+        'demographics.gender', 
+        'demographics.ethnicity', 
+        'demographics.age_range',
+        'personality_traits.introvert_extrovert',
+        'personality_traits.biggest_strength.category',
+        'personality_traits.biggest_fear.category',
+        'moral_ambiguity.betrays_others',
+        'background_history.tragic_past',
+        'socioeconomic.income_level',
+        'narrative_arc.goal_achievement',
+        'narrative_arc.success_metrics',
+        'relationships_family.parental_status',
+        'relationships_family.siblings_status',
+        'dialogue_analysis.swear_frequency'
+    ];
+    
+    // Add filter buttons by priority
+    priorityOrder.forEach(categoryKey => {
+        const values = categories[categoryKey];
+        if (!values || values.length === 0) return;
+        
+        // Create category heading
+        const categoryHeading = document.createElement('div');
+        categoryHeading.className = 'filter-category';
+        
+        // Format category name for display
+        const displayName = categoryKey.split('.').pop().replace(/_/g, ' ');
+        categoryHeading.textContent = displayName;
+        filterContainer.appendChild(categoryHeading);
+        
+        // Create filter buttons for each value
+        values.sort().forEach(value => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-button';
+            btn.dataset.category = categoryKey;
+            btn.dataset.value = value;
+            btn.textContent = value;
+            
+            btn.addEventListener('click', (e) => {
+                // Deactivate all buttons
+                document.querySelectorAll('.filter-button').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Activate clicked button
+                e.target.classList.add('active');
+                
+                // Apply filter
+                const filtered = FilmData.filterFilms(categoryKey, value);
+                
+                // Arrange films based on filter
+                arrangeFilms(filtered.matching, filtered.nonMatching);
+            });
+            
+            filterContainer.appendChild(btn);
+        });
+    });
+    
+    // Append filter container to the body
+    document.body.appendChild(filterContainer);
+}
+
+/**
+ * Resets the filter UI
+ */
+function resetFilterUI() {
+    document.querySelectorAll('.filter-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+}
+
+/**
+ * Arranges films based on filtering
+ * @param {Array} matching - Array of matching film IDs
+ * @param {Array} nonMatching - Array of non-matching film IDs
+ */
+function arrangeFilms(matching = [], nonMatching = []) {
+    const container = document.querySelector('#container');
+    const centerX = container.clientWidth / 2;
+    
+    // If no filter is active, reset positions
+    if (matching.length === 0 && nonMatching.length === 0) {
+        Object.values(FilmData.elements).forEach(element => {
+            // Reset to original 3D transform
+            element.style.transition = 'transform 0.8s ease-out';
+            element.style.transform = 'rotateX(20deg) rotateY(40deg)';
+        });
+        return;
+    }
+    
+    // Position matching films to the left
+    matching.forEach((filmId, index) => {
+        const element = FilmData.elements[filmId];
+        if (element) {
+            element.style.transition = 'transform 0.8s ease-out';
+            element.style.transform = `rotateX(20deg) rotateY(40deg) translateX(${-centerX / 2.5}px)`;
+            element.classList.add('matching');
+            element.classList.remove('non-matching');
+        }
+    });
+    
+    // Position non-matching films to the right
+    nonMatching.forEach((filmId, index) => {
+        const element = FilmData.elements[filmId];
+        if (element) {
+            element.style.transition = 'transform 0.8s ease-out';
+            element.style.transform = `rotateX(20deg) rotateY(40deg) translateX(${centerX / 2.5}px)`;
+            element.classList.remove('matching');
+        }
+    });
+} 

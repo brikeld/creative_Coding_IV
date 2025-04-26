@@ -3,53 +3,18 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Text Tower</title>
+    <title>Piu Films Collection</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="parallelepiped">
-        <!-- Texture -->
-        <div class="texture-wrapper">
-            <!-- Texture sides -->
-            <div class="texture-side texture-front"></div>
-            <div class="texture-side texture-back"></div>
-            <div class="texture-side texture-right"></div>
-            <div class="texture-side texture-left"></div>
-            <div class="texture-side texture-top"></div>
-            <div class="texture-side texture-bottom"></div>
-        </div>
-        
-        <!-- Faces -->
-        <div class="face front"></div>
-        <div class="face back"></div>
-        <div class="face right"></div>
-        <div class="face left"></div>
-        <div class="face top"></div>
-        <div class="face bottom"></div>
-        
-        <!-- Edges -->
-        <div class="edge edge-front-top"></div>
-        <div class="edge edge-front-bottom"></div>
-        <div class="edge edge-front-left"></div>
-        <div class="edge edge-front-right"></div>
-        
-        <div class="edge edge-back-top"></div>
-        <div class="edge edge-back-bottom"></div>
-        <div class="edge edge-back-left"></div>
-        <div class="edge edge-back-right"></div>
-        
-        <div class="edge edge-top-front-back-left"></div>
-        <div class="edge edge-top-front-back-right"></div>
-        <div class="edge edge-bottom-front-back-left"></div>
-        <div class="edge edge-bottom-front-back-right"></div>
-        
-        <div class="edge edge-top-left-right-front"></div>
-        <div class="edge edge-top-left-right-back"></div>
-        <div class="edge edge-bottom-left-right-front"></div>
-        <div class="edge edge-bottom-left-right-back"></div>
+    <div id="container">
+        <!-- Parallelepipeds will be generated here by JavaScript -->
     </div>
     
-    <!-- Scripts -->
-    <script src="main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/parallelepiped.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
