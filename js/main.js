@@ -15,12 +15,13 @@ initFirebase();
 
 function onFirebaseData(data) {
   console.log("**DATA**", data);
+  document.getElementById(data.id).click();
 }
 
 function initFirebase() {
   firebaseInstance = new Firebase();
   firebaseInstance.addEventListener("dataReceived", (event) => {
-    onFirebaseData(event[0]);
+    onFirebaseData(event);
   });
 }
 
@@ -162,6 +163,7 @@ function createFilterUI() {
             btn.dataset.category = categoryKey;
             btn.dataset.value = value;
             btn.textContent = value;
+            btn.id = value; 
             
             btn.addEventListener('click', (e) => {
                 // Deactivate all buttons
