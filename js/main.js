@@ -3,6 +3,31 @@
  * Sets up and initializes the Film Visualizer application
  */
 
+//fireBase
+
+import Firebase from "./Firebase";
+
+let firebaseInstance = null;
+
+
+// Firebase
+initFirebase();
+
+function onFirebaseData(data) {
+  console.log("**DATA**", data);
+}
+
+function initFirebase() {
+  firebaseInstance = new Firebase();
+  firebaseInstance.addEventListener("dataReceived", (event) => {
+    onFirebaseData(event[0]);
+  });
+}
+
+
+
+
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Get the container
@@ -16,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadingEl.className = 'loading-indicator';
     loadingEl.textContent = 'Loading character data...';
     container.appendChild(loadingEl);
+    
     
     // Clear image caches
     FilmData.clearImageCache();
@@ -101,6 +127,13 @@ function createFilterUI() {
         'dialogue_analysis.swear_frequency'
     ];
     
+    // Custom category display names mapping
+    const categoryDisplayNames = {
+        'personality_traits.introvert_extrovert': 'Personality Traits',
+        'personality_traits.biggest_strength.category': 'Qualities',
+        'personality_traits.biggest_fear.category': 'Biggest Fear'
+    };
+    
     // Add filter buttons by priority
     priorityOrder.forEach(categoryKey => {
         const values = categories[categoryKey];
@@ -110,8 +143,15 @@ function createFilterUI() {
         const categoryHeading = document.createElement('div');
         categoryHeading.className = 'filter-category';
         
-        // Format category name for display
-        const displayName = categoryKey.split('.').pop().replace(/_/g, ' ');
+        // Get the custom display name or format the default one
+        let displayName;
+        if (categoryDisplayNames[categoryKey]) {
+            displayName = categoryDisplayNames[categoryKey];
+        } else {
+            // Format category name for display (original logic)
+            displayName = categoryKey.split('.').pop().replace(/_/g, ' ');
+        }
+        
         categoryHeading.textContent = displayName;
         filterContainer.appendChild(categoryHeading);
         
@@ -157,7 +197,6 @@ function resetFilterUI() {
 }
 
 /**
- * Arranges films based on filtering
  * @param {Array} matching - Array of matching film IDs
  * @param {Array} nonMatching - Array of non-matching film IDs
  */

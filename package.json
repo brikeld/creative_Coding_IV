@@ -12,6 +12,8 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "@onemorestudio/eventemitterjs": "^1.0.0",
+    "firebase": "^11.7.1",
     "matter-js": "^0.20.0",
     "three": "^0.176.0"
   }

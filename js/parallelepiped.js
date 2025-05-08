@@ -61,86 +61,7 @@ const Parallelepiped = (function() {
             parallelepiped.appendChild(edgeElement);
         });
         
-        // Add event listener to show film details
-        parallelepiped.addEventListener('click', () => {
-            showFilmDetails(film);
-        });
-        
         return parallelepiped;
-    }
-    
-    /**
-     * Shows film details
-     * @param {Object} film - The film object
-     */
-    function showFilmDetails(film) {
-        // Get character data for this film
-        const charData = FilmData.getCharacterData(film.filmName);
-        if (!charData) {
-            console.error('No character data found for film:', film.filmName);
-            return;
-        }
-        
-        // Create details popup
-        const detailsOverlay = document.createElement('div');
-        detailsOverlay.className = 'film-details-overlay';
-        
-        const detailsContainer = document.createElement('div');
-        detailsContainer.className = 'film-details-container';
-        
-        // Add film title
-        const filmTitle = document.createElement('h2');
-        filmTitle.textContent = charData.film_info.film_name;
-        detailsContainer.appendChild(filmTitle);
-        
-        // Add character name
-        const characterName = document.createElement('h3');
-        characterName.textContent = `Character: ${charData.character_analysis.metadata.character_name}`;
-        detailsContainer.appendChild(characterName);
-        
-        // Add basic info
-        const basicInfo = document.createElement('div');
-        basicInfo.className = 'film-details-info';
-        
-        // Add year and genre
-        const yearGenre = document.createElement('p');
-        yearGenre.textContent = `Year: ${charData.film_info.year} | Genre: ${charData.film_info.genre.join(', ')}`;
-        basicInfo.appendChild(yearGenre);
-        
-        // Add demographics
-        const demographics = document.createElement('p');
-        demographics.textContent = `Demographics: ${charData.character_analysis.demographics.gender}, ${charData.character_analysis.demographics.age_range}, ${charData.character_analysis.demographics.ethnicity}`;
-        basicInfo.appendChild(demographics);
-        
-        // Add personality
-        const personality = document.createElement('p');
-        personality.textContent = `Personality: ${charData.character_analysis.personality_traits.introvert_extrovert}`;
-        basicInfo.appendChild(personality);
-        
-        // Add strength
-        const strength = document.createElement('p');
-        strength.textContent = `Biggest Strength: ${charData.character_analysis.personality_traits.biggest_strength.category}`;
-        basicInfo.appendChild(strength);
-        
-        // Add strength description
-        const strengthDesc = document.createElement('p');
-        strengthDesc.className = 'details-description';
-        strengthDesc.textContent = charData.character_analysis.personality_traits.biggest_strength.reason_specific_description;
-        basicInfo.appendChild(strengthDesc);
-        
-        detailsContainer.appendChild(basicInfo);
-        
-        // Add close button
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = 'Close';
-        closeBtn.className = 'details-close-btn';
-        closeBtn.addEventListener('click', () => {
-            document.body.removeChild(detailsOverlay);
-        });
-        detailsContainer.appendChild(closeBtn);
-        
-        detailsOverlay.appendChild(detailsContainer);
-        document.body.appendChild(detailsOverlay);
     }
     
     /**
@@ -200,7 +121,6 @@ const Parallelepiped = (function() {
             }
         });
     }
-    
     // Public API
     return {
         create,
