@@ -15,7 +15,13 @@ initFirebase();
 
 function onFirebaseData(data) {
   console.log("**DATA**", data);
-  document.getElementById(data.id).click();
+  // Check if the button exists before trying to click it
+  const button = document.getElementById(data.id);
+  if (button) {
+    button.click();
+  } else {
+    console.warn(`Button with ID '${data.id}' not found`);
+  }
 }
 
 function initFirebase() {
@@ -73,6 +79,30 @@ document.addEventListener('DOMContentLoaded', function() {
             // Expose API globally
             API.exposeGlobally();
             
+            // Create global helper for Firebase testing
+            window.triggerFilter = function(buttonId) {
+                if (firebaseInstance) {
+                    firebaseInstance.sendFilterCommand(buttonId);
+                    return true;
+                }
+                return false;
+            };
+            
+            // Helper function to list all available filter button IDs
+            window.listFilterButtons = function() {
+                const buttons = document.querySelectorAll('.filter-button');
+                const buttonInfo = [];
+                buttons.forEach(btn => {
+                    buttonInfo.push({
+                        id: btn.id,
+                        text: btn.textContent,
+                        category: btn.dataset.category || 'reset'
+                    });
+                });
+                console.table(buttonInfo);
+                return buttonInfo;
+            };
+            
             // Setup filter controls
             createFilterUI();
             
@@ -100,6 +130,7 @@ function createFilterUI() {
     const resetBtn = document.createElement('button');
     resetBtn.className = 'filter-button reset-filter';
     resetBtn.textContent = 'Reset Filters';
+    resetBtn.id = 'reset_filters'; // Add ID for Firebase control
     resetBtn.addEventListener('click', () => {
         FilmData.clearFilter();
         resetFilterUI();
@@ -160,7 +191,11 @@ function createFilterUI() {
             btn.dataset.category = categoryKey;
             btn.dataset.value = value;
             btn.textContent = value;
-            btn.id = value; 
+            
+            // Ensure buttons have consistent IDs for Firebase integration
+            // Format: lowercase value with no spaces
+            const buttonId = value.toLowerCase().replace(/\s+/g, '_');
+            btn.id = buttonId;
             
             btn.addEventListener('click', (e) => {
                 // Deactivate all buttons

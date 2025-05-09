@@ -47,9 +47,13 @@ export default class Firebase extends EventEmitter {
     set(path, _val);
   }
   
-  sendFilterCommand(category) {
+  /**
+   * Sends a filter command to trigger a specific filter button
+   * @param {string} buttonId - The ID of the button to trigger (e.g., 'male', 'female', 'adult')
+   */
+  sendFilterCommand(buttonId) {
     this.send('remoteControl', {
-      category: category,
+      id: buttonId,
       timestamp: Date.now()
     });
   }
