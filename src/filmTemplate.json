@@ -2,7 +2,8 @@
   "film_info": {
     "film_name": "string",
     "year": "number",
-    "genre": ["drama", "comedy", "action", "romance", "sci-fi", "fantasy", "thriller", "documentary", "animation", "horror", "other"]
+    "genre": ["drama", "comedy", "action", "romance", "sci-fi", "fantasy", "thriller", "documentary", "animation", "horror", "other"],
+    "box_office": "number"
   },
   "character_analysis": {
     "metadata": {

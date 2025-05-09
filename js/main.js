@@ -70,9 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Append all elements at once
             container.appendChild(fragment);
             
-            // Set up smooth drag scrolling
-            Scroll.setup(container);
-            
             // Expose API globally
             API.exposeGlobally();
             

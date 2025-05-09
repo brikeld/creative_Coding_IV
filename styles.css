@@ -36,15 +36,15 @@ body {
 
 .parallelepiped {
     position: relative;
-    width: 90px; /* 2x smaller (was 180px) */
-    height: 140px; /* 2x smaller (was 280px) */
+    width: 90px;
+    height: 140px;
     transform-style: preserve-3d;
     transform: rotateX(20deg) rotateY(40deg);
-    transition: transform 0.5s ease-out, translate 0.5s ease-out;
+    transition: transform 0.5s ease-out;
     flex-shrink: 0;
-    margin: 40px 0; /* Reduced margin */
+    margin: 40px 0;
     cursor: pointer;
-    will-change: transform; /* Hardware acceleration hint */
+    will-change: transform;
 }
 
 #container.active {
@@ -56,8 +56,12 @@ body {
 }
 
 @keyframes float {
-    0% { transform: rotateX(20deg) rotateY(40deg) translateY(0); }
-    100% { transform: rotateX(30deg) rotateY(50deg) translateY(-5px); } /* Reduced movement */
+    0% { 
+        transform: rotateX(20deg) rotateY(40deg) translateY(0px); 
+    }
+    100% { 
+        transform: rotateX(30deg) rotateY(50deg) translateY(-5px); 
+    }
 }
 
 @keyframes pulse {
@@ -72,10 +76,8 @@ body {
 
 /* Parallelepiped Container */
 
-
 .parallelepiped:hover {
     animation: float 2s ease-in-out infinite alternate;
-    z-index: 10;
 }
 
 .texture-wrapper {
@@ -280,12 +282,21 @@ body {
 .parallelepiped.matching {
     z-index: 5;
     transform-style: preserve-3d !important;
+    transition: transform 0.8s ease-out;
 }
 
 .parallelepiped.non-matching {
     opacity: 0.5;
     z-index: 1;
     transform-style: preserve-3d !important;
+    transition: transform 0.8s ease-out;
+}
+
+/* When filtered and hovered */
+.parallelepiped.matching:hover,
+.parallelepiped.non-matching:hover {
+    animation: none;
+    transform: scale(1.1) translateY(-5px);
 }
 
 /* Loading and Error styles */

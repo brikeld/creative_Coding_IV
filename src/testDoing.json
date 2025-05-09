@@ -4,7 +4,8 @@
       "film_info": {
         "film_name": "ANORA",
         "year": 2025,
-        "genre": ["drama", "romance"]
+        "genre": ["drama", "romance"],
+        "box_office": 59574302
       },
       "character_analysis": {
         "metadata": {
@@ -57,7 +58,8 @@
       "film_info": {
         "film_name": "No Country for Old Men",
         "year": 2008,
-        "genre": ["thriller", "crime", "drama"]
+        "genre": ["thriller", "crime", "drama"],
+        "box_office": 171632777
       },
       "character_analysis": {
         "metadata": {
@@ -95,7 +97,7 @@
         },
         "background_history": {
           "tragic_past": "unknown",
-          "tragic_past_reason": "The film gives little information about Chigurh’s background. He remains an enigma, with his past never fully explained, which adds to his mysterious and intimidating presence."
+          "tragic_past_reason": "The film gives little information about Chigurh's background. He remains an enigma, with his past never fully explained, which adds to his mysterious and intimidating presence."
         },
         "socioeconomic": {
           "income_level": "unknown",
@@ -112,7 +114,8 @@
       "film_info": {
         "film_name": "1917",
         "year": 2019,
-        "genre": ["drama", "action"]
+        "genre": ["drama", "action"],
+        "box_office": 446064352
       },
       "character_analysis": {
         "metadata": {
@@ -169,7 +172,8 @@
       "film_info": {
         "film_name": "Schindler's List",
         "year": 1993,
-        "genre": ["drama", "historical", "biography"]
+        "genre": ["drama", "historical", "biography"],
+        "box_office": 322161245
       },
       "character_analysis": {
         "metadata": {
@@ -188,7 +192,7 @@
           },
           "biggest_strength": {
             "category": "charisma",
-            "reason_specific_description": "Schindler’s greatest strength is his charm and persuasive nature. Throughout the film, he uses it to win over Nazi officials, secure deals, and protect Jewish lives without raising suspicion."
+            "reason_specific_description": "Schindler's greatest strength is his charm and persuasive nature. Throughout the film, he uses it to win over Nazi officials, secure deals, and protect Jewish lives without raising suspicion."
           },
           "moral_ambiguity": {
             "betrays_others": "yes",
@@ -208,7 +212,7 @@
         "background_history": {
           "tragic_past": "implied",
           "tragic_past_reason": [
-            "While the film focuses on Schindler’s wartime actions, hints suggest financial struggles and personal failures in his past, driving his initial greed and later his redemption."
+            "While the film focuses on Schindler's wartime actions, hints suggest financial struggles and personal failures in his past, driving his initial greed and later his redemption."
           ]
         },
         "socioeconomic": {
@@ -226,7 +230,8 @@
       "film_info": {
         "film_name": "Titanic",
         "year": 1997,
-        "genre": ["drama", "romance"]
+        "genre": ["drama", "romance"],
+        "box_office": 2264812968
       },
       "character_analysis": {
         "metadata": {
@@ -283,7 +288,8 @@
       "film_info": {
         "film_name": "American Beauty",
         "year": 1999,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 356296601
       },
       "character_analysis": {
         "metadata": {
@@ -322,7 +328,7 @@
         "background_history": {
           "tragic_past": "implied",
           "tragic_past_reason": [
-            "Lester’s midlife crisis suggests long-term unhappiness and emotional neglect, although the film doesn't directly reveal a single traumatic event."
+            "Lester's midlife crisis suggests long-term unhappiness and emotional neglect, although the film doesn't directly reveal a single traumatic event."
           ]
         },
         "socioeconomic": {
@@ -340,7 +346,8 @@
       "film_info": {
         "film_name": "Gladiator",
         "year": 2000,
-        "genre": ["drama", "action"]
+        "genre": ["drama", "action"],
+        "box_office": 465516248
       },
       "character_analysis": {
         "metadata": {
@@ -379,7 +386,7 @@
         "background_history": {
           "tragic_past": "explicit",
           "tragic_past_reason": [
-            "Maximus’ wife and son are murdered by the Emperor’s order, and his home is destroyed. This event defines his journey from general to gladiator, fueling his desire for justice and vengeance."
+            "Maximus' wife and son are murdered by the Emperor's order, and his home is destroyed. This event defines his journey from general to gladiator, fueling his desire for justice and vengeance."
           ]
         },
         "socioeconomic": {
@@ -397,7 +404,8 @@
       "film_info": {
         "film_name": "A Beautiful Mind",
         "year": 2001,
-        "genre": ["drama", "biography"]
+        "genre": ["drama", "biography"],
+        "box_office": 316791257
       },
       "character_analysis": {
         "metadata": {
@@ -436,7 +444,7 @@
         "background_history": {
           "tragic_past": "explicit",
           "tragic_past_reason": [
-            "Nash’s battle with schizophrenia, which distorts his perception of reality and isolates him from his peers, family, and professional life, becomes a core tragedy of his story."
+            "Nash's battle with schizophrenia, which distorts his perception of reality and isolates him from his peers, family, and professional life, becomes a core tragedy of his story."
           ]
         },
         "socioeconomic": {
@@ -454,7 +462,8 @@
       "film_info": {
         "film_name": "Crash",
         "year": 2004,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 98410061
       },
       "character_analysis": {
         "metadata": {
@@ -511,7 +520,8 @@
       "film_info": {
         "film_name": "The Departed",
         "year": 2006,
-        "genre": ["drama", "thriller", "crime"]
+        "genre": ["drama", "thriller", "crime"],
+        "box_office": 291481358
       },
       "character_analysis": {
         "metadata": {
@@ -568,7 +578,8 @@
       "film_info": {
         "film_name": "Birdman or (The Unexpected Virtue of Ignorance)",
         "year": 2014,
-        "genre": ["drama", "comedy"]
+        "genre": ["drama", "comedy"],
+        "box_office": 103215094
       },
       "character_analysis": {
         "metadata": {
@@ -607,7 +618,7 @@
         "background_history": {
           "tragic_past": "implied",
           "tragic_past_reason": [
-            "Riggan’s past as a washed-up movie star who lost fame, artistic respect, and family connection is a quiet tragedy, implied through his desperation to reclaim meaning via the Broadway play."
+            "Riggan's past as a washed-up movie star who lost fame, artistic respect, and family connection is a quiet tragedy, implied through his desperation to reclaim meaning via the Broadway play."
           ]
         },
         "socioeconomic": {
@@ -625,7 +636,8 @@
       "film_info": {
         "film_name": "12 Years a Slave",
         "year": 2013,
-        "genre": ["drama", "historical"]
+        "genre": ["drama", "historical"],
+        "box_office": 187734091
       },
       "character_analysis": {
         "metadata": {
@@ -682,7 +694,8 @@
       "film_info": {
         "film_name": "Spotlight",
         "year": 2015,
-        "genre": ["drama", "historical"]
+        "genre": ["drama", "historical"],
+        "box_office": 98690254
       },
       "character_analysis": {
         "metadata": {
@@ -739,7 +752,8 @@
       "film_info": {
         "film_name": "Moonlight",
         "year": 2016,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 65172611
       },
       "character_analysis": {
         "metadata": {
@@ -796,7 +810,8 @@
       "film_info": {
         "film_name": "Napoleon",
         "year": 2023,
-        "genre": ["drama", "action", "historical"]
+        "genre": ["drama", "action", "historical"],
+        "box_office": 221394838
       },
       "character_analysis": {
         "metadata": {
@@ -835,7 +850,7 @@
         "background_history": {
           "tragic_past": "implied",
           "tragic_past_reason": [
-            "Napoleon’s early life on Corsica under foreign rule and the turbulent revolutionary period form a backdrop to his ambitions. The film hints that his harsh beginnings fuel both his ambition and his fear of failure."
+            "Napoleon's early life on Corsica under foreign rule and the turbulent revolutionary period form a backdrop to his ambitions. The film hints that his harsh beginnings fuel both his ambition and his fear of failure."
           ]
         },
         "socioeconomic": {
@@ -853,7 +868,8 @@
       "film_info": {
         "film_name": "Shutter Island",
         "year": 2010,
-        "genre": ["thriller", "mystery", "psychological drama"]
+        "genre": ["thriller", "mystery", "psychological drama"],
+        "box_office": 294978537
       },
       "character_analysis": {
         "metadata": {
@@ -872,12 +888,12 @@
           },
           "biggest_strength": {
             "category": "unwavering determination",
-            "reason_specific_description": "Despite the overwhelming weight of his inner demons, Teddy’s strength lies in his relentless pursuit of truth. His dogged investigation into the mysteries at Ashecliffe, including daring moments like questioning the authenticity of his surroundings while on the ferry, showcases his drive even as his own mind becomes his worst enemy."
+            "reason_specific_description": "Despite the overwhelming weight of his inner demons, Teddy's strength lies in his relentless pursuit of truth. His dogged investigation into the mysteries at Ashecliffe, including daring moments like questioning the authenticity of his surroundings while on the ferry, showcases his drive even as his own mind becomes his worst enemy."
           },
           "moral_ambiguity": {
             "betrays_others": "yes",
             "reason_betrays_others": [
-              "Teddy’s methods are not always clear-cut or ethical; his fixation on uncovering secrets leads him to manipulate facts and question allies, suggesting that he blurs the line between heroism and self-deception. This moral gray area is evident when his investigation seems as much about confronting his own buried past as it is about the case at hand."
+              "Teddy's methods are not always clear-cut or ethical; his fixation on uncovering secrets leads him to manipulate facts and question allies, suggesting that he blurs the line between heroism and self-deception. This moral gray area is evident when his investigation seems as much about confronting his own buried past as it is about the case at hand."
             ]
           }
         },
@@ -892,7 +908,7 @@
         "background_history": {
           "tragic_past": "explicit",
           "tragic_past_reason": [
-            "Teddy’s background is steeped in tragedy—from the loss of his wife to the horrors he experienced during the war. These elements not only fuel his investigation but also contribute to the fracturing of his mental state."
+            "Teddy's background is steeped in tragedy—from the loss of his wife to the horrors he experienced during the war. These elements not only fuel his investigation but also contribute to the fracturing of his mental state."
           ]
         },
         "socioeconomic": {
@@ -910,7 +926,8 @@
       "film_info": {
         "film_name": "The Martian",
         "year": 2015,
-        "genre": ["science fiction", "drama", "thriller"]
+        "genre": ["science fiction", "drama", "thriller"],
+        "box_office": 630621406
       },
       "character_analysis": {
         "metadata": {
@@ -925,7 +942,7 @@
           "introvert_extrovert": "ambivert",
           "biggest_fear": {
             "category": "isolation and failure",
-            "reason_specific_description": "Mark is deeply afraid of being completely alone on an alien world and failing to survive. His video log moments—where he half-jokes 'fuck' and acknowledges the immense challenge of making water, food, and life support last—highlight his terror of not overcoming the planet’s harsh reality."
+            "reason_specific_description": "Mark is deeply afraid of being completely alone on an alien world and failing to survive. His video log moments—where he half-jokes 'fuck' and acknowledges the immense challenge of making water, food, and life support last—highlight his terror of not overcoming the planet's harsh reality."
           },
           "biggest_strength": {
             "category": "resourcefulness",
@@ -967,7 +984,8 @@
       "film_info": {
         "film_name": "Amélie",
         "year": 2001,
-        "genre": ["romantic", "comedy", "fantasy"]
+        "genre": ["romantic", "comedy", "fantasy"],
+        "box_office": 175183052
       },
       "character_analysis": {
         "metadata": {

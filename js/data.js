@@ -10,7 +10,21 @@ const FilmData = (function() {
         { id: 'film1', image: '/cofanetto/amelie.jpg', text: "AMELIE", filmName: "Amélie" },
         { id: 'film2', image: '/cofanetto/Anton.jpg', text: "NOCOUNTRYFOROLDMEN", filmName: "No Country for Old Men" },
         { id: 'film3', image: '/cofanetto/Napoleon.jpg', text: "NAPOLEON", filmName: "Napoleon" },
-        { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" }
+        { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" },
+        { id: 'film5', image: '/cofanetto/1917.jpg', text: "1917", filmName: "1917" },
+        { id: 'film6', image: '/cofanetto/Schindler.jpg', text: "SCHINDLERSLIST", filmName: "Schindler's List" },
+        { id: 'film7', image: '/cofanetto/titanic.jpg', text: "TITANIC", filmName: "Titanic" },
+        { id: 'film8', image: '/cofanetto/AmericanBeauty.jpg', text: "AMERICANBEAUTY", filmName: "American Beauty" },
+        { id: 'film9', image: '/cofanetto/Gladiator.jpg', text: "GLADIATOR", filmName: "Gladiator" },
+        { id: 'film10', image: '/cofanetto/The Martian.jpg', text: "THEMARTIAN", filmName: "The Martian" },
+        { id: 'film11', image: '/cofanetto/Crash.jpg', text: "CRASH", filmName: "Crash" },
+        { id: 'film12', image: '/cofanetto/The Departed.jpg', text: "THEDEPARTED", filmName: "The Departed" },
+        { id: 'film13', image: '/cofanetto/Birdman.jpg', text: "BIRDMAN", filmName: "Birdman or (The Unexpected Virtue of Ignorance)" },
+        { id: 'film14', image: '/cofanetto/12 Years a Slave.jpg', text: "12YEARSASLAVE", filmName: "12 Years a Slave" },
+        { id: 'film15', image: '/cofanetto/Spotlight.jpg', text: "SPOTLIGHT", filmName: "Spotlight" },
+        { id: 'film16', image: '/cofanetto/Moonlight.jpg', text: "MOONLIGHT", filmName: "Moonlight" },
+        { id: 'film17', image: '/cofanetto/Shutter Island.jpg', text: "SHUTTERISLAND", filmName: "Shutter Island" },
+        { id: 'film18', image: '/cofanetto/BeatifulMind.png', text: "ABEAUTIFULMIND", filmName: "A Beautiful Mind" }
     ];
     
     // Complete character data from the JSON
@@ -195,7 +209,21 @@ const FilmData = (function() {
             { id: 'film1', image: '/cofanetto/amelie.jpg', text: "AMELIE", filmName: "Amélie" },
             { id: 'film2', image: '/cofanetto/Anton.jpg', text: "NOCOUNTRYFOROLDMEN", filmName: "No Country for Old Men" },
             { id: 'film3', image: '/cofanetto/Napoleon.jpg', text: "NAPOLEON", filmName: "Napoleon" },
-            { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" }
+            { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" },
+            { id: 'film5', image: '/cofanetto/1917.jpg', text: "1917", filmName: "1917" },
+            { id: 'film6', image: '/cofanetto/Schindler.jpg', text: "SCHINDLERSLIST", filmName: "Schindler's List" },
+            { id: 'film7', image: '/cofanetto/titanic.jpg', text: "TITANIC", filmName: "Titanic" },
+            { id: 'film8', image: '/cofanetto/AmericanBeauty.jpg', text: "AMERICANBEAUTY", filmName: "American Beauty" },
+            { id: 'film9', image: '/cofanetto/Gladiator.jpg', text: "GLADIATOR", filmName: "Gladiator" },
+            { id: 'film10', image: '/cofanetto/The Martian.jpg', text: "THEMARTIAN", filmName: "The Martian" },
+            { id: 'film11', image: '/cofanetto/Crash.jpg', text: "CRASH", filmName: "Crash" },
+            { id: 'film12', image: '/cofanetto/The Departed.jpg', text: "THEDEPARTED", filmName: "The Departed" },
+            { id: 'film13', image: '/cofanetto/Birdman.jpg', text: "BIRDMAN", filmName: "Birdman or (The Unexpected Virtue of Ignorance)" },
+            { id: 'film14', image: '/cofanetto/12 Years a Slave.jpg', text: "12YEARSASLAVE", filmName: "12 Years a Slave" },
+            { id: 'film15', image: '/cofanetto/Spotlight.jpg', text: "SPOTLIGHT", filmName: "Spotlight" },
+            { id: 'film16', image: '/cofanetto/Moonlight.jpg', text: "MOONLIGHT", filmName: "Moonlight" },
+            { id: 'film17', image: '/cofanetto/Shutter Island.jpg', text: "SHUTTERISLAND", filmName: "Shutter Island" },
+            { id: 'film18', image: '/cofanetto/BeatifulMind.png', text: "ABEAUTIFULMIND", filmName: "A Beautiful Mind" }
         ];
     }
     
