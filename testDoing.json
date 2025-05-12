@@ -4,7 +4,9 @@
       "film_info": {
         "film_name": "ANORA",
         "year": 2025,
-        "genre": ["drama", "romance"]
+        "genre": ["drama", "romance"],
+        "box_office": 59574302
+        
       },
       "character_analysis": {
         "metadata": {
@@ -57,7 +59,8 @@
       "film_info": {
         "film_name": "No Country for Old Men",
         "year": 2008,
-        "genre": ["thriller", "crime", "drama"]
+        "genre": ["thriller", "crime", "drama"],
+        "box_office": 171632777
       },
       "character_analysis": {
         "metadata": {
@@ -112,7 +115,8 @@
       "film_info": {
         "film_name": "1917",
         "year": 2019,
-        "genre": ["drama", "action"]
+        "genre": ["drama", "action"],
+        "box_office": 446064352
       },
       "character_analysis": {
         "metadata": {
@@ -169,7 +173,8 @@
       "film_info": {
         "film_name": "Schindler's List",
         "year": 1993,
-        "genre": ["drama", "historical", "biography"]
+        "genre": ["drama", "historical", "biography"],
+        "box_office": 322161245
       },
       "character_analysis": {
         "metadata": {
@@ -226,7 +231,9 @@
       "film_info": {
         "film_name": "Titanic",
         "year": 1997,
-        "genre": ["drama", "romance"]
+        "genre": ["drama", "romance"],
+        "box_office": 2264812968
+        
       },
       "character_analysis": {
         "metadata": {
@@ -283,7 +290,8 @@
       "film_info": {
         "film_name": "American Beauty",
         "year": 1999,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 356296601
       },
       "character_analysis": {
         "metadata": {
@@ -340,7 +348,8 @@
       "film_info": {
         "film_name": "Gladiator",
         "year": 2000,
-        "genre": ["drama", "action"]
+        "genre": ["drama", "action"],
+        "box_office": 465516248
       },
       "character_analysis": {
         "metadata": {
@@ -397,7 +406,8 @@
       "film_info": {
         "film_name": "A Beautiful Mind",
         "year": 2001,
-        "genre": ["drama", "biography"]
+        "genre": ["drama", "biography"],
+        "box_office": 316791257
       },
       "character_analysis": {
         "metadata": {
@@ -454,7 +464,8 @@
       "film_info": {
         "film_name": "Crash",
         "year": 2004,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 98410061
       },
       "character_analysis": {
         "metadata": {
@@ -511,7 +522,9 @@
       "film_info": {
         "film_name": "The Departed",
         "year": 2006,
-        "genre": ["drama", "thriller", "crime"]
+        "genre": ["drama", "thriller", "crime"],
+        "box_office": 291481358
+        
       },
       "character_analysis": {
         "metadata": {
@@ -568,7 +581,8 @@
       "film_info": {
         "film_name": "Birdman or (The Unexpected Virtue of Ignorance)",
         "year": 2014,
-        "genre": ["drama", "comedy"]
+        "genre": ["drama", "comedy"],
+        "box_office": 103215094
       },
       "character_analysis": {
         "metadata": {
@@ -625,7 +639,8 @@
       "film_info": {
         "film_name": "12 Years a Slave",
         "year": 2013,
-        "genre": ["drama", "historical"]
+        "genre": ["drama", "historical"],
+        "box_office": 187734091
       },
       "character_analysis": {
         "metadata": {
@@ -682,7 +697,8 @@
       "film_info": {
         "film_name": "Spotlight",
         "year": 2015,
-        "genre": ["drama", "historical"]
+        "genre": ["drama", "historical"],
+        "box_office": 98690254
       },
       "character_analysis": {
         "metadata": {
@@ -739,7 +755,9 @@
       "film_info": {
         "film_name": "Moonlight",
         "year": 2016,
-        "genre": ["drama"]
+        "genre": ["drama"],
+        "box_office": 65172611
+        
       },
       "character_analysis": {
         "metadata": {
@@ -796,7 +814,8 @@
       "film_info": {
         "film_name": "Napoleon",
         "year": 2023,
-        "genre": ["drama", "action", "historical"]
+        "genre": ["drama", "action", "historical"],
+        "box_office": 221394838
       },
       "character_analysis": {
         "metadata": {
@@ -853,7 +872,8 @@
       "film_info": {
         "film_name": "Shutter Island",
         "year": 2010,
-        "genre": ["thriller", "mystery", "psychological drama"]
+        "genre": ["thriller", "mystery", "psychological drama"],
+        "box_office": 294978537
       },
       "character_analysis": {
         "metadata": {
@@ -910,7 +930,8 @@
       "film_info": {
         "film_name": "The Martian",
         "year": 2015,
-        "genre": ["science fiction", "drama", "thriller"]
+        "genre": ["science fiction", "drama", "thriller"],
+        "box_office": 630521406
       },
       "character_analysis": {
         "metadata": {
@@ -967,7 +988,8 @@
       "film_info": {
         "film_name": "Amélie",
         "year": 2001,
-        "genre": ["romantic", "comedy", "fantasy"]
+        "genre": ["romantic", "comedy", "fantasy"],
+        "box_office": 175183052
       },
       "character_analysis": {
         "metadata": {
@@ -1019,6 +1041,202 @@
           "primary_goal": "To overcome the confines of isolation by transforming her own life and the lives of those around her through small, deliberate acts of kindness—ultimately opening herself up to love and authentic human connection."
         }
       }
+      
+
+
+
+
+
+
+
+
+
+
+      
+    },
+    {
+      "film_info": {
+        "film_name": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "genre": ["fantasy", "adventure", "drama"],
+        "box_office": 1123837908
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Frodo Baggins"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Frodo fears failing to destroy the Ring and letting evil win. This fear grows stronger the closer he gets to Mount Doom, like when he begins to falter under the Ring’s weight and influence in the final stretch."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Frodo’s greatest strength is his quiet bravery. He continues the journey to Mordor despite overwhelming danger, isolation, and psychological torment, showing true heroism by enduring when others would give up."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "At Mount Doom, Frodo chooses to keep the Ring instead of destroying it. Though the Ring corrupts him, this moment shows how even good intentions can falter under great power."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "orphan"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": ["none"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Frodo is an orphan raised by his uncle Bilbo, which helps explain his deep connection to the Shire and his need to protect it from evil, even at great personal cost."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "ring-bearer (formerly a hobbit of leisure)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To destroy the One Ring in Mount Doom and save Middle-earth from Sauron, though he ultimately cannot destroy it himself and is saved by Gollum's intervention."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The King's Speech",
+        "year": 2010,
+        "genre": ["drama", "historical", "biographical"],
+        "box_office": 471000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "King George VI (Bertie)"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Bertie fears failing in his royal duties because of his stammer. His panic before public speeches, especially during his first wartime address, shows how deeply he dreads letting people down."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "His willingness to undergo difficult speech therapy, despite his pride and status, shows great determination. He never gives up, even when progress is slow or humiliating."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Bertie is loyal and sincere. He struggles with duty and personal fear, but he does not betray those around him—even when pressured by his brother’s abdication or his therapist’s methods."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Bertie grew up in a strict royal environment, was left-handed but forced to switch, and developed a stammer from early childhood. These pressures shaped his anxiety and insecurity."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "King of the United Kingdom"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To overcome his stammer and confidently lead his country through public speaking, especially during the outbreak of World War II."
+        }
+      }
+    },
+    
+    {
+      "film_info": {
+        "film_name": "The Shape of Water",
+        "year": 2017,
+        "genre": ["romance", "fantasy", "drama"],
+        "box_office": 195243184
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Elisa Esposito"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Elisa’s life is marked by silence and isolation due to her muteness. Her fear of being alone is clear in how deeply she connects with the creature, who also exists on the margins of society."
+          },
+          "biggest_strength": {
+            "category": "empathy",
+            "reason_specific_description": "Her ability to understand and care for others, especially the creature, is what drives her to risk everything. Her emotional intelligence gives her the strength to act when no one else will."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "She goes against her government job and the authorities to save the creature. Though her actions are compassionate, they involve breaking laws and deceiving those around her."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": ["none"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Elisa was found abandoned as a child with scars on her neck that left her mute. Her lonely, voiceless past shapes her bond with the creature, who also cannot speak."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "cleaning staff at a government facility"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To save the creature and find a meaningful, loving connection, even if it means leaving her world behind."
+        }
+      }
     }
+
+
+    
+    
+    
+    
   ]
+  
 }
+
