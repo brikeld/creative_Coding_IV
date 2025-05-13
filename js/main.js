@@ -32,23 +32,25 @@ function initFirebase() {
 }
 
 
-
+// Default 3D transform that should be applied consistently to all parallelepipeds
+const DEFAULT_TRANSFORM = 'rotateX(-44deg) rotateY(0deg) scaleZ(-20%)';
 
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the container
-    const container = document.querySelector('#container');
+    // Initialize the bookshelf first
+    Bookshelf.init();
     
-    // Clear any existing content
-    container.innerHTML = '';
+    // Get the first shelf for loading indicator
+    const firstShelf = document.querySelector('.shelf-items');
     
-    // Create loading indicator
+    // Create loading indicator and add to first shelf
     const loadingEl = document.createElement('div');
     loadingEl.className = 'loading-indicator';
     loadingEl.textContent = 'Loading character data...';
-    container.appendChild(loadingEl);
-    
+    if (firstShelf) {
+        firstShelf.appendChild(loadingEl);
+    }
     
     // Clear image caches
     FilmData.clearImageCache();
@@ -60,21 +62,28 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingEl.parentNode.removeChild(loadingEl);
         }
         
-        // Initialize - create all parallelepipeds
-        // Use DocumentFragment for better performance
-        const fragment = document.createDocumentFragment();
+        // Initialize - create all parallelepipeds and place them sequentially on shelves
         const films = FilmData.getAllFilms();
         
         // Batch process creation of elements
         requestAnimationFrame(() => {
-            films.forEach(film => {
+            films.forEach((film) => {
                 const element = Parallelepiped.create(film);
-                fragment.appendChild(element);
+                
+                // Explicitly set the initial transform to match our default
+                element.style.transform = DEFAULT_TRANSFORM;
+                
+                Bookshelf.addItem(element);
                 FilmData.elements[film.id] = element;
             });
             
-            // Append all elements at once
-            container.appendChild(fragment);
+            // Force a slight delay to ensure all elements have their correct transforms
+            setTimeout(() => {
+                Object.values(FilmData.elements).forEach(element => {
+                    // Reapply the transform after a short delay to ensure consistency
+                    element.style.transform = DEFAULT_TRANSFORM;
+                });
+            }, 100);
             
             // Expose API globally
             API.exposeGlobally();
@@ -102,6 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.table(buttonInfo);
                 return buttonInfo;
             };
+            
+            // Make the transform constant globally available
+            window.DEFAULT_TRANSFORM = DEFAULT_TRANSFORM;
             
             // Setup filter controls
             createFilterUI();
@@ -134,7 +146,7 @@ function createFilterUI() {
     resetBtn.addEventListener('click', () => {
         FilmData.clearFilter();
         resetFilterUI();
-        arrangeFilms();
+        FilterEffects.resetShelves(); // Use new reset animation
     });
     filterContainer.appendChild(resetBtn);
     
@@ -209,8 +221,8 @@ function createFilterUI() {
                 // Apply filter
                 const filtered = FilmData.filterFilms(categoryKey, value);
                 
-                // Arrange films based on filter
-                arrangeFilms(filtered.matching, filtered.nonMatching);
+                // Use new animation for filter
+                FilterEffects.splitShelvesForFilter(filtered.matching, filtered.nonMatching);
             });
             
             filterContainer.appendChild(btn);
@@ -227,45 +239,5 @@ function createFilterUI() {
 function resetFilterUI() {
     document.querySelectorAll('.filter-button').forEach(btn => {
         btn.classList.remove('active');
-    });
-}
-
-/**
- * @param {Array} matching - Array of matching film IDs
- * @param {Array} nonMatching - Array of non-matching film IDs
- */
-function arrangeFilms(matching = [], nonMatching = []) {
-    const container = document.querySelector('#container');
-    const centerX = container.clientWidth / 2;
-    
-    // If no filter is active, reset positions
-    if (matching.length === 0 && nonMatching.length === 0) {
-        Object.values(FilmData.elements).forEach(element => {
-            // Reset to original 3D transform
-            element.style.transition = 'transform 0.8s ease-out';
-            element.style.transform = 'rotateX(20deg) rotateY(40deg)';
-        });
-        return;
-    }
-    
-    // Position matching films to the left
-    matching.forEach((filmId, index) => {
-        const element = FilmData.elements[filmId];
-        if (element) {
-            element.style.transition = 'transform 0.8s ease-out';
-            element.style.transform = `rotateX(20deg) rotateY(40deg) translateX(${-centerX / 2.5}px)`;
-            element.classList.add('matching');
-            element.classList.remove('non-matching');
-        }
-    });
-    
-    // Position non-matching films to the right
-    nonMatching.forEach((filmId, index) => {
-        const element = FilmData.elements[filmId];
-        if (element) {
-            element.style.transition = 'transform 0.8s ease-out';
-            element.style.transform = `rotateX(20deg) rotateY(40deg) translateX(${centerX / 2.5}px)`;
-            element.classList.remove('matching');
-        }
     });
 } 

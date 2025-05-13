@@ -43,21 +43,28 @@ const Parallelepiped = (function() {
             parallelepiped.appendChild(face);
         });
         
-        // Create edges for better 3D effect
+        // Create edges for better 3D effect - adjusted for smaller parallelepiped
+        const edgeWidth = 70; // Width of the parallelepiped
+        const edgeHeight = 110; // Height of the parallelepiped
+        const edgeDepth = 23; // Half of the depth of the parallelepiped
+        
         const edges = [
-            { class: 'edge-front-top' },
-            { class: 'edge-front-bottom' },
-            { class: 'edge-front-left' },
-            { class: 'edge-front-right' },
-            { class: 'edge-back-top' },
-            { class: 'edge-back-bottom' },
-            { class: 'edge-back-left' },
-            { class: 'edge-back-right' }
+            { class: 'edge-front-top', width: edgeWidth, height: 2 },
+            { class: 'edge-front-bottom', width: edgeWidth, height: 2 },
+            { class: 'edge-front-left', width: 2, height: edgeHeight },
+            { class: 'edge-front-right', width: 2, height: edgeHeight },
+            { class: 'edge-back-top', width: edgeWidth, height: 2 },
+            { class: 'edge-back-bottom', width: edgeWidth, height: 2 },
+            { class: 'edge-back-left', width: 2, height: edgeHeight },
+            { class: 'edge-back-right', width: 2, height: edgeHeight }
         ];
         
         edges.forEach(edge => {
             const edgeElement = document.createElement('div');
             edgeElement.className = `edge ${edge.class}`;
+            // Set size directly in JS to match CSS
+            if (edge.width) edgeElement.style.width = `${edge.width}px`;
+            if (edge.height) edgeElement.style.height = `${edge.height}px`;
             parallelepiped.appendChild(edgeElement);
         });
         
