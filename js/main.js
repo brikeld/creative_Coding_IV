@@ -33,7 +33,7 @@ function initFirebase() {
 
 
 // Default 3D transform that should be applied consistently to all parallelepipeds
-const DEFAULT_TRANSFORM = 'rotateX(-44deg) rotateY(0deg) scaleZ(-20%)';
+const DEFAULT_TRANSFORM = 'rotateX(-40deg) rotateY(0deg) ';
 
 
 // Initialize when DOM is loaded

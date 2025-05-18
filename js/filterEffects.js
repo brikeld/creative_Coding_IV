@@ -21,21 +21,21 @@ const FilterEffects = (function() {
         const matchingElements = matching.map(id => document.getElementById(id)).filter(Boolean);
         const nonMatchingElements = nonMatching.map(id => document.getElementById(id)).filter(Boolean);
         
-        // First reorganize items (before any animation)
-        reorganizeItems(matchingElements, nonMatchingElements);
-        
-        // Then split the shelves to show the separation
-        gsap.to(shelfContainers, {
-            duration: 0.8,
-            stagger: 0.05,
-            x: function(index) {
-                // Odd shelves (0, 2, 4) go left, even shelves (1, 3, 5) go right
-                return index % 2 === 0 ? -300 : 300;
-            },
-            ease: 'back.out(1.0)',
-            onComplete: () => {
-                isAnimating = false;
-            }
+        // First animate the parallelepipeds to their new positions
+        animateItemsRepositioning(matchingElements, nonMatchingElements).then(() => {
+            // After parallelepiped animation completes, split the shelves
+            gsap.to(shelfContainers, {
+                duration: 0.8,
+                stagger: 0.05,
+                x: function(index) {
+                    // Odd shelves (0, 2, 4) go left, even shelves (1, 3, 5) go right
+                    return index % 2 === 0 ? -300 : 300;
+                },
+                ease: 'back.out(1.0)',
+                onComplete: () => {
+                    isAnimating = false;
+                }
+            });
         });
     }
     
@@ -56,64 +56,164 @@ const FilterEffects = (function() {
             stagger: 0.05,
             ease: 'back.out(0.7)',
             onComplete: () => {
-                // After shelves are back together, reorganize items
+                // After shelves are back together, reorganize items with animation
                 Bookshelf.reset();
                 
                 // Get all elements
                 const allElements = Object.values(FilmData.elements);
                 
-                // Reorganize to original state
-                allElements.forEach(element => {
-                    // Reset transform and remove filter classes
-                    element.style.transition = 'transform 0.5s ease-out';
-                    // Use global DEFAULT_TRANSFORM
-                    element.style.transform = window.DEFAULT_TRANSFORM;
-                    element.classList.remove('matching', 'non-matching');
-                    
-                    // Add back to bookshelf
-                    Bookshelf.addItem(element);
+                // Animate back to original positions
+                animateResetItems(allElements).then(() => {
+                    isAnimating = false;
                 });
-                
-                isAnimating = false;
             }
         });
     }
     
     /**
-     * Reorganize items based on matching/non-matching status
+     * Animate repositioning of items based on matching/non-matching status
      * @param {Array} matchingElements - Array of matching DOM elements
      * @param {Array} nonMatchingElements - Array of non-matching DOM elements
+     * @returns {Promise} - Promise that resolves when animation is complete
      */
-    function reorganizeItems(matchingElements, nonMatchingElements) {
-        // First detach all elements from current shelves
-        [...matchingElements, ...nonMatchingElements].forEach(el => {
-            if (el.parentNode) el.parentNode.removeChild(el);
+    function animateItemsRepositioning(matchingElements, nonMatchingElements) {
+        return new Promise((resolve) => {
+            // Store current positions of all elements for animation
+            const allElements = [...matchingElements, ...nonMatchingElements];
+            const startPositions = allElements.map(el => {
+                const rect = el.getBoundingClientRect();
+                return {
+                    element: el,
+                    top: rect.top,
+                    left: rect.left
+                };
+            });
+            
+            // Add appropriate classes, but keep elements in place for now
+            matchingElements.forEach(el => {
+                el.classList.add('matching');
+                el.classList.remove('non-matching');
+            });
+            
+            nonMatchingElements.forEach(el => {
+                el.classList.add('non-matching'); 
+                el.classList.remove('matching');
+            });
+            
+            // First detach all elements from current shelves
+            allElements.forEach(el => {
+                if (el.parentNode) el.parentNode.removeChild(el);
+            });
+            
+            // Reset the bookshelf item counters
+            Bookshelf.reset();
+            
+            // Get shelf containers for distribution
+            const matchingShelves = document.querySelectorAll('.shelf-container:nth-child(odd) .shelf-items');
+            const nonMatchingShelves = document.querySelectorAll('.shelf-container:nth-child(even) .shelf-items');
+            
+            // Distribute to new positions without animation yet
+            distributeItems(matchingElements, matchingShelves);
+            distributeItems(nonMatchingElements, nonMatchingShelves);
+            
+            // Now get the end positions
+            const endPositions = allElements.map(el => {
+                const rect = el.getBoundingClientRect();
+                return {
+                    element: el,
+                    top: rect.top,
+                    left: rect.left
+                };
+            });
+            
+            // Set all elements to their starting positions using GSAP
+            allElements.forEach((el, i) => {
+                // Apply the common transform
+                el.style.transform = window.DEFAULT_TRANSFORM;
+                
+                // Set initial position with GSAP
+                const startPos = startPositions[i];
+                const endPos = endPositions[i];
+                const deltaX = startPos.left - endPos.left;
+                const deltaY = startPos.top - endPos.top;
+                
+                gsap.set(el, {
+                    x: deltaX,
+                    y: deltaY,
+                    opacity: 1
+                });
+            });
+            
+            // Animate to final positions
+            gsap.to(allElements, {
+                duration: 0.8,
+                x: 0,
+                y: 0,
+                ease: "power3.inOut",
+                stagger: 0.02,
+                onComplete: resolve
+            });
         });
-        
-        // Reset the bookshelf item counters
-        Bookshelf.reset();
-        
-        // First place all matching items on the left (odd shelves: 0, 2, 4)
-        const matchingShelves = document.querySelectorAll('.shelf-container:nth-child(odd) .shelf-items');
-        distributeItems(matchingElements, matchingShelves);
-        
-        // Then place all non-matching items on the right (even shelves: 1, 3, 5)
-        const nonMatchingShelves = document.querySelectorAll('.shelf-container:nth-child(even) .shelf-items');
-        distributeItems(nonMatchingElements, nonMatchingShelves);
-        
-        // Add appropriate classes, but use the same transform for both
-        matchingElements.forEach(el => {
-            el.classList.add('matching');
-            el.classList.remove('non-matching');
-            el.style.transition = 'transform 0.5s ease-out';
-            el.style.transform = window.DEFAULT_TRANSFORM;
-        });
-        
-        nonMatchingElements.forEach(el => {
-            el.classList.add('non-matching'); 
-            el.classList.remove('matching');
-            el.style.transition = 'transform 0.5s ease-out';
-            el.style.transform = window.DEFAULT_TRANSFORM;
+    }
+    
+    /**
+     * Animate items back to their original positions when resetting
+     * @param {Array} allElements - All parallelepiped elements
+     * @returns {Promise} - Promise that resolves when animation is complete
+     */
+    function animateResetItems(allElements) {
+        return new Promise((resolve) => {
+            // Store current positions for all elements
+            const startPositions = allElements.map(el => {
+                const rect = el.getBoundingClientRect();
+                return {
+                    element: el,
+                    top: rect.top,
+                    left: rect.left
+                };
+            });
+            
+            // Remove filter classes
+            allElements.forEach(element => {
+                element.classList.remove('matching', 'non-matching');
+                element.style.transform = window.DEFAULT_TRANSFORM;
+                
+                // Add back to bookshelf
+                Bookshelf.addItem(element);
+            });
+            
+            // Get the end positions
+            const endPositions = allElements.map(el => {
+                const rect = el.getBoundingClientRect();
+                return {
+                    element: el,
+                    top: rect.top,
+                    left: rect.left
+                };
+            });
+            
+            // Set all elements to their starting positions using GSAP
+            allElements.forEach((el, i) => {
+                const startPos = startPositions[i];
+                const endPos = endPositions[i];
+                const deltaX = startPos.left - endPos.left;
+                const deltaY = startPos.top - endPos.top;
+                
+                gsap.set(el, {
+                    x: deltaX,
+                    y: deltaY
+                });
+            });
+            
+            // Animate to final positions
+            gsap.to(allElements, {
+                duration: 1.8,
+                x: 0,
+                y: 0,
+                ease: "power3.inOut",
+                stagger: 1.02,
+                onComplete: resolve
+            });
         });
     }
     
