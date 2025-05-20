@@ -91,11 +91,26 @@ const Bookshelf = (function() {
         return [...shelves];
     }
     
+    /**
+     * Add multiple items to the bookshelf at once
+     * @param {Array} items - Array of items to add
+     */
+    function addItems(items) {
+        items.forEach(item => addItem(item));
+        
+        // Resize shelves after adding items
+        if (typeof FilterEffects !== 'undefined' && 
+            FilterEffects.resizeShelvesBasedOnContent) {
+            FilterEffects.resizeShelvesBasedOnContent();
+        }
+    }
+    
     // Public API
     return {
         init,
         addItem,
         reset,
-        getShelves
+        getShelves,
+        addItems
     };
 })(); 

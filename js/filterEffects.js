@@ -23,6 +23,9 @@ const FilterEffects = (function() {
         
         // First animate the parallelepipeds to their new positions
         animateItemsRepositioning(matchingElements, nonMatchingElements).then(() => {
+            // Resize shelves based on content
+            resizeShelvesBasedOnContent();
+            
             // After parallelepiped animation completes, split the shelves
             gsap.to(shelfContainers, {
                 duration: 0.8,
@@ -64,9 +67,41 @@ const FilterEffects = (function() {
                 
                 // Animate back to original positions
                 animateResetItems(allElements).then(() => {
+                    // Resize shelves after reset
+                    resizeShelvesBasedOnContent();
                     isAnimating = false;
                 });
             }
+        });
+    }
+    
+    /**
+     * Dynamically resize shelves based on their content
+     */
+    function resizeShelvesBasedOnContent() {
+        const shelfContainers = document.querySelectorAll('.shelf-container');
+        const minShelfWidth = 200; // Minimum shelf width
+        const itemWidth = 85; // Width of each item (70px + 15px gap)
+        
+        shelfContainers.forEach(container => {
+            const shelfItems = container.querySelector('.shelf-items');
+            const itemsCount = shelfItems.childElementCount;
+            
+            // Calculate width based on number of items
+            const calculatedWidth = Math.max(minShelfWidth, (itemsCount * itemWidth) + 80); // Add padding
+            
+            // Apply width to container, shelf and items
+            gsap.to(container, {
+                width: calculatedWidth,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            
+            gsap.to(container.querySelector('.shelf'), {
+                width: calculatedWidth,
+                duration: 0.5,
+                ease: "power2.out"
+            });
         });
     }
     
@@ -252,6 +287,7 @@ const FilterEffects = (function() {
     // Public API
     return {
         splitShelvesForFilter,
-        resetShelves
+        resetShelves,
+        resizeShelvesBasedOnContent
     };
 })(); 

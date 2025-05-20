@@ -67,15 +67,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Batch process creation of elements
         requestAnimationFrame(() => {
+            const elements = [];
             films.forEach((film) => {
                 const element = Parallelepiped.create(film);
                 
                 // Explicitly set the initial transform to match our default
                 element.style.transform = DEFAULT_TRANSFORM;
                 
-                Bookshelf.addItem(element);
+                elements.push(element);
                 FilmData.elements[film.id] = element;
             });
+            
+            // Add all elements at once
+            Bookshelf.addItems(elements);
             
             // Force a slight delay to ensure all elements have their correct transforms
             setTimeout(() => {
