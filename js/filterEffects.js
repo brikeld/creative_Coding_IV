@@ -32,7 +32,7 @@ const FilterEffects = (function() {
                 stagger: 0.05,
                 x: function(index) {
                     // Odd shelves (0, 2, 4) go left, even shelves (1, 3, 5) go right
-                    return index % 2 === 0 ? -300 : 300;
+                    return index % 2 === 0 ? -200 : 200; // Reduced from -300/300 for narrower shelves
                 },
                 ease: 'back.out(1.0)',
                 onComplete: () => {
@@ -81,14 +81,14 @@ const FilterEffects = (function() {
     function resizeShelvesBasedOnContent() {
         const shelfContainers = document.querySelectorAll('.shelf-container');
         const minShelfWidth = 200; // Minimum shelf width
-        const itemWidth = 85; // Width of each item (70px + 15px gap)
+        const itemWidth = 120; // Width of each item (increased from 100px)
         
         shelfContainers.forEach(container => {
             const shelfItems = container.querySelector('.shelf-items');
             const itemsCount = shelfItems.childElementCount;
             
             // Calculate width based on number of items
-            const calculatedWidth = Math.max(minShelfWidth, (itemsCount * itemWidth) + 80); // Add padding
+            const calculatedWidth = Math.max(minShelfWidth, (itemsCount * itemWidth) + 100); // Increased padding from 80 to 100
             
             // Apply width to container, shelf and items
             gsap.to(container, {
