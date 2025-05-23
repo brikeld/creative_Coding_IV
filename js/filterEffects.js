@@ -13,6 +13,9 @@ const FilterEffects = (function() {
     function splitShelvesForFilter(matching, nonMatching) {
         if (isAnimating) return; // Prevent overlapping animations
         isAnimating = true;
+        // Add filtered class to bookshelf for gap animation
+        const bookshelf = document.querySelector('.bookshelf');
+        if (bookshelf) bookshelf.classList.add('filtered');
         
         // Get shelf containers
         const shelfContainers = document.querySelectorAll('.shelf-container');
@@ -150,6 +153,9 @@ const FilterEffects = (function() {
     function resetShelves() {
         if (isAnimating) return; // Prevent overlapping animations
         isAnimating = true;
+        // Remove filtered class from bookshelf for gap animation
+        const bookshelf = document.querySelector('.bookshelf');
+        if (bookshelf) bookshelf.classList.remove('filtered');
         
         // Get shelf containers
         const shelfContainers = document.querySelectorAll('.shelf-container');
@@ -286,38 +292,36 @@ const FilterEffects = (function() {
     function distributeItems(items, shelves, isCompact = false) {
         if (!items.length || !shelves.length) return;
         
-        // Maximum capacity per shelf
         const shelfCapacity = Animations.capacity.itemsPerShelf;
+        let currentIndex = 0;
         
-        // Clear any distribution tracking
-        let currentShelfIndex = 0;
+        // Calculate how many items per shelf
+        const itemsPerShelf = Math.min(items.length, shelfCapacity);
         
-        // Add each item to the current shelf until it's full, then move to next shelf
-        items.forEach(item => {
-            if (currentShelfIndex >= shelves.length) {
-                // If we've run out of shelves, add to the last shelf anyway
-                shelves[shelves.length - 1].appendChild(item);
-                return;
+        // Distribute items across shelves, maintaining row alignment
+        while (currentIndex < items.length) {
+            const targetShelfIndex = Math.floor(currentIndex / itemsPerShelf);
+            if (targetShelfIndex < shelves.length) {
+                const shelf = shelves[targetShelfIndex];
+                shelf.appendChild(items[currentIndex]);
+            } else {
+                // If we run out of shelves, add to the last shelf
+                shelves[shelves.length - 1].appendChild(items[currentIndex]);
             }
-            
-            const currentShelf = shelves[currentShelfIndex];
-            currentShelf.appendChild(item);
-            
-            // If we've reached capacity for this shelf, move to the next one
-            if (currentShelf.childElementCount >= shelfCapacity && currentShelfIndex < shelves.length - 1) {
-                currentShelfIndex++;
-            }
-        });
+            currentIndex++;
+        }
         
-        // Hide empty shelves by not transforming them and making them transparent
+        // Handle empty shelf visibility
         Array.from(shelves).forEach((shelf, index) => {
             const container = shelf.closest('.shelf-container');
-            if (shelf.childElementCount === 0 && container) {
-                container.style.opacity = '0';
-                container.dataset.isEmpty = 'true';
-            } else if (container) {
-                container.style.opacity = '1';
-                container.dataset.isEmpty = 'false';
+            if (container) {
+                if (shelf.childElementCount === 0) {
+                    container.style.opacity = '0';
+                    container.dataset.isEmpty = 'true';
+                } else {
+                    container.style.opacity = '1';
+                    container.dataset.isEmpty = 'false';
+                }
             }
         });
     }

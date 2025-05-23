@@ -53,7 +53,7 @@ const BoxOfficeDisplay = (function() {
         
         gsap.to({value: currentTotal}, {
             value: targetTotal,
-            duration: 1.5,
+            duration: 3.5,
             ease: "power2.out",
             onUpdate: function() {
                 const currentValue = this.targets()[0].value;

@@ -29,6 +29,11 @@ body {
   align-items: center;
   padding: 125px 0 90px; /* Reduced from 190px 0 140px */
   overflow-y: auto;
+  transition: gap 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.bookshelf.filtered {
+  gap: 10.5px;
 }
 
 .shelf-container {
