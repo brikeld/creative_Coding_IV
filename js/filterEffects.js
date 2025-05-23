@@ -160,11 +160,18 @@ const FilterEffects = (function() {
         // Get shelf containers
         const shelfContainers = document.querySelectorAll('.shelf-container');
         
+        // Remove existing group labels
+        document.querySelectorAll('.group-label').forEach(label => label.remove());
+        
         // Remove the filter-related classes and reset opacity
         shelfContainers.forEach(container => {
             container.classList.remove('matching-shelf', 'non-matching-shelf');
             container.style.opacity = '1';  // Reset opacity for all shelves
+            container.style.display = 'block';  // Reset display for all shelves
             container.dataset.isEmpty = 'false';  // Reset empty state
+            // Remove group classes
+            container.className = container.className.replace(/group-\d+-shelf/g, '');
+            delete container.dataset.groupKey;
         });
         
         // First reset the bookshelf item tracking
@@ -186,6 +193,10 @@ const FilterEffects = (function() {
         // Remove filter classes
         allElements.forEach(element => {
             element.classList.remove('matching', 'non-matching');
+            // Remove group classes
+            element.className = element.className.replace(/group-\d+/g, '');
+            element.classList.remove('group-grayscale');
+            delete element.dataset.groupKey;
             element.style.transform = window.DEFAULT_TRANSFORM;
             
             // Add back to bookshelf
@@ -256,16 +267,15 @@ const FilterEffects = (function() {
         const shelfContainers = document.querySelectorAll('.shelf-container');
         const minShelfWidth = Animations.spatial.minShelfWidth;
         
-        // Use more compact spacing when filtered
-        const config = isFiltered ? Animations.spatial.itemSpacing.filtered : Animations.spatial.itemSpacing.normal;
-        const itemWidth = config.itemWidth;
-        const padding = config.padding;
+        // Use actual parallelepiped dimensions: 47px width + 20px gap
+        const itemWidth = 67; // 47px + 20px gap
+        const padding = 40; // Reduced padding for better fit
         
         shelfContainers.forEach(container => {
             const shelfItems = container.querySelector('.shelf-items');
             const itemsCount = shelfItems.childElementCount;
             
-            // Calculate width based on number of items
+            // Calculate width based on actual items with proper spacing
             const calculatedWidth = Math.max(minShelfWidth, (itemsCount * itemWidth) + padding);
             
             // Apply width to container, shelf and items
@@ -326,10 +336,202 @@ const FilterEffects = (function() {
         });
     }
     
+    /**
+     * Arranges shelves for multiple groups based on category filtering
+     * @param {Object} groups - Object with group names as keys and film ID arrays as values
+     */
+    function arrangeShelvesForGroups(groups) {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        const bookshelf = document.querySelector('.bookshelf');
+        if (bookshelf) bookshelf.classList.add('filtered');
+        
+        const shelfContainers = document.querySelectorAll('.shelf-container');
+        const groupKeys = Object.keys(groups);
+        const groupCount = groupKeys.length;
+        
+        // Calculate highest earning group
+        let highestEarningGroup = '';
+        let highestEarnings = 0;
+        
+        groupKeys.forEach(groupKey => {
+            const groupTotal = groups[groupKey].reduce((sum, filmId) => {
+                const film = FilmData.getAllFilms().find(f => f.id === filmId);
+                return sum + (film?.film_info?.box_office || 0);
+            }, 0);
+            
+            console.log(`Group ${groupKey}: $${groupTotal.toLocaleString()}`);
+            
+            if (groupTotal > highestEarnings) {
+                highestEarnings = groupTotal;
+                highestEarningGroup = groupKey;
+            }
+        });
+        
+        console.log(`Highest earning group: ${highestEarningGroup} with $${highestEarnings.toLocaleString()}`);
+        
+        // Remove existing group labels
+        document.querySelectorAll('.group-label').forEach(label => label.remove());
+        
+        // IMPORTANT: Get all elements BEFORE clearing shelves
+        const groupElementsMap = {};
+        const allElements = [];
+        
+        groupKeys.forEach(groupKey => {
+            const elements = groups[groupKey].map(id => document.getElementById(id)).filter(Boolean);
+            groupElementsMap[groupKey] = elements;
+            allElements.push(...elements);
+        });
+        
+        // Store current positions for animation
+        const startPositions = allElements.map(el => {
+            const rect = el.getBoundingClientRect();
+            return { element: el, top: rect.top, left: rect.left };
+        });
+        
+        // Clear all shelves and reset tracking
+        Bookshelf.reset();
+        
+        // Distribute groups across shelves using preserved element references
+        let shelfIndex = 0;
+        const usedShelves = [];
+        
+        groupKeys.forEach((groupKey, groupIndex) => {
+            const groupElements = groupElementsMap[groupKey];
+            if (groupElements.length === 0) return; // Skip empty groups
+            
+            const isHighestEarning = groupKey === highestEarningGroup;
+            console.log(`Group ${groupKey} (index ${groupIndex}): isHighestEarning = ${isHighestEarning}`);
+            
+            // Add group-specific classes
+            groupElements.forEach(el => {
+                el.classList.remove('matching', 'non-matching');
+                // Remove any existing group classes
+                el.className = el.className.replace(/group-\d+/g, '');
+                el.classList.remove('group-grayscale');
+                
+                if (isHighestEarning) {
+                    el.classList.add(`group-${groupIndex}`); // Only highest earning gets color
+                    console.log(`Adding color class group-${groupIndex} to element`, el.id);
+                } else {
+                    el.classList.add('group-grayscale');
+                    console.log(`Adding grayscale class to element`, el.id);
+                }
+                el.dataset.groupKey = groupKey;
+            });
+            
+            // Distribute this group's items across available shelves
+            const shelvesForGroup = Math.ceil(groupElements.length / Animations.capacity.itemsPerShelf);
+            
+            for (let i = 0; i < shelvesForGroup && shelfIndex < shelfContainers.length; i++) {
+                const shelf = shelfContainers[shelfIndex].querySelector('.shelf-items');
+                const startIdx = i * Animations.capacity.itemsPerShelf;
+                const endIdx = Math.min(startIdx + Animations.capacity.itemsPerShelf, groupElements.length);
+                
+                for (let j = startIdx; j < endIdx; j++) {
+                    if (groupElements[j]) {
+                        shelf.appendChild(groupElements[j]);
+                    }
+                }
+                
+                // Mark shelf container with group info
+                shelfContainers[shelfIndex].classList.add(`group-${groupIndex}-shelf`);
+                shelfContainers[shelfIndex].dataset.groupKey = groupKey;
+                shelfContainers[shelfIndex].style.display = 'block';
+                usedShelves.push(shelfIndex);
+                shelfIndex++;
+            }
+            
+            // Create group label after the last shelf of this group
+            const lastShelf = shelfContainers[shelfIndex - 1];
+            const label = document.createElement('div');
+            label.className = 'group-label';
+            label.textContent = groupKey;
+            label.style.cssText = `
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                color: white;
+                font-family: 'Input Mono', monospace;
+                font-size: 0.8rem;
+                margin-top: 10px;
+                text-align: center;
+                white-space: nowrap;
+                z-index: 10;
+            `;
+            lastShelf.appendChild(label);
+        });
+        
+        // Hide unused shelves completely
+        shelfContainers.forEach((container, index) => {
+            if (!usedShelves.includes(index)) {
+                container.style.display = 'none';
+            }
+        });
+        
+        // Get end positions after redistribution
+        const endPositions = allElements.map(el => {
+            const rect = el.getBoundingClientRect();
+            return { element: el, top: rect.top, left: rect.left };
+        });
+        
+        // Set initial positions for animation
+        allElements.forEach((el, i) => {
+            el.style.transform = window.DEFAULT_TRANSFORM;
+            const startPos = startPositions[i];
+            const endPos = endPositions[i];
+            const deltaX = startPos.left - endPos.left;
+            const deltaY = startPos.top - endPos.top;
+            
+            gsap.set(el, { x: deltaX, y: deltaY, opacity: 1 });
+        });
+        
+        let animationsComplete = 0;
+        const totalAnimations = 2;
+        const checkAllComplete = () => {
+            animationsComplete++;
+            if (animationsComplete >= totalAnimations) {
+                resizeShelvesBasedOnContent(true);
+                isAnimating = false;
+            }
+        };
+        
+        // Calculate shelf positions for groups with efficient screen usage
+        const availableWidth = window.innerWidth - 200; // Leave margins
+        const shelfSpacing = Math.max(300, availableWidth / (groupCount + 1));
+        
+        // Animate shelves to group positions
+        usedShelves.forEach((shelfIndex, arrayIndex) => {
+            const container = shelfContainers[shelfIndex];
+            const groupIndex = parseInt(container.className.match(/group-(\d+)-shelf/)?.[1] || '0');
+            const xPosition = (groupIndex - (groupCount - 1) / 2) * shelfSpacing;
+            
+            gsap.to(container, {
+                duration: Animations.timings.shelfSplit.duration,
+                x: xPosition,
+                ease: Animations.timings.shelfSplit.ease,
+                onComplete: arrayIndex === 0 ? checkAllComplete : undefined
+            });
+        });
+        
+        // Animate items to their new positions
+        gsap.to(allElements, {
+            duration: Animations.timings.itemsToPosition.duration,
+            x: 0,
+            y: 0,
+            ease: Animations.timings.itemsToPosition.ease,
+            stagger: Animations.timings.itemsToPosition.stagger,
+            onComplete: checkAllComplete
+        });
+    }
+    
     // Public API
     return {
         splitShelvesForFilter,
         resetShelves,
-        resizeShelvesBasedOnContent
+        resizeShelvesBasedOnContent,
+        arrangeShelvesForGroups
     };
 })(); 

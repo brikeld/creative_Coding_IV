@@ -185,6 +185,42 @@ const FilmData = (function() {
         activeFilter = { category, value };
         return result;
     }
+
+    /**
+     * Groups films by all values within a category
+     * @param {string} category - The category to group by
+     * @returns {Object} - Object with groups for each value in the category
+     */
+    function groupFilmsByCategory(category) {
+        const groups = {};
+        
+        films.forEach(film => {
+            const charData = characterData.find(char => 
+                char.film_info.film_name.toLowerCase() === film.filmName.toLowerCase()
+            );
+            
+            if (!charData) {
+                // Add to 'unknown' group
+                if (!groups['unknown']) groups['unknown'] = [];
+                groups['unknown'].push(film.id);
+                return;
+            }
+            
+            // Add character_analysis prefix if not already included
+            const fullPath = category.startsWith('character_analysis.') 
+                ? category 
+                : 'character_analysis.' + category;
+            
+            const propValue = getNestedProperty(charData, fullPath);
+            const groupKey = propValue || 'unknown';
+            
+            if (!groups[groupKey]) groups[groupKey] = [];
+            groups[groupKey].push(film.id);
+        });
+        
+        activeFilter = { category, groups };
+        return groups;
+    }
     
     /**
      * Clears the active filter
@@ -266,6 +302,7 @@ const FilmData = (function() {
         loadCharacterData,
         getFilterCategories,
         filterFilms,
+        groupFilmsByCategory,
         clearFilter,
         getActiveFilter,
         resetFilms,

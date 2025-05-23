@@ -149,11 +149,11 @@ function createFilterUI() {
     const resetBtn = document.createElement('button');
     resetBtn.className = 'filter-button reset-filter';
     resetBtn.textContent = 'Reset Filters';
-    resetBtn.id = 'reset_filters'; // Add ID for Firebase control
+    resetBtn.id = 'reset_filters';
     resetBtn.addEventListener('click', () => {
         FilmData.clearFilter();
         resetFilterUI();
-        FilterEffects.resetShelves(); // Use new reset animation
+        FilterEffects.resetShelves();
     });
     filterContainer.appendChild(resetBtn);
     
@@ -182,58 +182,52 @@ function createFilterUI() {
         'personality_traits.biggest_fear.category': 'Biggest Fear'
     };
     
-    // Add filter buttons by priority
+    // Add category buttons only
     priorityOrder.forEach(categoryKey => {
         const values = categories[categoryKey];
         if (!values || values.length === 0) return;
-        
-        // Create category heading
-        const categoryHeading = document.createElement('div');
-        categoryHeading.className = 'filter-category';
         
         // Get the custom display name or format the default one
         let displayName;
         if (categoryDisplayNames[categoryKey]) {
             displayName = categoryDisplayNames[categoryKey];
         } else {
-            // Format category name for display (original logic)
+            // Format category name for display
             displayName = categoryKey.split('.').pop().replace(/_/g, ' ');
         }
         
-        categoryHeading.textContent = displayName;
-        filterContainer.appendChild(categoryHeading);
+        // Create category button (single button per category)
+        const btn = document.createElement('button');
+        btn.className = 'filter-button category-button';
+        btn.dataset.category = categoryKey;
+        btn.textContent = displayName;
         
-        // Create filter buttons for each value
-        values.sort().forEach(value => {
-            const btn = document.createElement('button');
-            btn.className = 'filter-button';
-            btn.dataset.category = categoryKey;
-            btn.dataset.value = value;
-            btn.textContent = value;
-            
-            // Ensure buttons have consistent IDs for Firebase integration
-            // Format: lowercase value with no spaces
-            const buttonId = value.toLowerCase().replace(/\s+/g, '_');
-            btn.id = buttonId;
-            
-            btn.addEventListener('click', (e) => {
-                // Deactivate all buttons
-                document.querySelectorAll('.filter-button').forEach(b => {
-                    b.classList.remove('active');
-                });
-                
-                // Activate clicked button
-                e.target.classList.add('active');
-                
-                // Apply filter
-                const filtered = FilmData.filterFilms(categoryKey, value);
-                
-                // Use new animation for filter
-                FilterEffects.splitShelvesForFilter(filtered.matching, filtered.nonMatching);
+        // Ensure buttons have consistent IDs for Firebase integration
+        const buttonId = categoryKey.toLowerCase().replace(/\./g, '_').replace(/\s+/g, '_');
+        btn.id = buttonId;
+        
+        btn.addEventListener('click', (e) => {
+            // Deactivate all buttons
+            document.querySelectorAll('.filter-button').forEach(b => {
+                b.classList.remove('active');
             });
             
-            filterContainer.appendChild(btn);
+            // Activate clicked button
+            e.target.classList.add('active');
+            
+            // Apply category-based grouping filter
+            const groups = FilmData.groupFilmsByCategory(categoryKey);
+            console.log('Filter groups for', categoryKey, ':', groups);
+            console.log('Group keys:', Object.keys(groups));
+            Object.keys(groups).forEach(groupKey => {
+                console.log(`Group ${groupKey}: ${groups[groupKey].length} items`);
+            });
+            
+            // Use new multi-group animation
+            FilterEffects.arrangeShelvesForGroups(groups);
         });
+        
+        filterContainer.appendChild(btn);
     });
     
     // Append filter container to the body
