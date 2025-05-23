@@ -19,9 +19,12 @@ const Bookshelf = (function() {
                 element: shelf,
                 index: index,
                 items: 0,
-                // Calculate capacity based on shelf width - limit to max 5 items per shelf
-                // Using wider 120px width per item to account for margins and spacing
-                capacity: Math.min(5, Math.floor((shelf.clientWidth - 100) / 120))
+                // Calculate capacity based on shelf width - limit to max items per shelf from Animations
+                // Using item width from Animations
+                capacity: Math.min(
+                    Animations.capacity.itemsPerShelf, 
+                    Math.floor((shelf.clientWidth - 60) / Animations.spatial.itemSpacing.normal.itemWidth)
+                )
             });
         });
         

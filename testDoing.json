@@ -1228,15 +1228,196 @@
           "success_metrics": "fully",
           "primary_goal": "To save the creature and find a meaningful, loving connection, even if it means leaving her world behind."
         }
+      }      
+    },
+    {
+      "film_info": {
+        "film_name": "Green Book",
+        "year": 2018,
+        "genre": ["drama", "biographical", "road movie"],
+        "box_office": 321800000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Tony Lip (Frank Vallelonga)"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "extrovert",
+          "biggest_fear": {
+            "category": "poverty",
+            "reason_specific_description": "At the start of the film, Tony loses his job and is willing to do nearly anything to support his family. His decision to take a job far from home, driving Dr. Shirley through the Deep South, is motivated by financial fear and duty."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "Tony is quick-thinking and adaptable. He gets them out of dangerous situations on the road using charm, strength, or by bending the rules, such as talking his way out of being arrested in the South."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Tony is rough around the edges and prejudiced at first, but he remains loyal to Dr. Shirley. His personal growth is marked by increased respect and empathy, not betrayal."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "frequent",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": [
+            "Tony does not have a tragic backstory. His struggles are based more in working-class survival and limited education than past trauma."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "working class",
+          "occupation": "nightclub bouncer / driver"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To provide for his family and maintain his pride, which transforms into forming a real friendship with Dr. Shirley and overcoming his own biases."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Parasite",
+        "year": 2019,
+        "genre": ["thriller", "drama", "dark comedy"],
+        "box_office": 263100000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Kim Ki-taek"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "asian"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "poverty",
+            "reason_specific_description": "Ki-taek fears returning to deep poverty and becoming invisible to society again. He often hides his anxiety behind humor and a calm exterior, but scenes like the family's reaction to the flood show how fragile his sense of stability really is."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "He adapts quickly to situations, like when he seamlessly plays the role of a professional driver for the Park family, and helps the entire Kim family infiltrate the household through clever manipulation."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Ki-taek goes along with a plan that involves lying and exploiting the Park family. Later, overwhelmed by class tension and humiliation, he stabs Mr. Park during the party, showing how far he’s been pushed by social inequality."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Though not spelled out, Ki-taek has a long history of economic hardship. His passive behavior and grim acceptance of life’s unfairness suggest years of quiet suffering and disappointment."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "unemployed (later hired as a driver)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "not_at_all",
+          "success_metrics": "not_at_all",
+          "primary_goal": "To rise out of poverty and secure a better life for his family, which ultimately fails as tragedy strikes and he ends up hiding in the Park family's basement."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Nomadland",
+        "year": 2020,
+        "genre": ["drama", "road movie"],
+        "box_office": 39500000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Fern"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "senior",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "After losing her husband and her entire town, Fern fears becoming emotionally disconnected. She avoids settling down because she doesn’t want to lose her independence, yet her quiet sadness shows she longs for connection."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "She adapts to life on the road with dignity and patience—fixing her van, working seasonal jobs, and finding community among fellow nomads. Her strength is in surviving hardship with calm persistence."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Fern never manipulates or harms others. She’s honest and respectful in her interactions, though she sometimes distances herself emotionally to avoid being hurt again."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Fern lost her husband and her livelihood when the factory in Empire shut down. The collapse of the town and her personal grief pushed her into a new, nomadic way of living."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "seasonal worker (Amazon, beet harvest, etc.)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "ambiguous",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To find peace and meaning in a life outside of society’s structure, while carrying the memory of her husband and past life."
+        }
       }
     }
+    
 
+
+
+    
 
   
     
     
     
   ]
+  
   
 }
 

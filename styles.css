@@ -20,22 +20,22 @@ body {
 .bookshelf {
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Further increased from 80px for even more vertical spacing */
+  gap: 65px; /* Reduced from 100px to match smaller parallelepipeds */
   perspective: 600px;
   transform-style: preserve-3d;
   position: relative;
   width: 100%;
   height: auto;
   align-items: center;
-  padding: 190px 0 140px; 
+  padding: 125px 0 90px; /* Reduced from 190px 0 140px */
   overflow-y: auto;
 }
 
 .shelf-container {
   position: relative;
-  height: 75px;
-  margin: 20px auto;
-  width: 700px; /* Reduced from 1000px for narrower shelves */
+  height: 50px; /* Reduced from 75px to match smaller parallelepipeds */
+  margin: 14px auto; /* Reduced from 20px */
+  width: 560px; /* Reduced from 700px (about 20% smaller) */
   transform-style: preserve-3d;
   transform-origin: center center;
   transition: transform 0.5s ease, width 0.5s ease, x 0.8s ease;
@@ -52,11 +52,11 @@ body {
 
 .shelf {
   width: 100%;
-  height: 35px;
-  margin: 20px auto;
-  border-radius: 8px;
+  height: 25px; /* Reduced from 35px */
+  margin: 14px auto; /* Reduced from 20px */
+  border-radius: 6px; /* Reduced from 8px */
   background: linear-gradient(180deg, #fff 70%, #bbb 30%);
-  box-shadow: 0 8px 24px 2px rgba(185, 185, 185, 0.536), 0 2px 8px 0 #000b, 0 1px 0 0 #fff8 inset;
+  box-shadow: 0 5px 16px 2px rgba(185, 185, 185, 0.536), 0 2px 6px 0 #000b, 0 1px 0 0 #fff8 inset; /* Reduced shadow */
   transform: rotateX(25deg);
   transition: width 0.5s ease;
 }
@@ -64,14 +64,20 @@ body {
 .shelf-items {
   position: absolute;
   width: 100%;
-  top: -110px;
+  top: -75px; /* Adjusted from -110px to account for smaller height */
   display: flex;
   justify-content: flex-start;
-  gap: 30px; /* Increased from 15px for more space between parallelepipeds */
+  gap: 20px; /* Reduced from 30px for smaller items */
   transform-style: preserve-3d;
   transform: rotateX(25deg);
   overflow-x: visible;
-  padding: 0 40px;
+  padding: 0 30px; /* Reduced from 40px */
+}
+
+/* Add a more compact gap for filtered items */
+.matching-shelf .shelf-items,
+.non-matching-shelf .shelf-items {
+  gap: 8px; /* Reduced from 10px for smaller items */
 }
 
 .shelf-items::-webkit-scrollbar {
@@ -97,13 +103,13 @@ body {
 /* Original parallelepiped styles - exactly as they were before */
 .parallelepiped {
   position: relative;
-  width: 70px;
-  height: 110px;
+  width: 47px; /* Reduced from 70px (1/3 smaller) */
+  height: 73px; /* Reduced from 110px (1/3 smaller) */
   transform-style: preserve-3d;
   transform: rotateX(-44deg) rotateY(0deg);
   transition: transform 0.5s ease-out;
   flex-shrink: 0;
-  margin: 15px 15px 0; /* Increased from 10px for more space */
+  margin: 10px 10px 0; /* Reduced from 15px to fit smaller items */
   cursor: pointer;
   will-change: transform;
 }
@@ -152,29 +158,29 @@ body {
 .texture-front {
     width: 100%;
     height: 100%;
-    transform: translateZ(23px); /* Adjusted for smaller size (was 29.75px) */
+    transform: translateZ(15px); /* Reduced from 23px (1/3 smaller) */
     background-position: center 30%;
 }
 
 .texture-back {
     width: 100%;
     height: 100%;
-    transform: translateZ(-23px) rotateY(180deg); /* Adjusted for smaller size */
+    transform: translateZ(-15px) rotateY(180deg); /* Reduced from 23px (1/3 smaller) */
     background-position: center 70%;
 }
 
 .texture-right {
-    width: 46px; /* Adjusted for smaller size (was 59.5px) */
+    width: 30px; /* Reduced from 46px (1/3 smaller) */
     height: 100%;
-    right: -23px; /* Adjusted for smaller size (was -29.75px) */
+    right: -15px; /* Reduced from -23px (1/3 smaller) */
     transform: rotateY(90deg);
     background-position: right 50%;
 }
 
 .texture-left {
-    width: 46px; /* Adjusted for smaller size (was 59.5px) */
+    width: 30px; /* Reduced from 46px (1/3 smaller) */
     height: 100%;
-    left: -23px; /* Adjusted for smaller size (was -29.75px) */
+    left: -15px; /* Reduced from -23px (1/3 smaller) */
     transform: rotateY(-90deg);
     background-position: left 50%;
 }
@@ -399,26 +405,26 @@ body {
 .front {
     width: 100%;
     height: 100%;
-    transform: translateZ(29.75px);
+    transform: translateZ(15px); /* Adjusted to match new depth */
 }
 
 .back {
     width: 100%;
     height: 100%;
-    transform: translateZ(-29.75px) rotateY(180deg);
+    transform: translateZ(-15px) rotateY(180deg); /* Adjusted to match new depth */
 }
 
 .right {
-    width: 59.5px;
+    width: 30px; /* Adjusted to match new depth * 2 */
     height: 100%;
-    right: -29.75px;
+    right: -15px; /* Adjusted to match new depth */
     transform: rotateY(90deg);
 }
 
 .left {
-    width: 59.5px;
+    width: 30px; /* Adjusted to match new depth * 2 */
     height: 100%;
-    left: -29.75px;
+    left: -15px; /* Adjusted to match new depth */
     transform: rotateY(-90deg);
 }
 
@@ -432,50 +438,50 @@ body {
 
 .edge-front-top { 
     top: 0; left: 0; 
-    height: 2px; width: 70px; /* Adjusted width */
-    transform: translateZ(23px);
+    height: 2px; width: 47px; /* Adjusted to match new width */
+    transform: translateZ(15px);
 }
 
 .edge-front-bottom { 
     bottom: 0; left: 0; 
-    height: 2px; width: 70px; /* Adjusted width */
-    transform: translateZ(23px);
+    height: 2px; width: 47px; /* Adjusted to match new width */
+    transform: translateZ(15px);
 }
 
 .edge-front-left { 
     top: 0; left: 0; 
-    width: 2px; height: 110px; /* Adjusted height */
-    transform: translateZ(23px);
+    width: 2px; height: 73px; /* Adjusted to match new height */
+    transform: translateZ(15px);
 }
 
 .edge-front-right { 
     top: 0; right: 0; 
-    width: 2px; height: 110px; /* Adjusted height */
-    transform: translateZ(23px);
+    width: 2px; height: 73px; /* Adjusted to match new height */
+    transform: translateZ(15px);
 }
 
 .edge-back-top { 
     top: 0; left: 0; 
-    height: 2px; width: 70px; /* Adjusted width */
-    transform: translateZ(-23px);
+    height: 2px; width: 47px; /* Adjusted to match new width */
+    transform: translateZ(-15px);
 }
 
 .edge-back-bottom { 
     bottom: 0; left: 0; 
-    height: 2px; width: 70px; /* Adjusted width */
-    transform: translateZ(-23px);
+    height: 2px; width: 47px; /* Adjusted to match new width */
+    transform: translateZ(-15px);
 }
 
 .edge-back-left { 
     top: 0; left: 0; 
-    width: 2px; height: 110px; /* Adjusted height */
-    transform: translateZ(-23px);
+    width: 2px; height: 73px; /* Adjusted to match new height */
+    transform: translateZ(-15px);
 }
 
 .edge-back-right { 
     top: 0; right: 0; 
-    width: 2px; height: 110px; /* Adjusted height */
-    transform: translateZ(-23px);
+    width: 2px; height: 73px; /* Adjusted to match new height */
+    transform: translateZ(-15px);
 }
 
 
