@@ -153,6 +153,8 @@ body {
     opacity: 0.6;
     animation: textureGlow 6s infinite alternate;
     background-color: rgba(255, 255, 255, 0.5);
+    filter: grayscale(100%);
+    transition: filter 0.5s ease-out;
 }
 
 .texture-front {
@@ -482,6 +484,31 @@ body {
     top: 0; right: 0; 
     width: 2px; height: 73px; /* Adjusted to match new height */
     transform: translateZ(-15px);
+}
+
+/* Animation classes for filtered elements - removing visual differences */
+.parallelepiped.matching .texture-side {
+  filter: grayscale(0%);
+}
+
+.parallelepiped.non-matching .texture-side {
+  filter: grayscale(100%);
+}
+
+.box-office-total {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Input Mono', monospace;
+    opacity: 0.15;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: -1;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
 }
 
 
