@@ -172,6 +172,8 @@ const FilterEffects = (function() {
             // Remove group classes
             container.className = container.className.replace(/group-\d+-shelf/g, '');
             delete container.dataset.groupKey;
+            // Reset any transform positions
+            container.style.transform = '';
         });
         
         // First reset the bookshelf item tracking
@@ -243,6 +245,7 @@ const FilterEffects = (function() {
         gsap.to(shelfContainers, {
             duration: Animations.timings.shelfReset.duration,
             x: 0,
+            y: 0,
             stagger: Animations.timings.shelfReset.stagger,
             ease: Animations.timings.shelfReset.ease,
             onComplete: checkAllComplete
@@ -349,36 +352,30 @@ const FilterEffects = (function() {
         
         const shelfContainers = document.querySelectorAll('.shelf-container');
         const groupKeys = Object.keys(groups);
-        const groupCount = groupKeys.length;
         
-        // Calculate highest earning group
-        let highestEarningGroup = '';
-        let highestEarnings = 0;
-        
-        groupKeys.forEach(groupKey => {
+        // Calculate earnings for each group and sort by earnings (highest first)
+        const groupsWithEarnings = groupKeys.map(groupKey => {
             const groupTotal = groups[groupKey].reduce((sum, filmId) => {
                 const film = FilmData.getAllFilms().find(f => f.id === filmId);
-                return sum + (film?.film_info?.box_office || 0);
+                if (film) {
+                    const charData = FilmData.getCharacterData(film.filmName);
+                    return sum + (charData?.film_info?.box_office || 0);
+                }
+                return sum;
             }, 0);
-            
-            console.log(`Group ${groupKey}: $${groupTotal.toLocaleString()}`);
-            
-            if (groupTotal > highestEarnings) {
-                highestEarnings = groupTotal;
-                highestEarningGroup = groupKey;
-            }
-        });
+            return { key: groupKey, earnings: groupTotal };
+        }).sort((a, b) => b.earnings - a.earnings);
         
-        console.log(`Highest earning group: ${highestEarningGroup} with $${highestEarnings.toLocaleString()}`);
+        const sortedGroupKeys = groupsWithEarnings.map(g => g.key);
         
         // Remove existing group labels
         document.querySelectorAll('.group-label').forEach(label => label.remove());
         
-        // IMPORTANT: Get all elements BEFORE clearing shelves
+        // Get all elements BEFORE clearing shelves
         const groupElementsMap = {};
         const allElements = [];
         
-        groupKeys.forEach(groupKey => {
+        sortedGroupKeys.forEach(groupKey => {
             const elements = groups[groupKey].map(id => document.getElementById(id)).filter(Boolean);
             groupElementsMap[groupKey] = elements;
             allElements.push(...elements);
@@ -393,36 +390,35 @@ const FilterEffects = (function() {
         // Clear all shelves and reset tracking
         Bookshelf.reset();
         
-        // Distribute groups across shelves using preserved element references
+        // Distribute groups across shelves
         let shelfIndex = 0;
         const usedShelves = [];
+        const groupPositions = [];
         
-        groupKeys.forEach((groupKey, groupIndex) => {
+        sortedGroupKeys.forEach((groupKey, sortedIndex) => {
             const groupElements = groupElementsMap[groupKey];
-            if (groupElements.length === 0) return; // Skip empty groups
+            if (groupElements.length === 0) return;
             
-            const isHighestEarning = groupKey === highestEarningGroup;
-            console.log(`Group ${groupKey} (index ${groupIndex}): isHighestEarning = ${isHighestEarning}`);
+            const isHighestEarning = sortedIndex === 0;
+            const groupEarnings = groupsWithEarnings.find(g => g.key === groupKey).earnings;
             
-            // Add group-specific classes
+            // Add group-specific classes - highest earning gets color (group-0)
             groupElements.forEach(el => {
                 el.classList.remove('matching', 'non-matching');
-                // Remove any existing group classes
                 el.className = el.className.replace(/group-\d+/g, '');
                 el.classList.remove('group-grayscale');
                 
                 if (isHighestEarning) {
-                    el.classList.add(`group-${groupIndex}`); // Only highest earning gets color
-                    console.log(`Adding color class group-${groupIndex} to element`, el.id);
+                    el.classList.add('group-0');
                 } else {
                     el.classList.add('group-grayscale');
-                    console.log(`Adding grayscale class to element`, el.id);
                 }
                 el.dataset.groupKey = groupKey;
             });
             
-            // Distribute this group's items across available shelves
+            // Calculate shelf layout
             const shelvesForGroup = Math.ceil(groupElements.length / Animations.capacity.itemsPerShelf);
+            const groupStartShelf = shelfIndex;
             
             for (let i = 0; i < shelvesForGroup && shelfIndex < shelfContainers.length; i++) {
                 const shelf = shelfContainers[shelfIndex].querySelector('.shelf-items');
@@ -435,36 +431,24 @@ const FilterEffects = (function() {
                     }
                 }
                 
-                // Mark shelf container with group info
-                shelfContainers[shelfIndex].classList.add(`group-${groupIndex}-shelf`);
+                shelfContainers[shelfIndex].classList.add(`group-${sortedIndex}-shelf`);
                 shelfContainers[shelfIndex].dataset.groupKey = groupKey;
                 shelfContainers[shelfIndex].style.display = 'block';
                 usedShelves.push(shelfIndex);
                 shelfIndex++;
             }
             
-            // Create group label after the last shelf of this group
-            const lastShelf = shelfContainers[shelfIndex - 1];
-            const label = document.createElement('div');
-            label.className = 'group-label';
-            label.textContent = groupKey;
-            label.style.cssText = `
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
-                color: white;
-                font-family: 'Input Mono', monospace;
-                font-size: 0.8rem;
-                margin-top: 10px;
-                text-align: center;
-                white-space: nowrap;
-                z-index: 10;
-            `;
-            lastShelf.appendChild(label);
+            // Store group info for positioning
+            groupPositions.push({
+                groupKey,
+                groupEarnings,
+                sortedIndex,
+                shelfStart: groupStartShelf,
+                shelfCount: shelvesForGroup
+            });
         });
         
-        // Hide unused shelves completely
+        // Hide unused shelves
         shelfContainers.forEach((container, index) => {
             if (!usedShelves.includes(index)) {
                 container.style.display = 'none';
@@ -498,22 +482,47 @@ const FilterEffects = (function() {
             }
         };
         
-        // Calculate shelf positions for groups with efficient screen usage
-        const availableWidth = window.innerWidth - 200; // Leave margins
-        const shelfSpacing = Math.max(300, availableWidth / (groupCount + 1));
+        // Position groups efficiently across screen space
+        const screenWidth = window.innerWidth - 100;
+        const maxColumns = Math.min(groupPositions.length, 4);
+        const colWidth = screenWidth / maxColumns;
         
-        // Animate shelves to group positions
-        usedShelves.forEach((shelfIndex, arrayIndex) => {
-            const container = shelfContainers[shelfIndex];
-            const groupIndex = parseInt(container.className.match(/group-(\d+)-shelf/)?.[1] || '0');
-            const xPosition = (groupIndex - (groupCount - 1) / 2) * shelfSpacing;
+        groupPositions.forEach((groupInfo, index) => {
+            const column = index % maxColumns;
+            const row = Math.floor(index / maxColumns);
             
-            gsap.to(container, {
-                duration: Animations.timings.shelfSplit.duration,
-                x: xPosition,
-                ease: Animations.timings.shelfSplit.ease,
-                onComplete: arrayIndex === 0 ? checkAllComplete : undefined
-            });
+            // Calculate positions - highest earnings at top
+            const xPosition = (column - (maxColumns - 1) / 2) * colWidth;
+            const yPosition = -row * 150;
+            
+            // Position all shelves for this group
+            for (let i = 0; i < groupInfo.shelfCount; i++) {
+                const shelfIndex = groupInfo.shelfStart + i;
+                const container = shelfContainers[shelfIndex];
+                
+                gsap.to(container, {                    duration: Animations.timings.shelfSplit.duration,                    x: xPosition,                    y: yPosition - (i * -20),                    ease: Animations.timings.shelfSplit.ease,                    onComplete: index === 0 && i === 0 ? checkAllComplete : undefined                });
+                
+                // Add group label to last shelf of each group
+                if (i === groupInfo.shelfCount - 1) {
+                    const label = document.createElement('div');
+                    label.className = 'group-label';
+                    label.textContent = `${groupInfo.groupKey} - $${groupInfo.groupEarnings.toLocaleString()}`;
+                    label.style.cssText = `
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        color: white;
+                        font-family: 'Input Mono', monospace;
+                        font-size: 0.8rem;
+                        margin-top: 10px;
+                        text-align: center;
+                        white-space: nowrap;
+                        z-index: 10;
+                    `;
+                    container.appendChild(label);
+                }
+            }
         });
         
         // Animate items to their new positions
