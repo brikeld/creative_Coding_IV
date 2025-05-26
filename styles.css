@@ -483,3 +483,61 @@ body {
 /* Animation classes for filtered elements - removing visual differences */.parallelepiped.matching .texture-side {  filter: grayscale(0%);}.parallelepiped.non-matching .texture-side {  filter: grayscale(100%);}/* Group-based filtering styles */.parallelepiped.group-0 .texture-side { filter: grayscale(0%) hue-rotate(0deg); }.parallelepiped.group-1 .texture-side { filter: grayscale(0%) hue-rotate(60deg); }.parallelepiped.group-2 .texture-side { filter: grayscale(0%) hue-rotate(120deg); }.parallelepiped.group-3 .texture-side { filter: grayscale(0%) hue-rotate(180deg); }.parallelepiped.group-4 .texture-side { filter: grayscale(0%) hue-rotate(240deg); }.parallelepiped.group-5 .texture-side { filter: grayscale(0%) hue-rotate(300deg); }/* Additional group styles for more categories */.parallelepiped.group-6 .texture-side { filter: grayscale(0%) hue-rotate(30deg) saturate(1.2); }.parallelepiped.group-7 .texture-side { filter: grayscale(0%) hue-rotate(90deg) saturate(1.2); }.parallelepiped.group-8 .texture-side { filter: grayscale(0%) hue-rotate(150deg) saturate(1.2); }.parallelepiped.group-9 .texture-side { filter: grayscale(0%) hue-rotate(210deg) saturate(1.2); }/* Category button styles */.filter-button.category-button {    background-color: #444;    font-weight: bold;    padding: 4px 12px;    border-radius: 8px;    border: 2px solid #666;}
 
 .box-office-total {    position: fixed;    top: 50%;    left: 50%;    transform: translate(-50%, -50%);    color: white;    font-family: 'Input Mono', monospace;    opacity: 0.15;    pointer-events: none;    white-space: nowrap;    z-index: -1;    font-weight: bold;    text-align: center;    width: 100%;}/* Category button styles */.filter-button.category-button {    background-color: #444;    font-weight: bold;    padding: 4px 12px;    border-radius: 8px;    border: 2px solid #666;}.filter-button.category-button:hover {    background-color: #555;    border-color: #777;}/* Grayscale group for non-highest earning groups */.parallelepiped.group-grayscale .texture-side {     filter: grayscale(100%); }/* Ensure proper alignment for filtered shelves */.bookshelf.filtered .shelf-items {    justify-content: flex-start;    padding-left: 10px;}
+
+/* Intro Screen Styles */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.intro-screen.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.intro-text {
+    font-family: 'Input Mono', monospace;
+    font-weight: 400;
+    color: #a8a8a8;
+    font-size: clamp(2rem, 8vw, 6rem);
+    text-align: center;
+    max-width: 90vw;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.intro-text:hover {
+    color: #ffffff;
+}
+
+.intro-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+.intro-text.typing-complete::after {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.main-app {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}

@@ -35,9 +35,7 @@ function initFirebase() {
 // Default 3D transform that should be applied consistently to all parallelepipeds
 const DEFAULT_TRANSFORM = 'rotateX(-40deg) rotateY(0deg) ';
 
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+function initMainApp() {
     // Initialize the bookshelf first
     Bookshelf.init();
     
@@ -133,6 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingEl.textContent = 'Error loading character data. Please check if testDoing.json is available.';
         console.error('Error initializing application:', error);
     });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Start with intro screen
+    IntroScreen.init(initMainApp);
 });
 
 /**
