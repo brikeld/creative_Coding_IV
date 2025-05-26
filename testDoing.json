@@ -1405,19 +1405,305 @@
           "primary_goal": "To find peace and meaning in a life outside of society’s structure, while carrying the memory of her husband and past life."
         }
       }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Anatomy of a Fall",
+        "year": 2023,
+        "genre": ["drama", "mystery", "legal thriller"],
+        "box_office": 36050000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Sandra Voyter"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "betrayal",
+            "reason_specific_description": "Sandra fears losing control over her life and being judged falsely, especially after her husband’s death. Her defensiveness in court and how she reacts to being accused reflect a deep fear of having her truth ignored or distorted."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Sandra is intellectually sharp, able to argue persuasively and write with depth. Her courtroom testimony, as well as her ability to challenge accusations, shows her strong command of language and thought."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "She may have used an idea from her husband’s novel without clear permission, and during arguments, she prioritizes her needs over his well-being. Her behavior raises questions about emotional manipulation and honesty."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Sandra is carrying the emotional weight of her son’s accident and a troubled marriage. These events aren’t detailed in flashbacks but are revealed through arguments, books, and court testimony."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "novelist"
+        },
+        "narrative_arc": {
+          "goal_achievement": "ambiguous",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To prove her innocence in her husband's suspicious death while trying to hold on to her relationship with her son and her identity as a writer."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "All Quiet on the Western Front",
+        "year": 2022,
+        "genre": ["war", "drama", "historical"],
+        "box_office": 2878
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Paul Bäumer"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "death",
+            "reason_specific_description": "Paul begins the war excited but quickly becomes traumatized by the violence. His fear of death becomes clear in moments like his panic during the gas attack training and his near-silent dread on the battlefield."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Despite his fear, Paul consistently puts himself in danger to protect his friends, like when he helps Kat and defends his comrades in trench combat. His bravery becomes instinctual and tragic."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Paul’s participation in the war leads him to kill in order to survive, including a brutal and personal stabbing of a French soldier. He later regrets it deeply, showing how war distorts morality."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "While not tragic in the traditional sense, Paul’s idealistic youth is shattered by the war. He joins with friends out of nationalistic excitement, only to watch them die one by one."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "student turned soldier"
+        },
+        "narrative_arc": {
+          "goal_achievement": "not_at_all",
+          "success_metrics": "not_at_all",
+          "primary_goal": "To survive the war and retain his humanity—but he dies just before the armistice, disillusioned and alone."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Everything Everywhere All At Once",
+        "year": 2022,
+        "genre": ["sci-fi", "fantasy", "action", "drama", "comedy"],
+        "box_office": 141000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Evelyn Wang"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "asian"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Evelyn is deeply afraid of being seen as a failure by her father and society. She obsesses over her IRS audit, tries to present a perfect image for her father's visit, and constantly doubts her own worth. Her indecision and frustration reflect this fear, particularly when she tells Waymond, 'You know that’s not what my father is going to see.'"
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "Despite the chaos in her life, Evelyn manages a laundromat, handles her family’s needs, and navigates a complex multiverse. Her ability to adapt and find solutions under immense pressure shows her strong resourcefulness, as seen when she quickly switches roles and begins to understand verse-jumping mechanics."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Evelyn does not betray others, but she often withholds truths or suppresses emotions, especially with her daughter Joy and her husband Waymond, in an attempt to protect or manage the situation. However, she is fundamentally loyal to her family."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Evelyn is implied to have experienced a difficult life due to immigration, cultural conflict, and strained family ties. She has a fractured relationship with her father and regrets over past life decisions, especially seen in her multiverse flashbacks."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "laundromat owner"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To gain approval from her father and create a sense of purpose in her chaotic life, while reconciling her fractured family relationships and discovering her own self-worth across universes."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "CODA",
+        "year": 2022,
+        "genre": ["drama", "coming-of-age", "music", "family"],
+        "box_office": 19000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Ruby Rossi"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "teen",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Ruby fears being alone and disconnected—either emotionally or culturally. As the only hearing member of her family, she constantly bridges two worlds. Her decision to pursue music challenges her family ties and provokes her fear of abandoning them or being abandoned herself. This is shown in her outbursts and her reluctance to hurt her parents despite her passion for singing."
+          },
+          "biggest_strength": {
+            "category": "empathy",
+            "reason_specific_description": "Ruby shows strong empathy by translating for her family in personal and humiliating situations (like at the doctor’s office), advocating for their rights in fisheries meetings, and sacrificing her time to help them build a business. Her ability to emotionally connect, even while being pulled between conflicting identities, defines her strength."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Ruby struggles with loyalty versus self-actualization, but never betrays anyone. She delays her own goals for her family's sake, and even when she finally chooses music, she tries to do so while minimizing harm to them."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": [
+            "Ruby does not have a tragic past in the traditional sense. Her struggles are contemporary and internal: growing up isolated as the only hearing person in a deaf family, and finding her voice—literally and figuratively—in a world that misunderstands her."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "student and fishing deckhand"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To pursue her passion for singing and earn a place at Berklee College of Music, while managing her responsibilities to her deaf family and helping them build a new business."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Baby Driver",
+        "year": 2017,
+        "genre": ["action", "crime", "romance", "drama", "thriller"],
+        "box_office": 226945087
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Baby"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Baby's fear is losing the people he loves or cares about. He is haunted by the death of his parents, particularly his mother, and later becomes deeply protective of Debora. He is also terrified of endangering his foster father or dragging Debora into his criminal world."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "Baby is an extraordinarily skilled driver and highly adaptable under pressure. His use of music to cope with tinnitus also becomes a tool that enhances his precision and performance. This ability to use what could be a weakness as a strength defines his ingenuity throughout the film."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Despite being involved in criminal activities, Baby consistently shows a strong moral compass. He refuses to carry weapons, avoids direct involvement in violence, and attempts to shield innocent people. His actions reveal discomfort and moral conflict rather than betrayal."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "orphan"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Baby lost his parents in a car accident as a child. His mother was a singer, and he listens to her songs as a way of staying connected. He also suffers from tinnitus, a result of the crash, and relies on music to cope with it. These traumas deeply shape his introverted personality and actions."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "getaway driver"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To break free from a life of crime and start fresh with Debora, while protecting those he loves and reconciling with his past traumas."
+        }
+      }
     }
-    
 
-
-
-    
-
-  
-    
     
     
   ]
-  
-  
 }
 
