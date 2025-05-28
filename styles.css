@@ -38,9 +38,9 @@ body {
 
 .shelf-container {
   position: relative;
-  height: 50px; /* Reduced from 75px to match smaller parallelepipeds */
-  margin: 14px auto; /* Reduced from 20px */
-  width: 560px; /* Reduced from 700px (about 20% smaller) */
+  height: 50px; 
+  margin: 14px auto; 
+  width: 560px; 
   transform-style: preserve-3d;
   transform-origin: center center;
   transition: transform 0.5s ease, width 0.5s ease, x 0.8s ease;

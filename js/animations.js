@@ -53,13 +53,13 @@ const Animations = (function() {
                 padding: 60
             }
         },
-        // Minimum shelf width
-        minShelfWidth: 180
+        // Minimum shelf width - increased to accommodate more items
+        minShelfWidth: 250
     };
     
     // Shelf item capacity
     const capacity = {
-        itemsPerShelf: 6
+        itemsPerShelf: 8  // Increased from 6 to 8
     };
     
     // Public API

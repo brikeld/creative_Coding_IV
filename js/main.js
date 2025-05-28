@@ -88,7 +88,7 @@ function initMainApp() {
             }, 100);
             
             // Initialize box office display
-            BoxOfficeDisplay.init();
+            // BoxOfficeDisplay.init();
             
             // Expose API globally
             API.exposeGlobally();

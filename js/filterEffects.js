@@ -270,9 +270,9 @@ const FilterEffects = (function() {
         const shelfContainers = document.querySelectorAll('.shelf-container');
         const minShelfWidth = Animations.spatial.minShelfWidth;
         
-        // Use actual parallelepiped dimensions: 47px width + 20px gap
-        const itemWidth = 67; // 47px + 20px gap
-        const padding = 40; // Reduced padding for better fit
+        // Use actual parallelepiped dimensions: 47px width + 20px gap + margins
+        const itemWidth = 75; // Increased from 67 to 75 for better spacing
+        const padding = 60; // Increased from 40 to 60 for more room
         
         shelfContainers.forEach(container => {
             const shelfItems = container.querySelector('.shelf-items');

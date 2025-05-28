@@ -5,27 +5,8 @@
 
 // Film data module
 const FilmData = (function() {
-    // Film data - each object will have a unique image and character data
-    let films = [
-        { id: 'film1', image: '/cofanetto/amelie.jpg', text: "AMELIE", filmName: "Amélie" },
-        { id: 'film2', image: '/cofanetto/Anton.jpg', text: "NOCOUNTRYFOROLDMEN", filmName: "No Country for Old Men" },
-        { id: 'film3', image: '/cofanetto/Napoleon.jpg', text: "NAPOLEON", filmName: "Napoleon" },
-        { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" },
-        { id: 'film5', image: '/cofanetto/1917.jpg', text: "1917", filmName: "1917" },
-        { id: 'film6', image: '/cofanetto/Schindler.jpg', text: "SCHINDLERSLIST", filmName: "Schindler's List" },
-        { id: 'film7', image: '/cofanetto/titanic.jpg', text: "TITANIC", filmName: "Titanic" },
-        { id: 'film8', image: '/cofanetto/AmericanBeauty.jpg', text: "AMERICANBEAUTY", filmName: "American Beauty" },
-        { id: 'film9', image: '/cofanetto/Gladiator.jpg', text: "GLADIATOR", filmName: "Gladiator" },
-        { id: 'film10', image: '/cofanetto/The Martian.jpg', text: "THEMARTIAN", filmName: "The Martian" },
-        { id: 'film11', image: '/cofanetto/Crash.jpg', text: "CRASH", filmName: "Crash" },
-        { id: 'film12', image: '/cofanetto/The Departed.jpg', text: "THEDEPARTED", filmName: "The Departed" },
-        { id: 'film13', image: '/cofanetto/Birdman.jpg', text: "BIRDMAN", filmName: "Birdman or (The Unexpected Virtue of Ignorance)" },
-        { id: 'film14', image: '/cofanetto/12 Years a Slave.jpg', text: "12YEARSASLAVE", filmName: "12 Years a Slave" },
-        { id: 'film15', image: '/cofanetto/Spotlight.jpg', text: "SPOTLIGHT", filmName: "Spotlight" },
-        { id: 'film16', image: '/cofanetto/Moonlight.jpg', text: "MOONLIGHT", filmName: "Moonlight" },
-        { id: 'film17', image: '/cofanetto/Shutter Island.jpg', text: "SHUTTERISLAND", filmName: "Shutter Island" },
-        { id: 'film18', image: '/cofanetto/BeatifulMind.png', text: "ABEAUTIFULMIND", filmName: "A Beautiful Mind" }
-    ];
+    // Film data - dynamically generated from JSON
+    let films = [];
     
     // Complete character data from the JSON
     let characterData = [];
@@ -35,6 +16,88 @@ const FilmData = (function() {
     
     // Current active filter
     let activeFilter = null;
+    
+    /**
+     * Creates a film ID from film name
+     * @param {string} filmName - The film name
+     * @param {number} index - The index for uniqueness
+     * @returns {string} - The generated film ID
+     */
+    function createFilmId(filmName, index) {
+        return `film${index + 1}`;
+    }
+    
+    /**
+     * Creates a text representation from film name
+     * @param {string} filmName - The film name
+     * @returns {string} - The text representation
+     */
+    function createFilmText(filmName) {
+        return filmName.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    }
+    
+    /**
+     * Maps film name to image file
+     * @param {string} filmName - The film name from JSON
+     * @returns {string} - The image path
+     */
+    function mapFilmToImage(filmName) {
+        // Available images from the cofanetto folder
+        const imageMap = {
+            'ANORA': '/cofanetto/Ani.jpg',
+            'No Country for Old Men': '/cofanetto/Anton.jpg',
+            '1917': '/cofanetto/1917.jpg',
+            "Schindler's List": '/cofanetto/Schindler.jpg',
+            'Titanic': '/cofanetto/titanic.jpg',
+            'American Beauty': '/cofanetto/AmericanBeauty.jpg',
+            'Gladiator': '/cofanetto/Gladiator.jpg',
+            'A Beautiful Mind': '/cofanetto/BeatifulMind.png',
+            'Crash': '/cofanetto/Crash.jpg',
+            'The Departed': '/cofanetto/The Departed.jpg',
+            'Birdman or (The Unexpected Virtue of Ignorance)': '/cofanetto/Birdman.jpg',
+            '12 Years a Slave': '/cofanetto/12 Years a Slave.jpg',
+            'Spotlight': '/cofanetto/Spotlight.jpg',
+            'Moonlight': '/cofanetto/Moonlight.jpg',
+            'Napoleon': '/cofanetto/Napoleon.jpg',
+            'Shutter Island': '/cofanetto/Shutter Island.jpg',
+            'The Martian': '/cofanetto/The Martian.jpg',
+            'Amélie': '/cofanetto/amelie.jpg',
+            'The Lord of the Rings: The Return of the King': '/cofanetto/theLordofTheRings-ReturnOfTheKing.jpg',
+            'The King\'s Speech': '/cofanetto/TheKingSpeech.jpg',
+            'The Shape of Water': '/cofanetto/ShapeOfWater.jpg',
+            'Green Book': '/cofanetto/GreenBook.jpg',
+            'Parasite': '/cofanetto/Parasite.jpg',
+            'Nomadland': '/cofanetto/nomadLand.jpg',
+            'Anatomy of a Fall': '/cofanetto/anatomyofafall.jpg',
+            'All Quiet on the Western Front': '/cofanetto/allquietonthewesternfront.jpg',
+            'Everything Everywhere All At Once': '/cofanetto/everythingeverywhereallatonce.jpg',
+            'CODA': '/cofanetto/coda.jpg',
+            'Baby Driver': '/cofanetto/babyDriver.jpg',
+            'House of Gucci': '/cofanetto/houseofgucci.jpg',
+            'Inception': '/cofanetto/inception.jpg',
+            'Ferrari': '/cofanetto/ferrari.jpg',
+            'Her': '/cofanetto/her.jpg',
+            'Kill Bill: Vol. 1': '/cofanetto/killbill1.jpg',
+            'Kill Bill: Vol. 2': '/cofanetto/killbill2.png'
+        };
+        
+        return imageMap[filmName] || '/cofanetto/default.jpg';
+    }
+    
+    /**
+     * Generates films array from character data
+     */
+    function generateFilmsFromCharacterData() {
+        films = characterData.map((character, index) => {
+            const filmName = character.film_info.film_name;
+            return {
+                id: createFilmId(filmName, index),
+                image: mapFilmToImage(filmName),
+                text: createFilmText(filmName),
+                filmName: filmName
+            };
+        });
+    }
     
     /**
      * Gets a film by ID
@@ -94,6 +157,9 @@ const FilmData = (function() {
             .then(response => response.json())
             .then(data => {
                 characterData = data.characters;
+                generateFilmsFromCharacterData();
+                console.log(`Generated ${films.length} film objects from character data`);
+                console.log('Films generated:', films.map(f => f.filmName));
                 return data;
             })
             .catch(error => {
@@ -241,26 +307,11 @@ const FilmData = (function() {
      * Resets films to their initial state
      */
     function resetFilms() {
-        films = [
-            { id: 'film1', image: '/cofanetto/amelie.jpg', text: "AMELIE", filmName: "Amélie" },
-            { id: 'film2', image: '/cofanetto/Anton.jpg', text: "NOCOUNTRYFOROLDMEN", filmName: "No Country for Old Men" },
-            { id: 'film3', image: '/cofanetto/Napoleon.jpg', text: "NAPOLEON", filmName: "Napoleon" },
-            { id: 'film4', image: '/cofanetto/Ani.jpg', text: "ANORA", filmName: "ANORA" },
-            { id: 'film5', image: '/cofanetto/1917.jpg', text: "1917", filmName: "1917" },
-            { id: 'film6', image: '/cofanetto/Schindler.jpg', text: "SCHINDLERSLIST", filmName: "Schindler's List" },
-            { id: 'film7', image: '/cofanetto/titanic.jpg', text: "TITANIC", filmName: "Titanic" },
-            { id: 'film8', image: '/cofanetto/AmericanBeauty.jpg', text: "AMERICANBEAUTY", filmName: "American Beauty" },
-            { id: 'film9', image: '/cofanetto/Gladiator.jpg', text: "GLADIATOR", filmName: "Gladiator" },
-            { id: 'film10', image: '/cofanetto/The Martian.jpg', text: "THEMARTIAN", filmName: "The Martian" },
-            { id: 'film11', image: '/cofanetto/Crash.jpg', text: "CRASH", filmName: "Crash" },
-            { id: 'film12', image: '/cofanetto/The Departed.jpg', text: "THEDEPARTED", filmName: "The Departed" },
-            { id: 'film13', image: '/cofanetto/Birdman.jpg', text: "BIRDMAN", filmName: "Birdman or (The Unexpected Virtue of Ignorance)" },
-            { id: 'film14', image: '/cofanetto/12 Years a Slave.jpg', text: "12YEARSASLAVE", filmName: "12 Years a Slave" },
-            { id: 'film15', image: '/cofanetto/Spotlight.jpg', text: "SPOTLIGHT", filmName: "Spotlight" },
-            { id: 'film16', image: '/cofanetto/Moonlight.jpg', text: "MOONLIGHT", filmName: "Moonlight" },
-            { id: 'film17', image: '/cofanetto/Shutter Island.jpg', text: "SHUTTERISLAND", filmName: "Shutter Island" },
-            { id: 'film18', image: '/cofanetto/BeatifulMind.png', text: "ABEAUTIFULMIND", filmName: "A Beautiful Mind" }
-        ];
+        if (characterData.length > 0) {
+            generateFilmsFromCharacterData();
+        } else {
+            films = [];
+        }
     }
     
     /**
@@ -300,6 +351,7 @@ const FilmData = (function() {
         getCharacterData,
         updateFilm,
         loadCharacterData,
+        generateFilmsFromCharacterData,
         getFilterCategories,
         filterFilms,
         groupFilmsByCategory,

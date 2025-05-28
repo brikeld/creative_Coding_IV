@@ -1700,7 +1700,366 @@
           "primary_goal": "To break free from a life of crime and start fresh with Debora, while protecting those he loves and reconciling with his past traumas."
         }
       }
+    },
+
+    {
+      "film_info": {
+        "film_name": "House of Gucci",
+        "year": 2021,
+        "genre": ["drama", "crime", "biography"],
+        "box_office": 153300000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Patrizia Reggiani"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "extrovert",
+          "biggest_fear": {
+            "category": "poverty",
+            "reason_specific_description": "Patrizia is terrified of slipping into obscurity or financial insecurity. Her need to elevate herself from her modest background drives her ambition to control Gucci and secure her status."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Patrizia's unrelenting drive fuels her rise from a truck company bookkeeper to a power player in the Gucci family, manipulating situations to her advantage with charm and planning."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "She orchestrates Maurizio Gucci's murder after being cut out of the business and family life. She also manipulates various family members for power and status, blurring the line between loyalty and ambition."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "only_child"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Though not traditionally tragic, Patrizia’s upbringing in a lower-middle-class family shaped her deep insecurity and hunger for upward mobility, which becomes a source of inner tension."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "bookkeeper turned socialite/businesswoman"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "not_at_all",
+          "primary_goal": "To gain power and recognition within the Gucci dynasty and secure lasting wealth—but she ultimately loses everything and ends up in prison."
+        }
+      }
+    },
+
+
+    {
+      "film_info": {
+        "film_name": "Inception",
+        "year": 2010,
+        "genre": ["sci-fi", "thriller", "action"],
+        "box_office": 839000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Dom Cobb"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Cobb is haunted by the death of his wife, Mal, and fears losing the memory of her or accepting his guilt. This fear follows him into dreams, where Mal appears as a projection that sabotages his missions."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Cobb is a master of navigating complex dream layers. His deep understanding of dream architecture allows him to lead highly dangerous missions, like the inception job for Saito."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Cobb manipulates his team by hiding the truth about Mal’s presence in his subconscious. He also risks their lives for personal redemption, blurring the line between professional and selfish motives."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["damn"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Cobb’s wife, Mal, committed suicide, believing they were still dreaming, after he planted the idea in her mind during a dream. This tragedy drives his guilt and prevents him from returning to his children."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "unknown",
+          "occupation": "extractor (dream infiltration specialist)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "ambiguous",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To successfully perform inception for Saito and return to the U.S. to reunite with his children—though it’s unclear if he truly escapes the dream world in the end."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Ferrari",
+        "year": 2023,
+        "genre": ["drama", "biography"],
+        "box_office": 41900000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Enzo Ferrari"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Ferrari is obsessed with keeping the company alive and proving himself in racing, even if it risks lives or finances."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite personal and professional losses, he is relentless in pushing Ferrari forward, like when he insists on winning the Mille Miglia to secure the brand’s future."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": "He keeps his son Piero hidden from his wife Laura, deceiving her for years about his second life."
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": "none"
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": "Ferrari lost his son Dino to illness, which deeply affects him and drives many of his emotional decisions throughout the film."
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "automobile manufacturer / entrepreneur"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To save his company and secure Ferrari's future through success in racing and finding financial backing."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Her",
+        "year": 2013,
+        "genre": ["sci-fi", "romance", "drama"],
+        "box_office": 48700000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Theodore Twombly"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Theodore fears deep emotional isolation. Following the end of his marriage, he struggles with disconnection and the inability to share his life authentically. His longing for intimacy is expressed in everything from his profession (writing personal letters for others) to his emotional dependence on Samantha."
+          },
+          "biggest_strength": {
+            "category": "empathy",
+            "reason_specific_description": "Theodore is deeply empathetic, shown by how convincingly he writes heartfelt letters on behalf of others. He is emotionally perceptive, often reading into people’s feelings and showing compassion, especially in his interactions with Samantha and Amy."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Theodore avoids betrayal and strives to maintain emotional integrity. His internal conflict stems from being too passive or emotionally guarded, not from deceit or disloyalty."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Theodore went through an emotionally painful divorce with Catherine, which lingers throughout the narrative. His melancholy and emotional stagnation stem from unresolved grief and romantic failure, even if no explicit single tragedy is cited."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "letter writer"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To rediscover love and connection in the wake of emotional loss, ultimately learning how to live with vulnerability and emotional change—even when the object of affection, Samantha, transcends him."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Kill Bill: Vol. 1",
+        "year": 2003,
+        "genre": ["action", "thriller", "drama", "martial arts"],
+        "box_office": 180949045
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Beatrix Kiddo (The Bride)"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Beatrix’s fear centers around losing her unborn child and future. This fear is revealed when she tells Bill she's pregnant moments before he shoots her, which signifies her vulnerability at that moment of transition from assassin to mother."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "After awakening from a coma, she systematically hunts the Deadly Viper Assassination Squad despite severe physical and emotional trauma. Her single-minded resolve keeps her alive and on her path."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "She adheres to a personal code of vengeance without betraying allies. Her killings are deliberate and targeted at those who wronged her."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "pregnant",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": ["She was betrayed by her assassination team and put into a coma on her wedding day, losing her child and nearly her life."]
+        },
+        "socioeconomic": {
+          "income_level": "unknown",
+          "occupation": "former assassin"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To seek revenge against those who betrayed and nearly killed her, starting with members of the Deadly Viper Assassination Squad."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Kill Bill: Vol. 2",
+        "year": 2004,
+        "genre": ["action", "drama", "thriller", "martial arts"],
+        "box_office": 152159461
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Beatrix Kiddo (The Bride)"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Beatrix’s fear evolves to center around losing her daughter. Her vulnerability is amplified when she pleads with Karen Wong not to kill her because she is pregnant."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "She uses both physical combat and strategic deception, including the five-point exploding heart technique and psychological misdirection, to achieve her ultimate revenge and reclaim her daughter."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Despite being an assassin, she shows compassion, such as sparing Karen Wong and showing remorse to Bill before killing him. She holds herself to her own moral logic."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": ["Beatrix was betrayed by her former lover and mentor, shot in the head while pregnant, and left in a coma, all of which catalyze her transformation."]
+        },
+        "socioeconomic": {
+          "income_level": "unknown",
+          "occupation": "former assassin"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To kill Bill and reclaim her daughter, thereby concluding her journey of vengeance and reclaiming her identity as Beatrix and as a mother."
+        }
+      }
     }
+    
+    
+
+
+    
+
+
+    
+
+
+    
+    
 
     
     
