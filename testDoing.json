@@ -2047,7 +2047,505 @@
           "primary_goal": "To kill Bill and reclaim her daughter, thereby concluding her journey of vengeance and reclaiming her identity as Beatrix and as a mother."
         }
       }
+    },
+
+    {
+      "film_info": {
+        "film_name": "American Hustle",
+        "year": 2013,
+        "genre": ["drama", "crime", "comedy"],
+        "box_office": 251200000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Irving Rosenfeld"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Irving fears being exposed as a fraud and losing the delicate control he has over his business, his relationships, and his survival—seen especially in how he juggles his con operations with Sydney and his unstable marriage to Rosalyn."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "He adapts to changing situations quickly, like devising the final con to outmaneuver the FBI and mafia when things spiral out of control."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "He manipulates clients, deceives the FBI, and lies to his wife and lover to keep his scams afloat. He also cons Carmine Polito despite developing a genuine friendship with him."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "He witnessed his father being taken advantage of in the family business, which scarred him and made him resolve never to be the one getting conned again."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "con artist and loan scammer"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To stay out of jail, protect his son, and end up with Sydney—he achieves some of this by outsmarting the FBI, but loses many friendships and carries guilt."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Conclave",
+        "year": 2024,
+        "genre": ["drama", "mystery", "thriller"],
+        "box_office": 9730000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Cardinal Lawrence"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "senior",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Lawrence fears making the wrong decision in the papal election and compromising the Church’s integrity. His fear is tied to the immense responsibility he holds as Dean, guiding a group of flawed men to choose a new Pope amid scandal."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "He’s methodical, deeply reflective, and driven by principle, shown in how he navigates political manipulation and uncovers secrets while maintaining his moral compass and resisting corruption."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Although pressured by factions and secrets, Lawrence remains loyal to his conscience and the process, refusing to manipulate or be manipulated, even when it costs him influence."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": ["none"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "The script implies a long career of sacrifice and solitude in service to the Church, marked by weariness and spiritual struggle, as seen in his difficulty with prayer and private reflection."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "Cardinal / Dean of the College of Cardinals"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To ensure the election of a morally worthy Pope while upholding spiritual truth and transparency during a time of secrecy and manipulation within the Vatican."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Don't Look Up",
+        "year": 2021,
+        "genre": ["drama", "comedy", "sci-fi"],
+        "box_office": 79170000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Dr. Randall Mindy"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "He fears that his warnings will be ignored and humanity will face extinction. This becomes a personal and professional crisis when the government and media downplay the comet’s threat."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "As a tenured astronomy professor, he expertly calculates the trajectory of the comet and is one of the first to grasp its catastrophic implications. His scientific credibility makes him a central figure in the crisis."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Randall has an affair and becomes a public spokesperson for the administration, momentarily abandoning his integrity. He later regrets it and attempts to return to his original values and family."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": []
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "astronomy professor"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "not_at_all",
+          "primary_goal": "To alert the public and help stop the comet from destroying Earth. He ultimately fails to change the outcome but finds peace in accepting the end with loved ones."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Drive",
+        "year": 2011,
+        "genre": ["action", "crime", "drama", "thriller"],
+        "box_office": 81000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Driver"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Driver fears forming emotional attachments that he cannot protect. His budding connection with Irene and her son Benicio exposes his vulnerability and loneliness. This fear is reinforced when violence enters their lives, and he sacrifices himself to protect them."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "Driver's calm under pressure, improvisation during heists, and expert driving skills repeatedly save lives. Whether evading police or surviving mob hits, he uses logic and skill rather than brute force."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Though involved in criminal activities, he holds a strict personal code: he protects the innocent (Irene and Benicio), remains loyal, and only resorts to violence when cornered. He refuses money and walks away when it means protecting others."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "While the script never explicitly states Driver’s past, his stoic demeanor, lack of personal ties, and unwillingness to discuss his life imply a history marked by emotional loss or isolation. His comfort in violence and distance from others suggests trauma or abandonment."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "stunt driver / mechanic / getaway driver"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To protect Irene and her son from the criminal world, even at great personal cost, and to find a fleeting sense of connection and meaning in a life otherwise dominated by solitude and danger."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Dunkirk",
+        "year": 2017,
+        "genre": ["war", "drama", "thriller"],
+        "box_office": 527000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Tommy"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "death",
+            "reason_specific_description": "Tommy is driven by the primal fear of dying in a senseless, abandoned warzone. His actions—from fleeing ambushes, hiding below the mole, to boarding doomed ships—show a deep instinct for survival, framed by the chaos around him."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Despite his fear, Tommy repeatedly risks himself to help others, such as carrying stretchers across fire, diving into sinking ships, and saving Alex. His quiet persistence and refusal to abandon his fellow soldiers marks him as resilient and courageous."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Though desperate to survive, Tommy does not betray anyone. He defends Gibson when accused of being a spy and works cooperatively with others to escape and survive."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Tommy’s history is not provided in the film, but his behavior and the trauma he endures suggest a background shaped by the brutalities of war. He appears hardened and instinctively defensive, implying early exposure to violence or abandonment."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "unknown",
+          "occupation": "soldier"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To survive the evacuation from Dunkirk and make it home alive, overcoming deadly obstacles at sea, land, and air while witnessing the human cost of war."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Focus",
+        "year": 2015,
+        "genre": ["crime", "comedy", "romance", "drama"],
+        "box_office": 158800000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Nicky Spurgeon"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "betrayal",
+            "reason_specific_description": "Nicky fears emotional vulnerability and being deceived. His upbringing in a family of con artists and his experience with betrayal have conditioned him to never fully trust anyone, including Jess, despite his feelings for her."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Nicky is a master manipulator and strategist. He excels at reading people, anticipating reactions, and orchestrating complex cons, as demonstrated in the Super Bowl betting scene and the multilayered grifts throughout the film."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Nicky deceives multiple characters, including Jess, in pursuit of the long con. Though he cares for her, his professional code often takes precedence, showing that he manipulates others—even those he claims to love—for the success of a scheme."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Nicky implies he was raised in a family of con artists and recounts a story about his father accidentally killing his grandfather during a heist. This shaped his worldview, leading him to distrust people and operate through manipulation and deception."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "professional con artist"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To successfully pull off high-stakes cons while managing his feelings for Jess and maintaining control over emotionally volatile situations, even when it jeopardizes the mission or his own safety."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Gladiator 2",
+        "year": 2024,
+        "genre": ["drama", "action", "historical", "thriller"],
+        "box_office": "462180717"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Lucius"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "power_loss",
+            "reason_specific_description": "Lucius fears losing his autonomy and identity to Roman oppression. His resistance to being a pawn in the Roman games and his deep grief over Arishat’s death reflect a terror of becoming a tool for the empire that destroyed his world."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Lucius demonstrates fierce determination in the face of defeat, enslavement, and personal loss. He fights on, refusing to break under physical abuse, gladiatorial combat, and emotional trauma, all driven by his resolve to one day kill General Acacius."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Lucius remains loyal to Jugurtha and honors Arishat’s memory, refusing to betray allies despite immense pressure. He kills only in self-defense or when compelled to in the arena, always retaining a sense of justice and restraint."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Lucius loses Arishat, the woman he loves, during the Roman siege of Numidia. He is enslaved, branded, and forced into gladiatorial combat. His identity and humanity are stripped from him as he becomes a tool for Roman entertainment and power."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "gladiator (former officer, enslaved prisoner)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To avenge Arishat’s death and reclaim his sense of honor and identity by killing General Acacius and resisting Roman domination."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Girl with a Pearl Earring",
+        "year": 2003,
+        "genre": ["drama", "romance", "biography"],
+        "box_office": 33030115
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Griet"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "poverty",
+            "reason_specific_description": "Griet fears the financial instability that comes from her family's reduced circumstances after her father's accident. This fear drives her to work diligently as a maid to support her family."
+          },
+          "biggest_strength": {
+            "category": "creativity",
+            "reason_specific_description": "Griet possesses a natural artistic sensibility, evident in her understanding of color and composition, which catches Vermeer's attention and allows her to contribute meaningfully to his work."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": []
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": "Griet's family faces hardship after her father's accident leaves him blind, forcing her into servitude to support them."
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "maid"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To support her family financially while navigating the complexities of her role in Vermeer's household and her own personal growth."
+        }
+      }
     }
+
+
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+    
+
+
+    
     
     
 
