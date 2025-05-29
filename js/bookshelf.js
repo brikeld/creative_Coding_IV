@@ -19,12 +19,8 @@ const Bookshelf = (function() {
                 element: shelf,
                 index: index,
                 items: 0,
-                // Calculate capacity based on shelf width - limit to max items per shelf from Animations
-                // Using item width from Animations
-                capacity: Math.min(
-                    Animations.capacity.itemsPerShelf, 
-                    Math.floor((shelf.clientWidth - 60) / Animations.spatial.itemSpacing.normal.itemWidth)
-                )
+                // Use fixed capacity of 6 items per shelf
+                capacity: 6
             });
         });
         
@@ -83,6 +79,11 @@ const Bookshelf = (function() {
         shelves.forEach(shelf => {
             shelf.element.innerHTML = '';
             shelf.items = 0;
+            // Show all shelves when resetting
+            const container = shelf.element.closest('.shelf-container');
+            if (container) {
+                container.style.display = 'block';
+            }
         });
     }
     
@@ -101,11 +102,30 @@ const Bookshelf = (function() {
     function addItems(items) {
         items.forEach(item => addItem(item));
         
+        // Hide empty shelves after adding all items
+        hideEmptyShelves();
+        
         // Resize shelves after adding items
         if (typeof FilterEffects !== 'undefined' && 
             FilterEffects.resizeShelvesBasedOnContent) {
             FilterEffects.resizeShelvesBasedOnContent();
         }
+    }
+    
+    /**
+     * Hide shelves that have no items
+     */
+    function hideEmptyShelves() {
+        shelves.forEach(shelf => {
+            const container = shelf.element.closest('.shelf-container');
+            if (container) {
+                if (shelf.items === 0) {
+                    container.style.display = 'none';
+                } else {
+                    container.style.display = 'block';
+                }
+            }
+        });
     }
     
     // Public API
@@ -114,6 +134,7 @@ const Bookshelf = (function() {
         addItem,
         reset,
         getShelves,
-        addItems
+        addItems,
+        hideEmptyShelves
     };
 })(); 

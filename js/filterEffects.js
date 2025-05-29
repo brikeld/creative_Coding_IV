@@ -351,7 +351,45 @@ const FilterEffects = (function() {
         if (bookshelf) bookshelf.classList.add('filtered');
         
         const shelfContainers = document.querySelectorAll('.shelf-container');
-        const groupKeys = Object.keys(groups);
+        let groupKeys = Object.keys(groups);
+        
+        // Safeguard: Limit to maximum 6 groups to prevent crashes
+        const MAX_GROUPS = 8;
+        if (groupKeys.length > MAX_GROUPS) {
+            console.warn(`Too many groups (${groupKeys.length}). Consolidating to ${MAX_GROUPS} groups.`);
+            
+            // Calculate earnings for each group first
+            const groupsWithEarnings = groupKeys.map(groupKey => {
+                const groupTotal = groups[groupKey].reduce((sum, filmId) => {
+                    const film = FilmData.getAllFilms().find(f => f.id === filmId);
+                    if (film) {
+                        const charData = FilmData.getCharacterData(film.filmName);
+                        return sum + (charData?.film_info?.box_office || 0);
+                    }
+                    return sum;
+                }, 0);
+                return { key: groupKey, earnings: groupTotal, items: groups[groupKey] };
+            }).sort((a, b) => b.earnings - a.earnings);
+            
+            // Keep top 5 groups and consolidate the rest into "Others"
+            const topGroups = groupsWithEarnings.slice(0, MAX_GROUPS - 1);
+            const otherGroups = groupsWithEarnings.slice(MAX_GROUPS - 1);
+            
+            // Create new consolidated groups object
+            const newGroups = {};
+            topGroups.forEach(group => {
+                newGroups[group.key] = group.items;
+            });
+            
+            // Consolidate remaining groups into "Others"
+            if (otherGroups.length > 0) {
+                const otherItems = otherGroups.flatMap(group => group.items);
+                newGroups['Others'] = otherItems;
+            }
+            
+            groups = newGroups;
+            groupKeys = Object.keys(groups);
+        }
         
         // Calculate earnings for each group and sort by earnings (highest first)
         const groupsWithEarnings = groupKeys.map(groupKey => {

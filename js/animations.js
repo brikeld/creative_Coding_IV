@@ -59,7 +59,7 @@ const Animations = (function() {
     
     // Shelf item capacity
     const capacity = {
-        itemsPerShelf: 8  // Increased from 6 to 8
+        itemsPerShelf: 6  // Changed from 8 to 6 for consistent max capacity
     };
     
     // Public API
