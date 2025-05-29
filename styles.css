@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Changed from height: 100vh to min-height for scrolling */
     justify-content: space-between;
-    color: #ffffff;
+    color: #321717;
     perspective: 1000px;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .bookshelf.filtered {
-  gap: 10.5px;
+  gap: 20.5px;
 }
 
 .shelf-container {
@@ -146,7 +146,6 @@ body {
     background-position: center;
     opacity: 0.6;
     animation: textureGlow 6s infinite alternate;
-    background-color: rgba(255, 255, 255, 0.5);
     filter: grayscale(100%);
     transition: filter 0.5s ease-out;
 }
@@ -154,29 +153,29 @@ body {
 .texture-front {
     width: 100%;
     height: 100%;
-    transform: translateZ(15px); /* Reduced from 23px (1/3 smaller) */
+    transform: translateZ(8px); /* Reduced from 15px */
     background-position: center 30%;
 }
 
 .texture-back {
     width: 100%;
     height: 100%;
-    transform: translateZ(-15px) rotateY(180deg); /* Reduced from 23px (1/3 smaller) */
+    transform: translateZ(-8px) rotateY(180deg); /* Reduced from 15px */
     background-position: center 70%;
 }
 
 .texture-right {
-    width: 30px; /* Reduced from 46px (1/3 smaller) */
+    width: 16px; /* Reduced from 30px (depth * 2 = 8 * 2) */
     height: 100%;
-    right: -15px; /* Reduced from -23px (1/3 smaller) */
+    right: -8px; /* Reduced from 15px */
     transform: rotateY(90deg);
     background-position: right 50%;
 }
 
 .texture-left {
-    width: 30px; /* Reduced from 46px (1/3 smaller) */
+    width: 16px; /* Reduced from 30px (depth * 2 = 8 * 2) */
     height: 100%;
-    left: -15px; /* Reduced from -23px (1/3 smaller) */
+    left: -8px; /* Reduced from 15px */
     transform: rotateY(-90deg);
     background-position: left 50%;
 }
@@ -346,23 +345,6 @@ body {
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-/* Remove different shelf background colors */
-.shelf-container:nth-child(odd) .shelf {
-  background: linear-gradient(180deg, #fff 70%, #bbb 30%);
-}
-
-.shelf-container:nth-child(even) .shelf {
-  background: linear-gradient(180deg, #fff 70%, #bbb 30%);
-}
-
-/* Styles for shelf containers to have smoother transitions */
-.shelf-container:nth-child(odd) .shelf {
-  background: linear-gradient(180deg, #fff 70%, #bcc 30%);
-}
-
-.shelf-container:nth-child(even) .shelf {
-  background: linear-gradient(180deg, #fff 70%, #cbb 30%);
-}
 
 /* When filtered and hovered */
 .parallelepiped.matching:hover,
@@ -390,94 +372,87 @@ body {
     border-radius: 8px;
 }
 
-/* Face and Edge styles */
-.face {
-    position: absolute;
-    opacity: 0.15;
-    background: none;
-    z-index: 2;
-}
 
-.front {
-    width: 100%;
-    height: 100%;
-    transform: translateZ(15px); /* Adjusted to match new depth */
-}
-
-.back {
-    width: 100%;
-    height: 100%;
-    transform: translateZ(-15px) rotateY(180deg); /* Adjusted to match new depth */
-}
-
-.right {
-    width: 30px; /* Adjusted to match new depth * 2 */
-    height: 100%;
-    right: -15px; /* Adjusted to match new depth */
-    transform: rotateY(90deg);
-}
-
-.left {
-    width: 30px; /* Adjusted to match new depth * 2 */
-    height: 100%;
-    left: -15px; /* Adjusted to match new depth */
-    transform: rotateY(-90deg);
-}
 
 .edge {
     position: absolute;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-    animation: pulse 4s infinite alternate;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    animation: pulse 1s infinite alternate;
     z-index: 4;
 }
 
 .edge-front-top { 
     top: 0; left: 0; 
     height: 2px; width: 47px; /* Adjusted to match new width */
-    transform: translateZ(15px);
+    transform: translateZ(8px);
 }
 
 .edge-front-bottom { 
     bottom: 0; left: 0; 
     height: 2px; width: 47px; /* Adjusted to match new width */
-    transform: translateZ(15px);
+    transform: translateZ(8px);
 }
 
 .edge-front-left { 
     top: 0; left: 0; 
     width: 2px; height: 73px; /* Adjusted to match new height */
-    transform: translateZ(15px);
+    transform: translateZ(8px);
 }
 
 .edge-front-right { 
     top: 0; right: 0; 
     width: 2px; height: 73px; /* Adjusted to match new height */
-    transform: translateZ(15px);
+    transform: translateZ(8px);
 }
 
 .edge-back-top { 
     top: 0; left: 0; 
     height: 2px; width: 47px; /* Adjusted to match new width */
-    transform: translateZ(-15px);
+    transform: translateZ(-8px);
 }
 
 .edge-back-bottom { 
     bottom: 0; left: 0; 
     height: 2px; width: 47px; /* Adjusted to match new width */
-    transform: translateZ(-15px);
+    transform: translateZ(-8px);
 }
 
 .edge-back-left { 
     top: 0; left: 0; 
     width: 2px; height: 73px; /* Adjusted to match new height */
-    transform: translateZ(-15px);
+    transform: translateZ(-8px);
 }
 
 .edge-back-right { 
     top: 0; right: 0; 
     width: 2px; height: 73px; /* Adjusted to match new height */
-    transform: translateZ(-15px);
+    transform: translateZ(-8px);
+}
+
+/* New connecting edges */
+.edge-connect-top-left {
+    top: 0; left: 0;
+    width: 2px; height: 16px;
+    transform: rotateY(-90deg) translateZ(8px);
+}
+
+.edge-connect-top-right {
+    top: 0; right: 0;
+    width: 2px; height: 16px;
+    transform: rotateY(90deg) translateZ(8px);
+}
+
+.edge-connect-bottom-left {
+    bottom: 0; left: 0;
+    width: 2px; height: 16px;
+    transform: rotateY(-90deg) translateZ(8px);
+}
+
+.edge-connect-bottom-right {
+    bottom: 0; right: 0;
+    width: 2px; height: 16px;
+    transform: rotateY(90deg) translateZ(8px);
 }
 
 /* Animation classes for filtered elements - removing visual differences */.parallelepiped.matching .texture-side {  filter: grayscale(0%);}.parallelepiped.non-matching .texture-side {  filter: grayscale(100%);}/* Group-based filtering styles */.parallelepiped.group-0 .texture-side { filter: grayscale(0%) hue-rotate(0deg); }.parallelepiped.group-1 .texture-side { filter: grayscale(0%) hue-rotate(60deg); }.parallelepiped.group-2 .texture-side { filter: grayscale(0%) hue-rotate(120deg); }.parallelepiped.group-3 .texture-side { filter: grayscale(0%) hue-rotate(180deg); }.parallelepiped.group-4 .texture-side { filter: grayscale(0%) hue-rotate(240deg); }.parallelepiped.group-5 .texture-side { filter: grayscale(0%) hue-rotate(300deg); }/* Additional group styles for more categories */.parallelepiped.group-6 .texture-side { filter: grayscale(0%) hue-rotate(30deg) saturate(1.2); }.parallelepiped.group-7 .texture-side { filter: grayscale(0%) hue-rotate(90deg) saturate(1.2); }.parallelepiped.group-8 .texture-side { filter: grayscale(0%) hue-rotate(150deg) saturate(1.2); }.parallelepiped.group-9 .texture-side { filter: grayscale(0%) hue-rotate(210deg) saturate(1.2); }/* Category button styles */.filter-button.category-button {    background-color: #444;    font-weight: bold;    padding: 4px 12px;    border-radius: 8px;    border: 2px solid #666;}
@@ -489,7 +464,6 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     height: 100vh;
     background-color: #1a1a1a;
     display: flex;

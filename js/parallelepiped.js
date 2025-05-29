@@ -46,13 +46,15 @@ const Parallelepiped = (function() {
         // Create edges for better 3D effect - adjusted for smaller parallelepiped
         const edgeWidth = 47; // Width of the parallelepiped (reduced from 70)
         const edgeHeight = 73; // Height of the parallelepiped (reduced from 110)
-        const edgeDepth = 15; // Half of the depth of the parallelepiped (reduced from 23)
+        const edgeDepth = 8; // Half of the depth of the parallelepiped (reduced from 15 to 8)
         
         const edges = [
+            // Front face edges
             { class: 'edge-front-top', width: edgeWidth, height: 2 },
             { class: 'edge-front-bottom', width: edgeWidth, height: 2 },
             { class: 'edge-front-left', width: 2, height: edgeHeight },
             { class: 'edge-front-right', width: 2, height: edgeHeight },
+            // Back face edges
             { class: 'edge-back-top', width: edgeWidth, height: 2 },
             { class: 'edge-back-bottom', width: edgeWidth, height: 2 },
             { class: 'edge-back-left', width: 2, height: edgeHeight },
