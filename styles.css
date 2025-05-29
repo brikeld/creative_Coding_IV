@@ -485,6 +485,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
     height: 100vh;
     background-color: #1a1a1a;
     display: flex;
@@ -501,7 +502,7 @@ body {
 
 .intro-text {
     font-family: 'Input Mono', monospace;
-    font-weight: 400;
+    font-weight: 700;
     color: #a8a8a8;
     font-size: clamp(2rem, 8vw, 6rem);
     text-align: center;

@@ -544,7 +544,9 @@ const FilterEffects = (function() {
                 if (i === groupInfo.shelfCount - 1) {
                     const label = document.createElement('div');
                     label.className = 'group-label';
-                    label.textContent = `${groupInfo.groupKey} - $${groupInfo.groupEarnings.toLocaleString()}`;
+                    // Ensure earnings is a number and format consistently
+                    const earnings = Number(groupInfo.groupEarnings);
+                    label.textContent = `${groupInfo.groupKey} - $${earnings.toLocaleString()}`;
                     label.style.cssText = `
                         position: absolute;
                         top: 100%;
