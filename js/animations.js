@@ -39,21 +39,9 @@ const Animations = (function() {
     const spatial = {
         // Shelf separation distance when filtered (matching left, non-matching right)
         shelfSeparation: {
-            left: -505,
-            right: 380
+
         },
-        // Item spacing configurations
-        itemSpacing: {
-            filtered: {
-                itemWidth: 65,
-            },
-            normal: {
-                itemWidth: 75,
-                padding: 60
-            }
-        },
-        // Minimum shelf width - increased to accommodate more items
-        minShelfWidth: 250
+
     };
     
     // Shelf item capacity
