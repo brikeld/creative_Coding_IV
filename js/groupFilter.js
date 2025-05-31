@@ -261,16 +261,50 @@ const GroupFilter = (function() {
                 
                 console.log(`📍 Shelf ${shelfIndex}: x=${columnX}, y=${shelfY}`);
                 
-                // Use absolute positioning instead of transforms
-                container.style.position = 'absolute';
-                container.style.left = `${columnX}px`;
-                container.style.top = `${shelfY}px`;
+                // Animate to absolute position instead of setting directly
+                gsap.to(container, {
+                    duration: Animations.timings.shelfSplit.duration,
+                    ease: Animations.timings.shelfSplit.ease,
+                    position: 'absolute',
+                    left: `${columnX}px`,
+                    top: `${shelfY}px`
+                });
                 
                 if (i === groupInfo.shelfCount - 1) {
                     addGroupLabel(container, groupInfo);
                 }
             }
         });
+        
+        // Resize shelves after a short delay
+        setTimeout(() => {
+            console.log('🔄 Resizing shelves based on content...');
+            
+            document.querySelectorAll('.shelf-container').forEach((container, index) => {
+                const shelfItems = container.querySelector('.shelf-items');
+                const itemCount = shelfItems.childElementCount;
+                
+                if (itemCount > 0) {
+                    const itemWidth = 75;
+                    const padding = 60;
+                    const calculatedWidth = (itemCount * itemWidth) + padding;
+                    
+                    console.log(`📏 Shelf ${index}: ${itemCount} items → ${calculatedWidth}px`);
+                    
+                    gsap.to(container, {
+                        width: calculatedWidth,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    
+                    gsap.to(container.querySelector('.shelf'), {
+                        width: calculatedWidth,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                }
+            });
+        }, 200);
     }
     
     function addGroupLabel(container, groupInfo) {
