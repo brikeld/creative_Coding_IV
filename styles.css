@@ -20,7 +20,7 @@ body {
 .bookshelf {
   display: flex;
   flex-direction: column;
-  gap: 65px;
+  gap: 85px;
   transform-style: preserve-3d;
   position: relative;
   width: 100%;
@@ -32,7 +32,7 @@ body {
 }
 
 .bookshelf.filtered {
-  gap: 20.5px;
+  gap: 7vh;
 }
 
 .shelf-container {
@@ -56,7 +56,7 @@ body {
 
 .shelf {
   width: 100%;
-  height: 25px; /* Reduced from 35px */
+  height: 15px;
   margin: 14px auto; /* Reduced from 20px */
   border-radius: 6px; /* Reduced from 8px */
   background: linear-gradient(180deg, #fff 70%, #bbb 30%);
@@ -67,11 +67,6 @@ body {
 
 .shelf-items {  position: absolute;  width: 100%;  top: -75px; /* Adjusted from -110px to account for smaller height */  display: flex;  justify-content: flex-start;  align-items: flex-start;  gap: 20px; /* Reduced from 30px for smaller items */  transform-style: preserve-3d;  transform: rotateX(25deg);  overflow-x: visible;  padding: 0 15px; /* Reduced from 30px for better left alignment */}
 
-/* Add a more compact gap for filtered items */
-.matching-shelf .shelf-items,
-.non-matching-shelf .shelf-items {
-  gap: 8px; /* Reduced from 10px for smaller items */
-}
 
 .shelf-items::-webkit-scrollbar {
   display: none;
@@ -179,78 +174,6 @@ body {
     background-position: left 50%;
 }
 
-/* Film Details Overlay */
-.film-details-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.film-details-container {
-    background-color: #222;
-    border-radius: 8px;
-    padding: 20px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
-    border: 1px solid rgba(100, 100, 255, 0.2);
-}
-
-.film-details-container h2 {
-    color: #fff;
-    margin-top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-}
-
-.film-details-container h3 {
-    color: #aaa;
-    margin: 15px 0 5px;
-}
-
-.film-details-info {
-    margin-top: 15px;
-}
-
-.film-details-info p {
-    margin: 8px 0;
-    line-height: 1.5;
-}
-
-.details-description {
-    font-style: italic;
-    color: #aaa;
-    border-left: 2px solid #444;
-    padding-left: 10px;
-    margin: 10px 0 15px;
-}
-
-.details-close-btn {
-    display: block;
-    margin: 20px auto 5px;
-    padding: 8px 20px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Input Mono', monospace;
-    transition: all 0.3s ease;
-}
-
-.details-close-btn:hover {
-    background-color: #444;
-}
 
 /* Filter styles */
 .filter-container {
@@ -384,7 +307,6 @@ body {
 .edge-front-top { 
     top: 0; left: 0; 
     height: 2px; width: 47px; /* Adjusted to match new width */
-    transform: translateZ(8px);
 }
 
 .edge-front-bottom { 
@@ -429,48 +351,12 @@ body {
     transform: translateZ(-8px);
 }
 
-/* New connecting edges */
-.edge-connect-top-left {
-    top: 0; left: 0;
-    width: 2px; height: 16px;
-    transform: rotateY(-90deg) translateZ(8px);
-}
-
-.edge-connect-top-right {
-    top: 0; right: 0;
-    width: 2px; height: 16px;
-    transform: rotateY(90deg) translateZ(8px);
-}
-
-.edge-connect-bottom-left {
-    bottom: 0; left: 0;
-    width: 2px; height: 16px;
-    transform: rotateY(-90deg) translateZ(8px);
-}
-
-.edge-connect-bottom-right {
-    bottom: 0; right: 0;
-    width: 2px; height: 16px;
-    transform: rotateY(90deg) translateZ(8px);
-}
-
 /* Animation classes for filtered elements - removing visual differences */
 .parallelepiped.matching .texture-side {  filter: grayscale(0%);}
 .parallelepiped.non-matching .texture-side {  filter: grayscale(100%);}
 
-/* Group-based filtering styles */
-.parallelepiped.group-0 .texture-side { filter: grayscale(0%) hue-rotate(0deg); }
-.parallelepiped.group-1 .texture-side { filter: grayscale(0%) hue-rotate(60deg); }
-.parallelepiped.group-2 .texture-side { filter: grayscale(0%) hue-rotate(120deg); }
-.parallelepiped.group-3 .texture-side { filter: grayscale(0%) hue-rotate(180deg); }
-.parallelepiped.group-4 .texture-side { filter: grayscale(0%) hue-rotate(240deg); }
-.parallelepiped.group-5 .texture-side { filter: grayscale(0%) hue-rotate(300deg); }
 
-/* Additional group styles for more categories */
-.parallelepiped.group-6 .texture-side { filter: grayscale(0%) hue-rotate(30deg) saturate(1.2); }
-.parallelepiped.group-7 .texture-side { filter: grayscale(0%) hue-rotate(90deg) saturate(1.2); }
-.parallelepiped.group-8 .texture-side { filter: grayscale(0%) hue-rotate(150deg) saturate(1.2); }
-.parallelepiped.group-9 .texture-side { filter: grayscale(0%) hue-rotate(210deg) saturate(1.2); }
+
 
 /* Fallback style for any group beyond defined range */
 .parallelepiped[class*="group-"] .texture-side {     filter: grayscale(0%) hue-rotate(0deg); }
@@ -478,7 +364,7 @@ body {
 /* Grayscale group for non-highest earning groups */
 .parallelepiped.group-grayscale .texture-side {     filter: grayscale(100%); }
 
-.box-office-total {    position: fixed;    top: 50%;    left: 50%;    transform: translate(-50%, -50%);    color: white;    font-family: 'Input Mono', monospace;    opacity: 0.15;    pointer-events: none;    white-space: nowrap;    z-index: -1;    font-weight: bold;    text-align: center;    width: 100%;}
+
 
 /* Intro Screen Styles */
 .intro-screen {

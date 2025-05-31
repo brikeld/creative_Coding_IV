@@ -20,7 +20,8 @@ const Bookshelf = (function() {
                 index: index,
                 items: 0,
                 // Use fixed capacity of 6 items per shelf
-                capacity: 6
+                capacity: 6,
+                padding: 0
             });
         });
         

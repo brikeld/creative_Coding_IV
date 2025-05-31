@@ -2513,7 +2513,491 @@
           "primary_goal": "To support her family financially while navigating the complexities of her role in Vermeer's household and her own personal growth."
         }
       }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Ford v Ferrari",
+        "year": 2019,
+        "genre": ["drama", "biography", "sport"],
+        "box_office": 225500000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Ken Miles"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Ken fears losing his identity as a racer and mechanic, especially when he's forced to compromise his racing style for corporate politics—as seen when he's asked to slow down at Le Mans for a photo finish."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "His fearless driving and mechanical precision allow him to dominate on the track, as demonstrated in the intense, record-setting Le Mans performance."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Ken is blunt and stubborn, but he's loyal to Shelby and devoted to his family. He never sacrifices others for personal gain, even when it costs him a win at Le Mans."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["bloody"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Hints at wartime trauma and the struggles of rebuilding a life in post-war America. His financial troubles and failure to secure racing sponsors also show a history of being overlooked."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "race car driver and mechanic"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To win the 24 Hours of Le Mans and prove himself as both a driver and an engineer. He accomplishes this on track, but corporate interference denies him the official win."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Maestro",
+        "year": 2023,
+        "genre": ["drama", "romance", "biopic"],
+        "box_office": 14000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Leonard Bernstein"
+        },
+        "demographics": {
+          "gender": ["male"],
+          "age_range": ["adult", "senior"],
+          "ethnicity": ["white"]
+        },
+        "personality_traits": {
+          "introvert_extrovert": ["ambivert"],
+          "biggest_fear": {
+            "category": ["failure"],
+            "reason_specific_description": "He fears not living up to his artistic potential and being seen as a lightweight in serious music, which haunts him throughout his life."
+          },
+          "biggest_strength": {
+            "category": ["charisma"],
+            "reason_specific_description": "His charisma wins over orchestras, audiences, and friends—he electrifies Carnegie Hall during his unexpected debut."
+          },
+          "moral_ambiguity": {
+            "betrays_others": ["yes"],
+            "reason_betrays_others": "He emotionally betrays his wife Felicia through affairs and secrecy, even though they remain close companions."
+          }
+        },
+        "relationships_family": {
+          "parental_status": ["parent"],
+          "siblings_status": ["siblings"]
+        },
+        "dialogue_analysis": {
+          "swear_frequency": ["occasional"],
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": ["implied"],
+          "tragic_past_reason": ["He struggles with balancing his private desires and public persona in a less accepting time, leading to internal conflict and sorrow."]
+        },
+        "socioeconomic": {
+          "income_level": ["rich"],
+          "occupation": "Composer, conductor, and teacher"
+        },
+        "narrative_arc": {
+          "goal_achievement": ["partially"],
+          "success_metrics": ["partially"],
+          "primary_goal": "To become a respected composer and conductor while maintaining love and family stability"
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "Moneyball",
+        "year": 2011,
+        "genre": ["drama", "biography", "sport"],
+        "box_office": 110200000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Billy Beane"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Billy fears being remembered as a failure, both as a general manager and as a former player who never fulfilled his early potential. This drives his unorthodox approach to winning."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite losing key players and having the lowest payroll, Billy relentlessly pushes a revolutionary system forward, even against the skepticism of scouts and management."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Billy is loyal to his team and his methods. While he makes difficult decisions, including trading players, he doesn't betray others out of self-interest but out of necessity for the system to work."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["shit"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Billy was a highly scouted athlete who turned down a Stanford scholarship to play professional baseball and later failed to meet expectations. His regret over that decision fuels his choices as a GM."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "General Manager of the Oakland Athletics"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To build a winning baseball team using statistical analysis rather than traditional scouting. He succeeds in changing the game but falls short of winning the World Series."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Memoirs of a Geisha",
+        "year": 2005,
+        "genre": ["drama", "romance", "historical"],
+        "box_office": 162200000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Chiyo Sakamoto / Sayuri"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "child"  ,
+          "ethnicity": "asian"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Chiyo fears abandonment and isolation. After being separated from her sister and sold into an unfamiliar world, she clings to memories and the hope of reunion. Her desperation to find Satsu and later to earn acceptance underscores this fear."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite immense hardship, Chiyo perseveres through betrayal, servitude, and emotional trauma. Her resolve to rise beyond her status, impress Mameha, and ultimately become a respected geisha showcases her inner strength."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Chiyo does not betray others; she remains loyal to those who help her, like Pumpkin and Mameha. Even when faced with injustice from Hatsumomo, she does not act out of spite or treachery, instead focusing on self-preservation and resilience."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Chiyo was sold by her impoverished family into servitude, separated from her sister, and later orphaned. She endured cruelty in the okiya and betrayal from Hatsumomo, which shaped her guarded, resilient character."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "servant / geisha in training"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To survive, reunite with her sister, and ultimately become a successful geisha so she can live with dignity and cross paths again with the Chairman, who once showed her kindness."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Midnight in Paris",
+        "year": 2011,
+        "genre": ["fantasy", "romance", "comedy", "drama"],
+        "box_office": 154000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Gil Pender"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Gil fears living an unfulfilled life where his creative potential is stifled. He is haunted by the idea that he chose the wrong career in screenwriting and missed his chance to be a true novelist. His fear intensifies with the shallow lifestyle and unsupportive relationship he finds himself trapped in."
+          },
+          "biggest_strength": {
+            "category": "creativity",
+            "reason_specific_description": "Gil is deeply imaginative and romantic, with a vivid inner life that allows him to connect with the literary past in profound ways. His ability to time travel metaphorically and literally into nostalgic eras reveals a passionate, inquisitive mind searching for authenticity."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Gil emotionally distances himself from his fiancée Inez and keeps secrets about his nightly escapades in 1920s Paris. Though he doesn't cheat physically, his deception and growing emotional bond with Adriana mark a moral divergence from his relationship commitments."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["hell"]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": [
+            "Gil does not carry overt trauma, but he expresses profound regret about his professional path and dissatisfaction with his shallow Hollywood lifestyle. His past is marked more by missed opportunities than explicit tragedy."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "screenwriter / aspiring novelist"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To break free from a superficial and unfulfilling life and embrace his true artistic self, ultimately finding inspiration and romantic clarity through magical journeys into the past."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Mank",
+        "year": 2020,
+        "genre": ["drama", "biography"],
+        "box_office": 12200000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Herman J. Mankiewicz"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "Mank constantly questions his contribution and legacy. In a moment of vulnerability, he tells his wife, 'I should have done something by now,' and later, 'I'm trapped... in a rat trap of my own construction.' These suggest a deep fear of professional and personal inadequacy."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Mank is a sharp-witted, intellectually formidable writer. His dialogues are rich with wit and layered references. He is able to dismantle ideologies and people through clever language, as seen in his interactions with Hearst and Thalberg, and his satirical script for Citizen Kane."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Mank writes Citizen Kane, a thinly veiled critique of William Randolph Hearst, despite being welcomed into Hearst’s inner circle and forming a bond with Marion Davies. This is perceived as a betrayal, particularly by Marion, who pleads with him not to 'kick Pops when he’s down.'"
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["goddamn"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "His ongoing battle with alcoholism, professional dissatisfaction, and self-destructive tendencies suggest a deeply troubled past. There's also the regretful tone in his reflections about missed opportunities and estranged relationships."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "screenwriter"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To write something of lasting value and meaning — culminating in the screenplay for Citizen Kane, which he wants recognized as his work alone, despite the consequences."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Oppenheimer",
+        "year": 2023,
+        "genre": ["drama", "biography", "historical"],
+        "box_office": 976000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "J. Robert Oppenheimer"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "power_loss",
+            "reason_specific_description": "Oppenheimer’s greatest fear is the moral and political consequences of the power he helped create. As the film progresses, he is haunted by his role in unleashing nuclear weapons and the inability to control their future use. His expressions during hearings and his inner turmoil reveal a man deeply afraid of what his legacy might become — not just what he’s done, but the fact that he can’t undo it."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Oppenheimer’s mastery of quantum mechanics and theoretical physics, along with his ability to learn complex subjects (e.g., Dutch in six weeks), illustrates towering intellectual capacity. He could grasp abstract ideas and communicate them compellingly, attracting brilliant minds to work with him and building the foundation for the Manhattan Project."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "He alienates political allies and former friends, including Jean Tatlock and Haakon Chevalier, when he distances himself from Communist ties during security hearings.",
+              "He participates in building the atomic bomb knowing the humanitarian cost, and later suffers guilt, suggesting a betrayal of personal moral beliefs for national duty."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "He suffered from intense emotional instability as a student, culminating in a suicide attempt aimed at a tutor (the poisoned apple incident).",
+            "His relationships are filled with betrayal, guilt, and loss — notably Jean Tatlock’s eventual death and his guilt-laden relationship with his wife, Kitty."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "physicist"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To advance theoretical physics and lead the development of the atomic bomb, while later trying to control and ethically influence how such power is used by governments — ultimately struggling with the burden of what he has helped unleash."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The Brutalist",
+        "year": 2023,
+        "genre": ["drama", "historical", "biography"],
+        "box_office": "50300000"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "László Toth"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "László fears irrelevance and being forgotten, both as an architect and as a man. His struggle to maintain dignity while destitute, and his painful interactions with clients and family, underscore his fear of not fulfilling his purpose or restoring his broken family."
+          },
+          "biggest_strength": {
+            "category": "creativity",
+            "reason_specific_description": "Despite living in hardship, László produces brilliant architectural designs and furniture. His transformation of the Van Buren library shows innovative thinking rooted in Bauhaus ideals, balancing form, light, and utility with vision."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "He oversteps personal boundaries, notably making a pass at his cousin’s wife Audrey, leading to a breakdown in trust.",
+              "He also misjudges client interactions, pushing assertively for creative control, which causes conflict and temporary financial fallout."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["goddamn"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "László is a Holocaust survivor, physically and emotionally scarred by war, displacement, and separation from his wife and niece.",
+            "He suffers from addiction and trauma, including heroin use, which he hides but cannot control."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "architect"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To rebuild a meaningful life in America, restore his professional identity as an architect, and reunite with his wife and niece while maintaining personal dignity in the face of social and economic alienation."
+        }
+      }
     }
+    
+    
+
+
+    
+
+
+    
+    
+
+    
+
+
 
 
 

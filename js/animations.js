@@ -46,7 +46,6 @@ const Animations = (function() {
         itemSpacing: {
             filtered: {
                 itemWidth: 65,
-                padding: 40
             },
             normal: {
                 itemWidth: 75,

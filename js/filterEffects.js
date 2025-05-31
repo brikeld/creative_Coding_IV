@@ -4,6 +4,17 @@
 
 const FilterEffects = (function() {
     let isAnimating = false;
+    let animationTimeouts = [];
+    
+    function clearAnimationTimeouts() {
+        animationTimeouts.forEach(timeout => clearTimeout(timeout));
+        animationTimeouts = [];
+    }
+    
+    function resetAnimationState() {
+        isAnimating = false;
+        clearAnimationTimeouts();
+    }
     
     /**
      * First organizes items by filter, then splits shelves to show separation
@@ -13,6 +24,8 @@ const FilterEffects = (function() {
     function splitShelvesForFilter(matching, nonMatching) {
         if (isAnimating) return; // Prevent overlapping animations
         isAnimating = true;
+        clearAnimationTimeouts();
+        
         // Add filtered class to bookshelf for gap animation
         const bookshelf = document.querySelector('.bookshelf');
         if (bookshelf) bookshelf.classList.add('filtered');
@@ -108,8 +121,11 @@ const FilterEffects = (function() {
         const checkAllComplete = () => {
             animationsComplete++;
             if (animationsComplete >= 2) {
-                // Both animations are done
-                isAnimating = false;
+                // Both animations are done - add timeout to ensure completion
+                const timeout = setTimeout(() => {
+                    resetAnimationState();
+                }, 100);
+                animationTimeouts.push(timeout);
             }
         };
         
@@ -153,6 +169,8 @@ const FilterEffects = (function() {
     function resetShelves() {
         if (isAnimating) return; // Prevent overlapping animations
         isAnimating = true;
+        clearAnimationTimeouts();
+        
         // Remove filtered class from bookshelf for gap animation
         const bookshelf = document.querySelector('.bookshelf');
         if (bookshelf) bookshelf.classList.remove('filtered');
@@ -205,7 +223,7 @@ const FilterEffects = (function() {
             Bookshelf.addItem(element);
         });
         
-        // Get the end positions after adding to bookshelf
+        // Get end positions after redistributing to reset positions
         const endPositions = allElements.map(el => {
             const rect = el.getBoundingClientRect();
             return {
@@ -215,7 +233,7 @@ const FilterEffects = (function() {
             };
         });
         
-        // Set all elements to their starting positions using GSAP
+        // Set elements to their starting positions for animation
         allElements.forEach((el, i) => {
             const startPos = startPositions[i];
             const endPos = endPositions[i];
@@ -224,7 +242,8 @@ const FilterEffects = (function() {
             
             gsap.set(el, {
                 x: deltaX,
-                y: deltaY
+                y: deltaY,
+                opacity: 1
             });
         });
         
@@ -233,15 +252,20 @@ const FilterEffects = (function() {
         const checkAllComplete = () => {
             animationsComplete++;
             if (animationsComplete >= 2) {
-                // Both animations are done
-                resizeShelvesBasedOnContent(false);
-                isAnimating = false;
+                // Both animations are done - add timeout to ensure completion
+                const timeout = setTimeout(() => {
+                    resetAnimationState();
+                }, 100);
+                animationTimeouts.push(timeout);
             }
         };
         
+        // Reset shelf widths first
+        resizeShelvesBasedOnContent(false);
+        
         // Run both animations concurrently
         
-        // 1. Bring shelves back together
+        // 1. Reset shelf positions
         gsap.to(shelfContainers, {
             duration: Animations.timings.shelfReset.duration,
             x: 0,
@@ -251,7 +275,7 @@ const FilterEffects = (function() {
             onComplete: checkAllComplete
         });
         
-        // 2. Animate parallelepipeds to their final positions
+        // 2. Animate elements to their reset positions
         gsap.to(allElements, {
             duration: Animations.timings.itemsReset.duration,
             x: 0,
@@ -344,8 +368,9 @@ const FilterEffects = (function() {
      * @param {Object} groups - Object with group names as keys and film ID arrays as values
      */
     function arrangeShelvesForGroups(groups) {
-        if (isAnimating) return;
+        if (isAnimating) return; // Prevent overlapping animations
         isAnimating = true;
+        clearAnimationTimeouts();
         
         const bookshelf = document.querySelector('.bookshelf');
         if (bookshelf) bookshelf.classList.add('filtered');
@@ -353,7 +378,6 @@ const FilterEffects = (function() {
         const shelfContainers = document.querySelectorAll('.shelf-container');
         let groupKeys = Object.keys(groups);
         
-        // Safeguard: Limit to maximum 6 groups to prevent crashes
         const MAX_GROUPS = 8;
         if (groupKeys.length > MAX_GROUPS) {
             console.warn(`Too many groups (${groupKeys.length}). Consolidating to ${MAX_GROUPS} groups.`);
@@ -459,7 +483,10 @@ const FilterEffects = (function() {
             const groupStartShelf = shelfIndex;
             
             for (let i = 0; i < shelvesForGroup && shelfIndex < shelfContainers.length; i++) {
-                const shelf = shelfContainers[shelfIndex].querySelector('.shelf-items');
+                const shelfContainer = shelfContainers[shelfIndex];
+                if (!shelfContainer) break;
+                
+                const shelf = shelfContainer.querySelector('.shelf-items');
                 const startIdx = i * Animations.capacity.itemsPerShelf;
                 const endIdx = Math.min(startIdx + Animations.capacity.itemsPerShelf, groupElements.length);
                 
@@ -469,9 +496,9 @@ const FilterEffects = (function() {
                     }
                 }
                 
-                shelfContainers[shelfIndex].classList.add(`group-${sortedIndex}-shelf`);
-                shelfContainers[shelfIndex].dataset.groupKey = groupKey;
-                shelfContainers[shelfIndex].style.display = 'block';
+                shelfContainer.classList.add(`group-${sortedIndex}-shelf`);
+                shelfContainer.dataset.groupKey = groupKey;
+                shelfContainer.style.display = 'block';
                 usedShelves.push(shelfIndex);
                 shelfIndex++;
             }
@@ -516,7 +543,10 @@ const FilterEffects = (function() {
             animationsComplete++;
             if (animationsComplete >= totalAnimations) {
                 resizeShelvesBasedOnContent(true);
-                isAnimating = false;
+                const timeout = setTimeout(() => {
+                    resetAnimationState();
+                }, 100);
+                animationTimeouts.push(timeout);
             }
         };
         
@@ -538,27 +568,53 @@ const FilterEffects = (function() {
                 const shelfIndex = groupInfo.shelfStart + i;
                 const container = shelfContainers[shelfIndex];
                 
+                // Safety check to prevent undefined container error
+                if (!container) continue;
+                
                 gsap.to(container, {                    duration: Animations.timings.shelfSplit.duration,                    x: xPosition,                    y: yPosition - (i * -20),                    ease: Animations.timings.shelfSplit.ease,                    onComplete: index === 0 && i === 0 ? checkAllComplete : undefined                });
                 
                 // Add group label to last shelf of each group
                 if (i === groupInfo.shelfCount - 1) {
                     const label = document.createElement('div');
                     label.className = 'group-label';
-                    // Ensure earnings is a number and format consistently
+                    
+                    // Smart number formatting to prevent overlap
                     const earnings = Number(groupInfo.groupEarnings);
-                    label.textContent = `${groupInfo.groupKey} - $${earnings.toLocaleString()}`;
+                    const formatEarnings = (num) => {
+                        const format = (value, suffix) => {
+                            let formatted = value.toPrecision(3);
+                            // Handle scientific notation by extracting base number
+                            if (formatted.includes('e+')) {
+                                formatted = formatted.split('e+')[0];
+                            }
+                            return `${formatted}${suffix}`;
+                        };
+                        if (num >= 1e12) return format(num / 1e12, 'T');
+                        if (num >= 1e9) return format(num / 1e9, 'B');
+                        if (num >= 1e6) return format(num / 1e6, 'M');
+                        if (num >= 1e3) return format(num / 1e3, 'K');
+                        return num.toPrecision(3);
+                    };
+                    
+                    label.textContent = `${groupInfo.groupKey} - ${formatEarnings(earnings)}`;
+                    
                     label.style.cssText = `
                         position: absolute;
-                        top: 100%;
+                        top: 50px;
                         left: 50%;
                         transform: translateX(-50%);
                         color: white;
                         font-family: 'Input Mono', monospace;
                         font-size: 0.8rem;
-                        margin-top: 10px;
+                        // margin-top: 5px;
                         text-align: center;
                         white-space: nowrap;
-                        z-index: 10;
+                        // padding: 2px 5px;
+                        background: rgba(0, 0, 0, 0.3);
+                        border-radius: 4px;
+                        max-width: 200px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     `;
                     container.appendChild(label);
                 }
