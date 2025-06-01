@@ -78,7 +78,31 @@ const FilmData = (function() {
             'Ferrari': '/cofanetto/ferrari.jpg',
             'Her': '/cofanetto/her.jpg',
             'Kill Bill: Vol. 1': '/cofanetto/killbill1.jpg',
-            'Kill Bill: Vol. 2': '/cofanetto/killbill2.png'
+            'Kill Bill: Vol. 2': '/cofanetto/killbill2.png',
+            // Adding the missing 22 films
+            'American Hustle': '/cofanetto/AmericanHustle.jpg',
+            'Conclave': '/cofanetto/conclave.jpg',
+            'Don\'t Look Up': '/cofanetto/dontlookup.jpg',
+            'Drive': '/cofanetto/drive.jpg',
+            'Dunkirk': '/cofanetto/dunkirk.jpg',
+            'Focus': '/cofanetto/focus.jpg',
+            'Gladiator 2': '/cofanetto/gladiator2.jpg',
+            'Girl with a Pearl Earring': '/cofanetto/girlwiththepearlearring.jpg',
+            'Ford v Ferrari': '/cofanetto/fordvferrari.jpg',
+            'Maestro': '/cofanetto/maestro.jpg',
+            'Moneyball': '/cofanetto/moneyball.jpg',
+            'Memoirs of a Geisha': '/cofanetto/memoirsofageisha.jpg',
+            'Midnight in Paris': '/cofanetto/midnightinparis.jpg',
+            'Mank': '/cofanetto/mank.jpg',
+            'Oppenheimer': '/cofanetto/Oppenheimer.jpg',
+            'The Brutalist': '/cofanetto/the brutalist.jpg',
+            'Arrival': '/cofanetto/Arrival.jpg',
+            'Asteroid City': '/cofanetto/Asteroid City .jpg',
+            'Barbie': '/cofanetto/Barbie.jpg',
+            'Blade Runner 2049': '/cofanetto/Blade Runner 2049 .jpg',
+            'Dune': '/cofanetto/Dune.jpg',
+            'John Wick: Chapter 4': '/cofanetto/John Wick Chapter 4.jpg',
+            'Avatar': '/cofanetto/Avatar.jpg'
         };
         
         return imageMap[filmName] || '/cofanetto/default.jpg';
@@ -315,6 +339,39 @@ const FilmData = (function() {
     }
     
     /**
+     * Refreshes all existing parallelepipeds with updated images from the imageMap
+     * This is useful when the imageMap has been updated but films are already created
+     */
+    function refreshAllImages() {
+        if (characterData.length === 0) {
+            console.warn('No character data loaded. Cannot refresh images.');
+            return false;
+        }
+        
+        // Regenerate films with updated image mappings
+        generateFilmsFromCharacterData();
+        
+        // Update existing parallelepiped elements with new images
+        films.forEach(film => {
+            const element = elements[film.id];
+            if (element) {
+                // Update all texture sides with new image
+                const textureSides = element.querySelectorAll('.texture-side');
+                textureSides.forEach(side => {
+                    if (film.image && film.image.trim() !== '') {
+                        side.style.backgroundImage = `url('${film.image}')`;
+                    } else {
+                        side.style.backgroundImage = 'none';
+                    }
+                });
+            }
+        });
+        
+        console.log(`Refreshed ${films.length} parallelepipeds with updated images`);
+        return true;
+    }
+    
+    /**
      * Clears image caches by adding timestamps to URLs
      */
     function clearImageCache() {
@@ -358,6 +415,7 @@ const FilmData = (function() {
         clearFilter,
         getActiveFilter,
         resetFilms,
+        refreshAllImages,
         clearImageCache,
         elements
     };

@@ -207,14 +207,15 @@ const GroupFilter = (function() {
     function positionGroupsInColumns(groupPositions, shelfContainers, originalShelfPositions) {
         console.log('📍 positionGroupsInColumns called with', groupPositions.length, 'groups');
         
-        // Simple grid layout parameters
-        const columnWidth = 600;
-        const shelfHeight = 130;
-        const startX = 10; // Left column starts here
-        const startY = 70;  // All groups start at this Y
+        // Better spacing - separate intra-group and inter-group spacing
+        const columnWidth = 550; // Slightly increased for better spacing
+        const shelfHeight = 135; // For inter-group spacing (between different groups)
+        const intraGroupShelfHeight = 100; // For intra-group spacing (shelves within same group)
+        const startX = 10;
+        const startY = 70;
         
-        // Assign columns: pack vertically first, then horizontally
-        const maxColumnHeight = window.innerHeight - 200; // Leave some margin
+        // More conservative column height to ensure all groups are visible
+        const maxColumnHeight = 700; // Increased slightly for better distribution
         const columns = []; // Track column heights
         
         groupPositions.forEach((groupInfo, index) => {
@@ -246,7 +247,7 @@ const GroupFilter = (function() {
         
         groupPositions.forEach((groupInfo) => {
             const columnX = startX + (groupInfo.targetColumn * columnWidth);
-            const groupStartY = startY + groupInfo.targetY; // Add group offset within column
+            const groupStartY = startY + groupInfo.targetY;
             
             console.log(`🏗️ Group ${groupInfo.groupKey}: column=${groupInfo.targetColumn}, x=${columnX}, startY=${groupStartY}`);
             
@@ -255,11 +256,17 @@ const GroupFilter = (function() {
                 const shelfIndex = groupInfo.shelfStart + i;
                 const container = shelfContainers[shelfIndex];
                 
-                if (!container) continue;
+                if (!container) {
+                    console.warn(`⚠️ Missing container for shelf ${shelfIndex}`);
+                    continue;
+                }
                 
-                const shelfY = groupStartY + (i * shelfHeight);
+                const shelfY = groupStartY + (i * intraGroupShelfHeight);
                 
                 console.log(`📍 Shelf ${shelfIndex}: x=${columnX}, y=${shelfY}`);
+                
+                // Ensure shelf is visible and properly positioned
+                container.style.display = 'block';
                 
                 // Animate to absolute position instead of setting directly
                 gsap.to(container, {

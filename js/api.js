@@ -80,6 +80,14 @@ const API = (function() {
         return true;
     }
     
+    /**
+     * Refreshes all existing parallelepipeds with updated images
+     * @returns {boolean} - Whether the refresh was successful
+     */
+    function refreshAllImages() {
+        return FilmData.refreshAllImages();
+    }
+    
     // Make functions available globally
     function exposeGlobally() {
         window.filmVisualizer = {
@@ -88,7 +96,8 @@ const API = (function() {
             updateAllFilms,
             loadFilmsFromJSON,
             getFilmData,
-            resetFilms
+            resetFilms,
+            refreshAllImages
         };
     }
     
@@ -100,6 +109,7 @@ const API = (function() {
         loadFilmsFromJSON,
         getFilmData,
         resetFilms,
+        refreshAllImages,
         exposeGlobally
     };
 })(); 

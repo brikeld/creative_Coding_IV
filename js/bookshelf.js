@@ -19,8 +19,8 @@ const Bookshelf = (function() {
                 element: shelf,
                 index: index,
                 items: 0,
-                // Use fixed capacity of 6 items per shelf
-                capacity: 6,
+                // Use dynamic capacity from Animations
+                get capacity() { return Animations.capacity.itemsPerShelf; },
                 padding: 0
             });
         });

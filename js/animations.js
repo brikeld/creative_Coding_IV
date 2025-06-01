@@ -46,7 +46,10 @@ const Animations = (function() {
     
     // Shelf item capacity
     const capacity = {
-        itemsPerShelf: 6  // Changed from 8 to 6 for consistent max capacity
+        get itemsPerShelf() {
+            // Return 10 for initial screen, 6 for filtering
+            return FilmData.getActiveFilter() ? 6 : 10;
+        }
     };
     
     // Public API

@@ -55,18 +55,28 @@ body {
 }
 
 .shelf {
-  width: 100%;
   height: 15px;
-  margin: 14px auto; /* Reduced from 20px */
+  margin: 14px auto; /* Centering */
   border-radius: 6px; /* Reduced from 8px */
   background: linear-gradient(180deg, #fff 70%, #bbb 30%);
   box-shadow: 0 5px 16px 2px rgba(185, 185, 185, 0.536), 0 2px 6px 0 #000b, 0 1px 0 0 #fff8 inset; /* Reduced shadow */
   transform: rotateX(25deg);
-  transition: width 0.5s ease;
+  transition: width 0.5s ease, transform 0.5s ease;
 }
 
-.shelf-items {  position: absolute;  width: 100%;  top: -75px; /* Adjusted from -110px to account for smaller height */  display: flex;  justify-content: flex-start;  align-items: flex-start;  gap: 20px; /* Reduced from 30px for smaller items */  transform-style: preserve-3d;  transform: rotateX(25deg);  overflow-x: visible;  padding: 0 15px; /* Reduced from 30px for better left alignment */}
-
+.shelf-items {  
+  position: absolute;  
+  width: 100%;  
+  top: -75px; /* Adjusted from -110px to account for smaller height */  
+  display: flex;  
+  justify-content: center;  /* Changed from flex-start to center for better centering */
+  align-items: flex-start;  
+  gap: 15px; /* Reduced from 20px to fit 10 items */  
+  transform-style: preserve-3d;  
+  transform: rotateX(25deg);  
+  overflow-x: visible;  
+  padding: 0 10px; /* Reduced padding for more space */
+}
 
 .shelf-items::-webkit-scrollbar {
   display: none;
@@ -266,6 +276,7 @@ body {
   transform-style: preserve-3d !important;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
+
 
 
 /* When filtered and hovered */

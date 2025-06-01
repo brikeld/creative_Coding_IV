@@ -4,9 +4,12 @@
       "film_info": {
         "film_name": "ANORA",
         "year": 2025,
-        "genre": ["drama", "romance"],
-        "box_office": 59574302
-        
+        "genre": [
+          "drama",
+          "romance"
+        ],
+        "box_office": 59574302,
+        "image_path": "public/cofanetto/Ani.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -29,7 +32,9 @@
           },
           "moral_ambiguity": {
             "betrays_others": "no",
-            "reason_betrays_others": ["Ani generally upholds a personal code of loyalty despite the rough and transactional nature of her work environment."]
+            "reason_betrays_others": [
+              "Ani generally upholds a personal code of loyalty despite the rough and transactional nature of her work environment."
+            ]
           }
         },
         "relationships_family": {
@@ -38,11 +43,15 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "frequent",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
-          "tragic_past_reason": ["While not fully detailed, hints of economic and emotional hardships suggest a challenging past that has shaped her tough exterior."]
+          "tragic_past_reason": [
+            "While not fully detailed, hints of economic and emotional hardships suggest a challenging past that has shaped her tough exterior."
+          ]
         },
         "socioeconomic": {
           "income_level": "middle_class",
@@ -59,8 +68,13 @@
       "film_info": {
         "film_name": "No Country for Old Men",
         "year": 2008,
-        "genre": ["thriller", "crime", "drama"],
-        "box_office": 171632777
+        "genre": [
+          "thriller",
+          "crime",
+          "drama"
+        ],
+        "box_office": 171632777,
+        "image_path": "public/cofanetto/Anton.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -94,7 +108,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "unknown",
@@ -115,8 +131,12 @@
       "film_info": {
         "film_name": "1917",
         "year": 2019,
-        "genre": ["drama", "action"],
-        "box_office": 446064352
+        "genre": [
+          "drama",
+          "action"
+        ],
+        "box_office": 446064352,
+        "image_path": "public/cofanetto/1917.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -150,7 +170,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["bloody"]
+          "most_used_swear_word": [
+            "bloody"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -173,8 +195,13 @@
       "film_info": {
         "film_name": "Schindler's List",
         "year": 1993,
-        "genre": ["drama", "historical", "biography"],
-        "box_office": 322161245
+        "genre": [
+          "drama",
+          "historical",
+          "biography"
+        ],
+        "box_office": 322161245,
+        "image_path": "public/cofanetto/Schindler.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -208,7 +235,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["damn"]
+          "most_used_swear_word": [
+            "damn"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -231,9 +260,12 @@
       "film_info": {
         "film_name": "Titanic",
         "year": 1997,
-        "genre": ["drama", "romance"],
-        "box_office": 2264812968
-        
+        "genre": [
+          "drama",
+          "romance"
+        ],
+        "box_office": 2264812968,
+        "image_path": "public/cofanetto/titanic.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -267,7 +299,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -290,8 +324,11 @@
       "film_info": {
         "film_name": "American Beauty",
         "year": 1999,
-        "genre": ["drama"],
-        "box_office": 356296601
+        "genre": [
+          "drama"
+        ],
+        "box_office": 356296601,
+        "image_path": "public/cofanetto/AmericanBeauty.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -325,7 +362,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -348,8 +387,12 @@
       "film_info": {
         "film_name": "Gladiator",
         "year": 2000,
-        "genre": ["drama", "action"],
-        "box_office": 465516248
+        "genre": [
+          "drama",
+          "action"
+        ],
+        "box_office": 465516248,
+        "image_path": "public/cofanetto/Gladiator.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -383,7 +426,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["damn"]
+          "most_used_swear_word": [
+            "damn"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -406,8 +451,12 @@
       "film_info": {
         "film_name": "A Beautiful Mind",
         "year": 2001,
-        "genre": ["drama", "biography"],
-        "box_office": 316791257
+        "genre": [
+          "drama",
+          "biography"
+        ],
+        "box_office": 316791257,
+        "image_path": "public/cofanetto/BeatifulMind.png"
       },
       "character_analysis": {
         "metadata": {
@@ -441,7 +490,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["damn"]
+          "most_used_swear_word": [
+            "damn"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -464,8 +515,11 @@
       "film_info": {
         "film_name": "Crash",
         "year": 2004,
-        "genre": ["drama"],
-        "box_office": 98410061
+        "genre": [
+          "drama"
+        ],
+        "box_office": 98410061,
+        "image_path": "public/cofanetto/Crash.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -499,7 +553,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -522,9 +578,13 @@
       "film_info": {
         "film_name": "The Departed",
         "year": 2006,
-        "genre": ["drama", "thriller", "crime"],
-        "box_office": 291481358
-        
+        "genre": [
+          "drama",
+          "thriller",
+          "crime"
+        ],
+        "box_office": 291481358,
+        "image_path": "public/cofanetto/The Departed.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -558,7 +618,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "frequent",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -581,8 +643,12 @@
       "film_info": {
         "film_name": "Birdman or (The Unexpected Virtue of Ignorance)",
         "year": 2014,
-        "genre": ["drama", "comedy"],
-        "box_office": 103215094
+        "genre": [
+          "drama",
+          "comedy"
+        ],
+        "box_office": 103215094,
+        "image_path": "public/cofanetto/Birdman.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -616,7 +682,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -639,8 +707,12 @@
       "film_info": {
         "film_name": "12 Years a Slave",
         "year": 2013,
-        "genre": ["drama", "historical"],
-        "box_office": 187734091
+        "genre": [
+          "drama",
+          "historical"
+        ],
+        "box_office": 187734091,
+        "image_path": "public/cofanetto/12 Years a Slave.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -674,7 +746,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "never",
-          "most_used_swear_word": [""]
+          "most_used_swear_word": [
+            ""
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -697,8 +771,12 @@
       "film_info": {
         "film_name": "Spotlight",
         "year": 2015,
-        "genre": ["drama", "historical"],
-        "box_office": 98690254
+        "genre": [
+          "drama",
+          "historical"
+        ],
+        "box_office": 98690254,
+        "image_path": "public/cofanetto/Spotlight.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -732,11 +810,13 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [""]
+          "most_used_swear_word": [
+            ""
+          ]
         },
         "background_history": {
           "tragic_past": "none",
-          "tragic_past_reason": [ 
+          "tragic_past_reason": [
             "The script doesn't show Robby having a personal tragic past, his focus is professional integrity and the impact of journalism rather than personal trauma."
           ]
         },
@@ -755,9 +835,11 @@
       "film_info": {
         "film_name": "Moonlight",
         "year": 2016,
-        "genre": ["drama"],
-        "box_office": 65172611
-        
+        "genre": [
+          "drama"
+        ],
+        "box_office": 65172611,
+        "image_path": "public/cofanetto/Moonlight.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -791,7 +873,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [""]
+          "most_used_swear_word": [
+            ""
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -814,8 +898,13 @@
       "film_info": {
         "film_name": "Napoleon",
         "year": 2023,
-        "genre": ["drama", "action", "historical"],
-        "box_office": 221394838
+        "genre": [
+          "drama",
+          "action",
+          "historical"
+        ],
+        "box_office": 221394838,
+        "image_path": "public/cofanetto/Napoleon.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -849,7 +938,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "minimal",
-          "most_used_swear_word": ["none"]
+          "most_used_swear_word": [
+            "none"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -872,8 +963,13 @@
       "film_info": {
         "film_name": "Shutter Island",
         "year": 2010,
-        "genre": ["thriller", "mystery", "psychological drama"],
-        "box_office": 294978537
+        "genre": [
+          "thriller",
+          "mystery",
+          "psychological drama"
+        ],
+        "box_office": 294978537,
+        "image_path": "public/cofanetto/Shutter Island.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -907,7 +1003,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -930,8 +1028,13 @@
       "film_info": {
         "film_name": "The Martian",
         "year": 2015,
-        "genre": ["science fiction", "drama", "thriller"],
-        "box_office": 630521406
+        "genre": [
+          "science fiction",
+          "drama",
+          "thriller"
+        ],
+        "box_office": 630521406,
+        "image_path": "public/cofanetto/The Martian.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -965,7 +1068,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "minimal",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -988,8 +1093,13 @@
       "film_info": {
         "film_name": "Amélie",
         "year": 2001,
-        "genre": ["romantic", "comedy", "fantasy"],
-        "box_office": 175183052
+        "genre": [
+          "romantic",
+          "comedy",
+          "fantasy"
+        ],
+        "box_office": 175183052,
+        "image_path": "public/cofanetto/amelie.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1023,7 +1133,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [""]
+          "most_used_swear_word": [
+            ""
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -1041,25 +1153,18 @@
           "primary_goal": "To overcome the confines of isolation by transforming her own life and the lives of those around her through small, deliberate acts of kindness—ultimately opening herself up to love and authentic human connection."
         }
       }
-      
-
-
-
-
-
-
-
-
-
-
-      
     },
     {
       "film_info": {
         "film_name": "The Lord of the Rings: The Return of the King",
         "year": 2003,
-        "genre": ["fantasy", "adventure", "drama"],
-        "box_office": 1123837908
+        "genre": [
+          "fantasy",
+          "adventure",
+          "drama"
+        ],
+        "box_office": 1123837908,
+        "image_path": "public/cofanetto/theLordofTheRings-ReturnOfTheKing.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1093,7 +1198,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "never",
-          "most_used_swear_word": ["none"]
+          "most_used_swear_word": [
+            "none"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1112,13 +1219,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "The King's Speech",
         "year": 2010,
-        "genre": ["drama", "historical", "biographical"],
-        "box_office": 471000000
+        "genre": [
+          "drama",
+          "historical",
+          "biographical"
+        ],
+        "box_office": 471000000,
+        "image_path": "public/cofanetto/TheKingSpeech.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1152,7 +1263,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1171,13 +1284,17 @@
         }
       }
     },
-    
     {
       "film_info": {
         "film_name": "The Shape of Water",
         "year": 2017,
-        "genre": ["romance", "fantasy", "drama"],
-        "box_office": 195243184
+        "genre": [
+          "romance",
+          "fantasy",
+          "drama"
+        ],
+        "box_office": 195243184,
+        "image_path": "public/cofanetto/ShapeOfWater.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1211,7 +1328,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "never",
-          "most_used_swear_word": ["none"]
+          "most_used_swear_word": [
+            "none"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1228,14 +1347,19 @@
           "success_metrics": "fully",
           "primary_goal": "To save the creature and find a meaningful, loving connection, even if it means leaving her world behind."
         }
-      }      
+      }
     },
     {
       "film_info": {
         "film_name": "Green Book",
         "year": 2018,
-        "genre": ["drama", "biographical", "road movie"],
-        "box_office": 321800000
+        "genre": [
+          "drama",
+          "biographical",
+          "road movie"
+        ],
+        "box_office": 321800000,
+        "image_path": "public/cofanetto/GreenBook.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1269,7 +1393,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "frequent",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "none",
@@ -1288,13 +1414,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Parasite",
         "year": 2019,
-        "genre": ["thriller", "drama", "dark comedy"],
-        "box_office": 263100000
+        "genre": [
+          "thriller",
+          "drama",
+          "dark comedy"
+        ],
+        "box_office": 263100000,
+        "image_path": "public/cofanetto/Parasite.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1328,7 +1458,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1347,13 +1479,16 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Nomadland",
         "year": 2020,
-        "genre": ["drama", "road movie"],
-        "box_office": 39500000
+        "genre": [
+          "drama",
+          "road movie"
+        ],
+        "box_office": 39500000,
+        "image_path": "public/cofanetto/nomadLand.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1387,7 +1522,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -1406,13 +1543,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Anatomy of a Fall",
         "year": 2023,
-        "genre": ["drama", "mystery", "legal thriller"],
-        "box_office": 36050000
+        "genre": [
+          "drama",
+          "mystery",
+          "legal thriller"
+        ],
+        "box_office": 36050000,
+        "image_path": "public/cofanetto/anatomyofafall.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1446,7 +1587,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1465,13 +1608,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "All Quiet on the Western Front",
         "year": 2022,
-        "genre": ["war", "drama", "historical"],
-        "box_office": 2878
+        "genre": [
+          "war",
+          "drama",
+          "historical"
+        ],
+        "box_office": 2878,
+        "image_path": "public/cofanetto/allquietonthewesternfront.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1505,7 +1652,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1524,13 +1673,19 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Everything Everywhere All At Once",
         "year": 2022,
-        "genre": ["sci-fi", "fantasy", "action", "drama", "comedy"],
-        "box_office": 141000000
+        "genre": [
+          "sci-fi",
+          "fantasy",
+          "action",
+          "drama",
+          "comedy"
+        ],
+        "box_office": 141000000,
+        "image_path": "public/cofanetto/everythingeverywhereallatonce.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1564,7 +1719,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1583,13 +1740,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "CODA",
         "year": 2022,
-        "genre": ["drama", "coming-of-age", "music", "family"],
-        "box_office": 19000000
+        "genre": [
+          "drama",
+          "coming-of-age",
+          "music",
+          "family"
+        ],
+        "box_office": 19000000,
+        "image_path": "public/cofanetto/coda.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1623,7 +1785,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "none",
@@ -1642,13 +1806,19 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Baby Driver",
         "year": 2017,
-        "genre": ["action", "crime", "romance", "drama", "thriller"],
-        "box_office": 226945087
+        "genre": [
+          "action",
+          "crime",
+          "romance",
+          "drama",
+          "thriller"
+        ],
+        "box_office": 226945087,
+        "image_path": "public/cofanetto/babyDriver.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1701,13 +1871,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "House of Gucci",
         "year": 2021,
-        "genre": ["drama", "crime", "biography"],
-        "box_office": 153300000
+        "genre": [
+          "drama",
+          "crime",
+          "biography"
+        ],
+        "box_office": 153300000,
+        "image_path": "public/cofanetto/houseofgucci.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1741,7 +1915,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1760,14 +1936,17 @@
         }
       }
     },
-
-
     {
       "film_info": {
         "film_name": "Inception",
         "year": 2010,
-        "genre": ["sci-fi", "thriller", "action"],
-        "box_office": 839000000
+        "genre": [
+          "sci-fi",
+          "thriller",
+          "action"
+        ],
+        "box_office": 839000000,
+        "image_path": "public/cofanetto/inception.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1801,7 +1980,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["damn"]
+          "most_used_swear_word": [
+            "damn"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -1820,13 +2001,16 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Ferrari",
         "year": 2023,
-        "genre": ["drama", "biography"],
-        "box_office": 41900000
+        "genre": [
+          "drama",
+          "biography"
+        ],
+        "box_office": 41900000,
+        "image_path": "public/cofanetto/ferrari.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1875,13 +2059,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Her",
         "year": 2013,
-        "genre": ["sci-fi", "romance", "drama"],
-        "box_office": 48700000
+        "genre": [
+          "sci-fi",
+          "romance",
+          "drama"
+        ],
+        "box_office": 48700000,
+        "image_path": "public/cofanetto/her.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1915,7 +2103,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1934,13 +2124,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Kill Bill: Vol. 1",
         "year": 2003,
-        "genre": ["action", "thriller", "drama", "martial arts"],
-        "box_office": 180949045
+        "genre": [
+          "action",
+          "thriller",
+          "drama",
+          "martial arts"
+        ],
+        "box_office": 180949045,
+        "image_path": "public/cofanetto/killbill1.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -1974,11 +2169,15 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
-          "tragic_past_reason": ["She was betrayed by her assassination team and put into a coma on her wedding day, losing her child and nearly her life."]
+          "tragic_past_reason": [
+            "She was betrayed by her assassination team and put into a coma on her wedding day, losing her child and nearly her life."
+          ]
         },
         "socioeconomic": {
           "income_level": "unknown",
@@ -1991,13 +2190,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Kill Bill: Vol. 2",
         "year": 2004,
-        "genre": ["action", "drama", "thriller", "martial arts"],
-        "box_office": 152159461
+        "genre": [
+          "action",
+          "drama",
+          "thriller",
+          "martial arts"
+        ],
+        "box_office": 152159461,
+        "image_path": "public/cofanetto/killbill2.png"
       },
       "character_analysis": {
         "metadata": {
@@ -2031,11 +2235,15 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
-          "tragic_past_reason": ["Beatrix was betrayed by her former lover and mentor, shot in the head while pregnant, and left in a coma, all of which catalyze her transformation."]
+          "tragic_past_reason": [
+            "Beatrix was betrayed by her former lover and mentor, shot in the head while pregnant, and left in a coma, all of which catalyze her transformation."
+          ]
         },
         "socioeconomic": {
           "income_level": "unknown",
@@ -2048,13 +2256,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "American Hustle",
         "year": 2013,
-        "genre": ["drama", "crime", "comedy"],
-        "box_office": 251200000
+        "genre": [
+          "drama",
+          "crime",
+          "comedy"
+        ],
+        "box_office": 251200000,
+        "image_path": "public/cofanetto/AmericanHustle.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2088,7 +2300,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -2107,13 +2321,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Conclave",
         "year": 2024,
-        "genre": ["drama", "mystery", "thriller"],
-        "box_office": 9730000
+        "genre": [
+          "drama",
+          "mystery",
+          "thriller"
+        ],
+        "box_office": 9730000,
+        "image_path": "public/cofanetto/conclave.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2147,7 +2365,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "never",
-          "most_used_swear_word": ["none"]
+          "most_used_swear_word": [
+            "none"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -2166,13 +2386,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Don't Look Up",
         "year": 2021,
-        "genre": ["drama", "comedy", "sci-fi"],
-        "box_office": 79170000
+        "genre": [
+          "drama",
+          "comedy",
+          "sci-fi"
+        ],
+        "box_office": 79170000,
+        "image_path": "public/cofanetto/dontlookup.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2206,7 +2430,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "none",
@@ -2223,13 +2449,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Drive",
         "year": 2011,
-        "genre": ["action", "crime", "drama", "thriller"],
-        "box_office": 81000000
+        "genre": [
+          "action",
+          "crime",
+          "drama",
+          "thriller"
+        ],
+        "box_office": 81000000,
+        "image_path": "public/cofanetto/drive.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2282,13 +2513,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Dunkirk",
         "year": 2017,
-        "genre": ["war", "drama", "thriller"],
-        "box_office": 527000000
+        "genre": [
+          "war",
+          "drama",
+          "thriller"
+        ],
+        "box_office": 527000000,
+        "image_path": "public/cofanetto/dunkirk.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2341,13 +2576,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Focus",
         "year": 2015,
-        "genre": ["crime", "comedy", "romance", "drama"],
-        "box_office": 158800000
+        "genre": [
+          "crime",
+          "comedy",
+          "romance",
+          "drama"
+        ],
+        "box_office": 158800000,
+        "image_path": "public/cofanetto/focus.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2381,7 +2621,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -2400,13 +2642,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Gladiator 2",
         "year": 2024,
-        "genre": ["drama", "action", "historical", "thriller"],
-        "box_office": "462180717"
+        "genre": [
+          "drama",
+          "action",
+          "historical",
+          "thriller"
+        ],
+        "box_office": "462180717",
+        "image_path": "public/cofanetto/gladiator2.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2459,13 +2706,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Girl with a Pearl Earring",
         "year": 2003,
-        "genre": ["drama", "romance", "biography"],
-        "box_office": 33030115
+        "genre": [
+          "drama",
+          "romance",
+          "biography"
+        ],
+        "box_office": 33030115,
+        "image_path": "public/cofanetto/girlwiththepearlearring.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2514,13 +2765,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Ford v Ferrari",
         "year": 2019,
-        "genre": ["drama", "biography", "sport"],
-        "box_office": 225500000
+        "genre": [
+          "drama",
+          "biography",
+          "sport"
+        ],
+        "box_office": 225500000,
+        "image_path": "public/cofanetto/fordvferrari.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2554,7 +2809,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["bloody"]
+          "most_used_swear_word": [
+            "bloody"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -2573,57 +2830,94 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Maestro",
         "year": 2023,
-        "genre": ["drama", "romance", "biopic"],
-        "box_office": 14000000
+        "genre": [
+          "drama",
+          "romance",
+          "biopic"
+        ],
+        "box_office": 14000000,
+        "image_path": "public/cofanetto/maestro.jpg"
       },
       "character_analysis": {
         "metadata": {
           "character_name": "Leonard Bernstein"
         },
         "demographics": {
-          "gender": ["male"],
-          "age_range": ["adult", "senior"],
-          "ethnicity": ["white"]
+          "gender": [
+            "male"
+          ],
+          "age_range": [
+            "adult",
+            "senior"
+          ],
+          "ethnicity": [
+            "white"
+          ]
         },
         "personality_traits": {
-          "introvert_extrovert": ["ambivert"],
+          "introvert_extrovert": [
+            "ambivert"
+          ],
           "biggest_fear": {
-            "category": ["failure"],
+            "category": [
+              "failure"
+            ],
             "reason_specific_description": "He fears not living up to his artistic potential and being seen as a lightweight in serious music, which haunts him throughout his life."
           },
           "biggest_strength": {
-            "category": ["charisma"],
+            "category": [
+              "charisma"
+            ],
             "reason_specific_description": "His charisma wins over orchestras, audiences, and friends—he electrifies Carnegie Hall during his unexpected debut."
           },
           "moral_ambiguity": {
-            "betrays_others": ["yes"],
+            "betrays_others": [
+              "yes"
+            ],
             "reason_betrays_others": "He emotionally betrays his wife Felicia through affairs and secrecy, even though they remain close companions."
           }
         },
         "relationships_family": {
-          "parental_status": ["parent"],
-          "siblings_status": ["siblings"]
+          "parental_status": [
+            "parent"
+          ],
+          "siblings_status": [
+            "siblings"
+          ]
         },
         "dialogue_analysis": {
-          "swear_frequency": ["occasional"],
-          "most_used_swear_word": ["fuck"]
+          "swear_frequency": [
+            "occasional"
+          ],
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
-          "tragic_past": ["implied"],
-          "tragic_past_reason": ["He struggles with balancing his private desires and public persona in a less accepting time, leading to internal conflict and sorrow."]
+          "tragic_past": [
+            "implied"
+          ],
+          "tragic_past_reason": [
+            "He struggles with balancing his private desires and public persona in a less accepting time, leading to internal conflict and sorrow."
+          ]
         },
         "socioeconomic": {
-          "income_level": ["rich"],
+          "income_level": [
+            "rich"
+          ],
           "occupation": "Composer, conductor, and teacher"
         },
         "narrative_arc": {
-          "goal_achievement": ["partially"],
-          "success_metrics": ["partially"],
+          "goal_achievement": [
+            "partially"
+          ],
+          "success_metrics": [
+            "partially"
+          ],
           "primary_goal": "To become a respected composer and conductor while maintaining love and family stability"
         }
       }
@@ -2632,8 +2926,13 @@
       "film_info": {
         "film_name": "Moneyball",
         "year": 2011,
-        "genre": ["drama", "biography", "sport"],
-        "box_office": 110200000
+        "genre": [
+          "drama",
+          "biography",
+          "sport"
+        ],
+        "box_office": 110200000,
+        "image_path": "public/cofanetto/moneyball.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2667,7 +2966,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["shit"]
+          "most_used_swear_word": [
+            "shit"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -2686,13 +2987,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Memoirs of a Geisha",
         "year": 2005,
-        "genre": ["drama", "romance", "historical"],
-        "box_office": 162200000
+        "genre": [
+          "drama",
+          "romance",
+          "historical"
+        ],
+        "box_office": 162200000,
+        "image_path": "public/cofanetto/memoirsofageisha.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2700,7 +3005,7 @@
         },
         "demographics": {
           "gender": "female",
-          "age_range": "child"  ,
+          "age_range": "child",
           "ethnicity": "asian"
         },
         "personality_traits": {
@@ -2745,13 +3050,18 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Midnight in Paris",
         "year": 2011,
-        "genre": ["fantasy", "romance", "comedy", "drama"],
-        "box_office": 154000000
+        "genre": [
+          "fantasy",
+          "romance",
+          "comedy",
+          "drama"
+        ],
+        "box_office": 154000000,
+        "image_path": "public/cofanetto/midnightinparis.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2785,7 +3095,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["hell"]
+          "most_used_swear_word": [
+            "hell"
+          ]
         },
         "background_history": {
           "tragic_past": "none",
@@ -2804,13 +3116,16 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Mank",
         "year": 2020,
-        "genre": ["drama", "biography"],
-        "box_office": 12200000
+        "genre": [
+          "drama",
+          "biography"
+        ],
+        "box_office": 12200000,
+        "image_path": "public/cofanetto/mank.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2844,7 +3159,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "occasional",
-          "most_used_swear_word": ["goddamn"]
+          "most_used_swear_word": [
+            "goddamn"
+          ]
         },
         "background_history": {
           "tragic_past": "implied",
@@ -2863,13 +3180,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "Oppenheimer",
         "year": 2023,
-        "genre": ["drama", "biography", "historical"],
-        "box_office": 976000000
+        "genre": [
+          "drama",
+          "biography",
+          "historical"
+        ],
+        "box_office": 976000000,
+        "image_path": "public/cofanetto/Oppenheimer.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2904,7 +3225,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["fuck"]
+          "most_used_swear_word": [
+            "fuck"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -2924,13 +3247,17 @@
         }
       }
     },
-
     {
       "film_info": {
         "film_name": "The Brutalist",
         "year": 2023,
-        "genre": ["drama", "historical", "biography"],
-        "box_office": "50300000"
+        "genre": [
+          "drama",
+          "historical",
+          "biography"
+        ],
+        "box_office": "50300000",
+        "image_path": "public/cofanetto/the brutalist.jpg"
       },
       "character_analysis": {
         "metadata": {
@@ -2965,7 +3292,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["goddamn"]
+          "most_used_swear_word": [
+            "goddamn"
+          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -2984,67 +3313,390 @@
           "primary_goal": "To rebuild a meaningful life in America, restore his professional identity as an architect, and reunite with his wife and niece while maintaining personal dignity in the face of social and economic alienation."
         }
       }
+    },
+    {
+      "film_info": {
+        "film_name": "Arrival",
+        "year": 2016,
+        "genre": [
+          "sci-fi",
+          "drama",
+          "mystery"
+        ],
+        "box_office": 203400000,
+        "image_path": "public/cofanetto/Arrival.jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Dr. Louise Banks"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "She fears the loss of her daughter, which is both a literal event and a philosophical burden once she understands time non-linearly. Knowing the pain of losing a child, she still chooses to live through it."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Her deep understanding of linguistics and her calm approach under pressure allow her to decode the alien language, forming the basis of peaceful communication between species."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Although she keeps the full extent of what she knows to herself, especially her knowledge of the future, she acts out of compassion and clarity, not manipulation or betrayal."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": [
+            "none"
+          ]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Her daughter dies young from a rare illness. The tragedy is presented at the beginning and recontextualized at the end, once we understand the timeline as non-linear."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "linguist / university professor"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To communicate with the alien species and prevent global conflict, while coming to terms with the future loss of her daughter and choosing to live that life anyway."
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "Asteroid City",
+        "year": 2023,
+        "genre": [
+          "drama",
+          "comedy",
+          "sci-fi"
+        ],
+        "box_office": 54000000,
+        "image_path": "public/cofanetto/Asteroid City .jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Augie Steenbeck"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "Augie fears confronting the emotional pain of his wife's death, leading him to delay informing his children and suppress his grief."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite his emotional turmoil, Augie remains committed to his children and seeks connection, notably with Midge, reflecting his resilience."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Augie does not betray others; he struggles internally with grief but maintains his responsibilities and relationships."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": [
+            "none"
+          ]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "The recent death of his wife profoundly affects Augie, influencing his emotional state and interactions."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "war photographer"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To navigate his grief and reconnect emotionally with his children while finding personal meaning amid existential uncertainties."
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "Barbie",
+        "year": 2023,
+        "genre": [
+          "fantasy",
+          "comedy",
+          "drama"
+        ],
+        "box_office": 1445000000,
+        "image_path": "public/cofanetto/Barbie.jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Barbie"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Barbie fears becoming irrelevant and alone. Her existential crisis begins with thoughts of death and feelings of imperfection, triggered by a weakening link with the girl in the Real World who is playing with her. She fears losing her identity and place in the world."
+          },
+          "biggest_strength": {
+            "category": "empathy",
+            "reason_specific_description": "Despite her crisis, Barbie is open to growth and connection. She forms deep empathy for the girl and her mother in the Real World, and later expresses genuine awe and emotion for human experiences. Her transformation stems from her growing emotional awareness."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Barbie does not betray anyone. She seeks understanding and truth, even when it challenges her worldview. Her journey is one of self-discovery, not manipulation."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": [
+            "goddammit"
+          ]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": [
+            "Barbie does not have a traditional tragic past but experiences an existential unraveling—feelings of death, shame, and emotional depth that disrupt her idyllic plastic life and force her to confront the human condition."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "representation of feminine ideals / existential seeker"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To understand the meaning of her existence, bridge the divide between Barbie Land and the Real World, and ultimately evolve from an idealized concept into a real, feeling human being."
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "Blade Runner 2049",
+        "year": 2017,
+        "genre": [
+          "sci-fi",
+          "drama",
+          "thriller"
+        ],
+        "box_office": 267000000,
+        "image_path": "public/cofanetto/Blade Runner 2049 .jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Officer K"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "identity_loss",
+            "reason_specific_description": "K fears that his life is entirely artificial and meaningless, driven by implanted memories and obedience. As a replicant, he initially accepts his status, but later wrestles with the terrifying hope and doubt that he might be something more—a 'real' person with a soul."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "K shows relentless resolve in uncovering the mystery of the replicant child. Despite pressure from the LAPD and Wallace Corp, and with his own identity unraveling, he continues to search for truth and ultimately makes a sacrifice to preserve it."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "K does not betray others. He is manipulated and used by his superiors, but once he realizes their intentions are harmful, he acts independently to protect Deckard and preserve the secret of the replicant child."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": [
+            "fuck"
+          ]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "K's memories are implants, but one stands out—a wooden horse and a traumatic experience hiding it from bullies. Later, he discovers that this memory may be real, causing him to believe he is the child born of a replicant. This belief collapses when he realizes the memory belongs to someone else."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "working_class",
+          "occupation": "blade runner / LAPD replicant officer"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To find meaning in his existence by discovering the truth about the replicant child. Although he learns he is not the child, he finds purpose in ensuring Deckard meets his daughter, suggesting a choice to act with humanity despite being artificial."
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "Dune",
+        "year": 2021,
+        "genre": [
+          "sci-fi",
+          "drama",
+          "action"
+        ],
+        "box_office": 402000000,
+        "image_path": "public/cofanetto/Dune.jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Paul Atreides"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "power_loss",
+            "reason_specific_description": "Paul fears being consumed by the power and destiny imposed upon him — particularly the Bene Gesserit prophecy and his potential role as the Kwisatz Haderach. His growing prescient visions, combined with others' expectations, create existential dread about losing his autonomy to a future he cannot control."
+          },
+          "biggest_strength": {
+            "category": "intelligence",
+            "reason_specific_description": "Paul demonstrates early mastery in combat, politics, and mental discipline. His training under the Bene Gesserit, along with his sharp perception and strategic thinking, enables him to resist the gom jabbar test, interpret dreams with prophetic significance, and grasp the complex socio-political environment of Arrakis."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": []
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "only_child"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": []
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "Paul experiences deep psychological conflict as his identity is pulled between human and myth. While not rooted in trauma from childhood, the script implies the emotional burden of grooming him for political and prophetic roles since youth."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "noble heir"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To understand and survive his role in the political and prophetic upheaval surrounding Arrakis, and to reconcile his personal agency with the mythic expectations placed upon him."
+        }
+      }
+    },
+    {
+      "film_info": {
+        "film_name": "John Wick: Chapter 4",
+        "year": 2023,
+        "genre": [
+          "action",
+          "thriller",
+          "crime"
+        ],
+        "box_office": 432200000,
+        "image_path": "public/cofanetto/John Wick Chapter 4.jpg"
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "John Wick"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "John Wick is haunted by the memory of his late wife, Helen. Her death—and the peace she represented—continues to drive his actions. Despite his violent life, what he fears most is losing the last remnants of that love and the meaning it gave his life. This is evident in his quiet grief and refusal to stop until he finds closure, or death."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "John is relentless and unwavering. Whether surviving assassins, seeking vengeance, or attempting to earn his freedom from the High Table, his resolve never wavers. His combat stamina, refusal to surrender, and tactical brilliance all showcase this strength throughout the film."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": []
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": [
+            "fuck"
+          ]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "The death of John’s wife Helen, followed by the violent loss of the dog she gifted him, set off the events that pulled him back into the underworld he tried to leave. His past as a legendary assassin weighs heavily on him, making him both feared and emotionally tormented."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "unknown",
+          "occupation": "assassin (retired and reinstated)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To find freedom and peace by confronting the High Table’s absolute control, while avenging betrayals and seeking meaning through a brutal final journey of vengeance and personal reckoning."
+        }
+      }
     }
-    
-    
-
-
-    
-
-
-    
-    
-
-    
-
-
-
-
-
-
-    
-
-
-    
-
-
-    
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-    
-
-
-    
-    
-    
-
-
-    
-
-
-    
-
-
-    
-    
-
-    
-    
   ]
 }
-
