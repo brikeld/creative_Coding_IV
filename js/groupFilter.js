@@ -12,6 +12,16 @@ const GroupFilter = (function() {
         // CLEAN UP any existing group labels first
         document.querySelectorAll('.group-label').forEach(label => label.remove());
         
+        // Remove any existing floating animations
+        document.querySelectorAll('.parallelepiped.group-float').forEach(el => {
+            el.classList.remove('group-float');
+            el.style.removeProperty('--float-duration');
+            el.style.removeProperty('--float-delay');
+            el.style.removeProperty('--translate-end');
+            el.style.removeProperty('--rotate-z-end');
+            el.style.removeProperty('--rotate-start');
+        });
+        
         // CAPTURE ORIGINAL POSITIONS FIRST - before any manipulation
         const originalShelfPositions = Array.from(shelfContainers).map((container, index) => {
             const rect = container.getBoundingClientRect();
@@ -50,6 +60,11 @@ const GroupFilter = (function() {
         
         // Animate items (no shelf resizing interference)
         animateItemsToPositions(allElements);
+        
+        // Apply floating animation to highest earning group
+        setTimeout(() => {
+            applyFloatingAnimation(groupElementsMap, sortedGroupKeys);
+        }, 100);
     }
     
     function consolidateGroups(groups, groupKeys, maxGroups) {
@@ -366,6 +381,28 @@ const GroupFilter = (function() {
                 }, 100);
                 AnimationUtils.addTimeout(timeout);
             }
+        });
+    }
+    
+    function applyFloatingAnimation(groupElementsMap, sortedGroupKeys) {
+        const highestEarningGroup = sortedGroupKeys[0];
+        const highestEarningElements = groupElementsMap[highestEarningGroup];
+        
+        highestEarningElements.forEach((el, index) => {
+            el.classList.add('group-float');
+            
+            // Minimal variation - just subtle floating
+            const duration = 2.5 + Math.random() * 1; // 2.5s to 3.5s (slower)
+            const delay = Math.random() * 0.3; // 0s to 0.3s delay
+            const translateEnd = -1 - Math.random() * 2; // -1px to -3px (minimal up/down)
+            const rotateZEnd = -1 + Math.random() * 2; // -1deg to 1deg (tiny left/right)
+            const rotateStart = -0.5 + Math.random() * 1; // -0.5deg to 0.5deg
+            
+            el.style.setProperty('--float-duration', `${duration}s`);
+            el.style.setProperty('--float-delay', `${delay}s`);
+            el.style.setProperty('--translate-end', `${translateEnd}px`);
+            el.style.setProperty('--rotate-z-end', `${rotateZEnd}deg`);
+            el.style.setProperty('--rotate-start', `${rotateStart}deg`);
         });
     }
     

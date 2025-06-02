@@ -102,6 +102,15 @@ const ShelfManager = (function() {
             element.classList.remove('matching', 'non-matching');
             element.className = element.className.replace(/group-\d+/g, '');
             element.classList.remove('group-grayscale');
+            element.classList.remove('group-float');
+            
+            // Clean up CSS custom properties
+            element.style.removeProperty('--float-duration');
+            element.style.removeProperty('--float-delay');
+            element.style.removeProperty('--translate-end');
+            element.style.removeProperty('--rotate-z-end');
+            element.style.removeProperty('--rotate-start');
+            
             delete element.dataset.groupKey;
             element.style.transform = window.DEFAULT_TRANSFORM;
             

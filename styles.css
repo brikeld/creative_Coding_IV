@@ -114,25 +114,17 @@ body {
 
 @keyframes float {
     0% { 
-        transform: rotateX(-44deg) rotateY(0deg) translateY(0px); 
+        transform: rotateX(-44deg) rotateY(0deg) translateY(0px) rotateZ(var(--rotate-start, 0deg)); 
     }
     100% { 
-        transform: rotateX(-50deg) rotateY(5deg) translateY(-5px); 
+        transform: rotateX(-44deg) rotateY(0deg) translateY(var(--translate-end, -2px)) rotateZ(var(--rotate-z-end, 0deg)); 
     }
 }
 
-@keyframes pulse {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
-}
-
-@keyframes textureGlow {
-    0% { opacity: 0.35; }
-    100% { opacity: 0.45; }
-}
-
-.parallelepiped:hover {
-    animation: float 2s ease-in-out infinite alternate;
+/* Infinite floating animation for highest earning group */
+.parallelepiped.group-float {
+    animation: float var(--float-duration, 2s) ease-in-out infinite alternate;
+    animation-delay: var(--float-delay, 0s);
 }
 
 .texture-wrapper {
@@ -310,9 +302,18 @@ body {
 .edge {
     position: absolute;
     background: rgba(255, 255, 255, 0.16);
+    z-index: 4;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* White glow only for highest earning group */
+.parallelepiped.group-0 .edge {
     box-shadow: 0 0 8px rgb(255, 255, 255);
     animation: pulse 1s infinite alternate;
-    z-index: 4;
 }
 
 .edge-front-top { 
