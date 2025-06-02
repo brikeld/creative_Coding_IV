@@ -47,8 +47,8 @@ const Animations = (function() {
     // Shelf item capacity
     const capacity = {
         get itemsPerShelf() {
-            // Return 10 for initial screen, 6 for filtering
-            return FilmData.getActiveFilter() ? 6 : 10;
+            // Return 9 for both initial screen and filtering
+            return 9;
         }
     };
     

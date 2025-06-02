@@ -208,7 +208,7 @@ const GroupFilter = (function() {
         console.log('📍 positionGroupsInColumns called with', groupPositions.length, 'groups');
         
         // Better spacing - separate intra-group and inter-group spacing
-        const columnWidth = 550; // Slightly increased for better spacing
+        const columnWidth = 750; // Slightly increased for better spacing
         const shelfHeight = 135; // For inter-group spacing (between different groups)
         const intraGroupShelfHeight = 100; // For intra-group spacing (shelves within same group)
         const startX = 10;
