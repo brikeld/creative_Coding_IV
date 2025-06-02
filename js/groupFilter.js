@@ -378,6 +378,7 @@ const GroupFilter = (function() {
             onComplete: () => {
                 const timeout = setTimeout(() => {
                     AnimationUtils.resetAnimationState();
+                    EmptySpaceDetector.detectAndPlaceText();
                 }, 100);
                 AnimationUtils.addTimeout(timeout);
             }

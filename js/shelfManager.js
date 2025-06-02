@@ -137,6 +137,7 @@ const ShelfManager = (function() {
             if (animationsComplete >= 2) {
                 const timeout = setTimeout(() => {
                     AnimationUtils.resetAnimationState();
+                    EmptySpaceDetector.detectAndPlaceText();
                 }, 100);
                 AnimationUtils.addTimeout(timeout);
             }

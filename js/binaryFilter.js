@@ -58,6 +58,7 @@ const BinaryFilter = (function() {
                 ShelfManager.resizeShelvesBasedOnContent(true);
                 const timeout = setTimeout(() => {
                     AnimationUtils.resetAnimationState();
+                    EmptySpaceDetector.detectAndPlaceText();
                 }, 100);
                 AnimationUtils.addTimeout(timeout);
             }

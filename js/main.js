@@ -155,9 +155,10 @@ function createFilterUI() {
     resetBtn.textContent = 'Reset Filters';
     resetBtn.id = 'reset_filters';
     resetBtn.addEventListener('click', () => {
+        EmptySpaceDetector.clearText(); // Clear immediately
         FilmData.clearFilter();
         resetFilterUI();
-        FilterEffects.resetShelves();
+        FilterEffects.resetShelves();   
     });
     filterContainer.appendChild(resetBtn);
     
@@ -169,7 +170,7 @@ function createFilterUI() {
         'personality_traits.introvert_extrovert',
         'personality_traits.biggest_strength.category',
         'personality_traits.biggest_fear.category',
-        'moral_ambiguity.betrays_others',
+        'personality_traits.moral_ambiguity.betrays_others',
         'background_history.tragic_past',
         'socioeconomic.income_level',
         'narrative_arc.goal_achievement',
@@ -211,6 +212,8 @@ function createFilterUI() {
         btn.id = buttonId;
         
         btn.addEventListener('click', (e) => {
+            EmptySpaceDetector.clearText(); // Clear immediately
+            
             // Deactivate all buttons
             document.querySelectorAll('.filter-button').forEach(b => {
                 b.classList.remove('active');

@@ -210,7 +210,7 @@ const FilmData = (function() {
             'personality_traits.biggest_fear.category': [
                 'death', 'failure', 'loneliness', 'betrayal', 'love_loss', 'poverty', 'power_loss'
             ],
-            'moral_ambiguity.betrays_others': ['yes', 'no', 'unknown'],
+            'personality_traits.moral_ambiguity.betrays_others': ['yes', 'no', 'unknown'],
             'relationships_family.parental_status': ['parent', 'not_parent', 'lost_child', 'unknown'],
             'relationships_family.siblings_status': ['only_child', 'siblings', 'orphan', 'unknown'],
             'dialogue_analysis.swear_frequency': ['never', 'rare', 'occasional', 'frequent', 'excessive'],
