@@ -37,9 +37,9 @@ body {
 
 .shelf-container {
   position: relative;
-  height: 50px; 
+  height: 20px; 
   margin: 14px auto; 
-  width: 560px; 
+  width: 700px; 
   transform-style: preserve-3d;
   transform-origin: center center;
   transition: transform 0.5s ease, width 0.5s ease, x 0.8s ease;
@@ -60,18 +60,18 @@ body {
   border-radius: 6px; /* Reduced from 8px */
   background: linear-gradient(180deg, #fff 70%, #bbb 30%);
   box-shadow: 0 5px 16px 2px rgba(185, 185, 185, 0.536), 0 2px 6px 0 #000b, 0 1px 0 0 #fff8 inset; /* Reduced shadow */
-  transform: rotateX(25deg);
+  transform: translateX(-10px);
   transition: width 0.5s ease, transform 0.5s ease;
 }
 
 .shelf-items {  
   position: absolute;  
-  width: 100%;  
-  top: -75px; /* Adjusted from -110px to account for smaller height */  
+  width: 95%;  
+  top: -75px; 
   display: flex;  
   justify-content: center;  /* Changed from flex-start to center for better centering */
   align-items: flex-start;  
-  gap: 15px; /* Reduced from 20px to fit 10 items */  
+  gap: 10px;
   transform-style: preserve-3d;  
   transform: rotateX(25deg);  
   overflow-x: visible;  

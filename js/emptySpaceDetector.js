@@ -7,7 +7,7 @@ const EmptySpaceDetector = (function() {
     let detectionTimeout = null;
     
     function detectAndPlaceText() {
-        // return;
+        return;
         
         // Clear any pending detection
         if (detectionTimeout) {
