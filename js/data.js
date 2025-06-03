@@ -102,7 +102,14 @@ const FilmData = (function() {
             'Blade Runner 2049': '/cofanetto/Blade Runner 2049 .jpg',
             'Dune': '/cofanetto/Dune.jpg',
             'John Wick: Chapter 4': '/cofanetto/John Wick Chapter 4.jpg',
-            'Avatar': '/cofanetto/Avatar.jpg'
+            'Avatar': '/cofanetto/Avatar.jpg',
+            'Sicario': '/cofanetto/sicario.jpg',
+            'The Danish Girl': '/cofanetto/The Danish Girl.jpg',
+            'The Devil Wears Prada': '/cofanetto/the devil wears prada.jpg',
+            'The Hunger Games: Catching Fire': '/cofanetto/The Hunger Games Catching Fire.jpg',
+            'The Killer': '/cofanetto/thekiller2023.jpg',
+            'Maria': '/cofanetto/maria.jpg'
+            
         };
         
         return imageMap[filmName] || '/cofanetto/default.jpg';

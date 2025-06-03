@@ -3697,6 +3697,378 @@
           "primary_goal": "To find freedom and peace by confronting the High Table’s absolute control, while avenging betrayals and seeking meaning through a brutal final journey of vengeance and personal reckoning."
         }
       }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The Killer",
+        "year": 2023,
+        "genre": ["thriller", "drama", "action"],
+        "box_office": 0
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "The Killer"
+        },
+        "demographics": {
+          "gender": "male",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "He constantly obsesses over maintaining control and precision, and deeply fears making a mistake. This is shown when he reflects intensely after botching a hit in Paris."
+          },
+          "biggest_strength": {
+            "category": "resourcefulness",
+            "reason_specific_description": "He is a meticulous planner who adapts quickly under pressure. His ability to infiltrate, surveil, and eliminate targets in various countries with minimal trace shows this strength."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "Though he sees himself as professional and without emotion, he eliminates even those who once helped him (like The Expert) to tie up loose ends and protect himself."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "His stoic detachment and discipline suggest a life shaped by trauma or isolation, but nothing explicit is revealed."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "contract killer"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To eliminate everyone responsible for the attack on his partner and restore control over his carefully managed life."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The Devil Wears Prada",
+        "year": 2006,
+        "genre": ["drama", "comedy"],
+        "box_office": 326700000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Andrea 'Andy' Sachs"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "ambivert",
+          "biggest_fear": {
+            "category": "failure",
+            "reason_specific_description": "She fears failing to make something meaningful of her career, which is why she endures the difficult job at Runway to open doors for herself as a journalist."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite being out of her element in the fashion world, Andy quickly adapts, evolves, and excels—earning Miranda Priestly’s respect through hard work and commitment."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "yes",
+            "reason_betrays_others": [
+              "She prioritizes her career advancement over her relationships, especially with her boyfriend Nate and best friend Lily, but later realizes this and tries to repair the damage."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["damn"]
+        },
+        "background_history": {
+          "tragic_past": "none",
+          "tragic_past_reason": ["There is no mention of trauma or tragedy in her background; she comes from a supportive middle-class family and recently graduated college."]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "journalist / fashion magazine assistant"
+        },
+        "narrative_arc": {
+          "goal_achievement": "fully",
+          "success_metrics": "fully",
+          "primary_goal": "To grow professionally and prove herself as a journalist, while navigating the ethical compromises of career ambition."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The Hunger Games: Catching Fire",
+        "year": 2013,
+        "genre": ["action", "drama", "sci-fi"],
+        "box_office": 865000000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Katniss Everdeen"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "love_loss",
+            "reason_specific_description": "She constantly fears for the safety of her loved ones—especially Prim and her mother—as President Snow uses them as leverage to manipulate her into compliance."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Katniss repeatedly risks her life for others, from volunteering in place of her sister to becoming a symbol of resistance against the Capitol's tyranny."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "While she keeps secrets for the rebellion, she never betrays allies or acts selfishly; she is motivated by protection and survival, not manipulation."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["none"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Her father died in a mining accident, forcing her to become the provider for her family from a young age, shaping her resilience and emotional guardedness."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "poor",
+          "occupation": "hunter / rebel / Hunger Games victor"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To protect her family and survive the political manipulation of the Capitol, while becoming a reluctant symbol of rebellion."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Sicario",
+        "year": 2015,
+        "genre": ["crime", "drama", "thriller", "action"],
+        "box_office": 84900000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Kate Macer"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "power_loss",
+            "reason_specific_description": "Kate fears losing control and being used as a pawn in operations she doesn't understand. Her frustration builds as she is repeatedly kept in the dark and manipulated by the task force she joins, leading her to question her values and authority."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Kate consistently demonstrates moral and physical courage. From leading an FBI raid that uncovers mass graves to surviving a deadly convoy shootout, she continues to stand for law and order despite overwhelming corruption and violence."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Kate tries to uphold legal standards even as those around her resort to unethical means. Though tempted and tested, she never crosses the line of betrayal and remains committed to doing what is right, even if it isolates her."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "occasional",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "implied",
+          "tragic_past_reason": [
+            "While her past is not detailed, her hardened demeanor, divorce, and total immersion in work suggest past emotional wounds and personal sacrifices tied to her commitment to justice and law enforcement."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "FBI agent (kidnapping response team)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "not_at_all",
+          "success_metrics": "not_at_all",
+          "primary_goal": "To dismantle cartel operations legally and uphold justice, only to discover she is being used to legitimize covert operations that break the law and moral boundaries, ultimately leaving her disillusioned."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "The Danish Girl",
+        "year": 2015,
+        "genre": ["drama", "biography", "romance"],
+        "box_office": 64400000
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Einar Wegener / Lili Elbe"
+        },
+        "demographics": {
+          "gender": "non-binary",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Einar fears never being fully seen or accepted as Lili. This is evident in how they seek Gerda's understanding, dread institutionalization, and feel conflicted around Henrik's affection and society's scrutiny."
+          },
+          "biggest_strength": {
+            "category": "courage",
+            "reason_specific_description": "Lili demonstrates immense bravery by embracing her identity in a time of extreme social stigma. From wearing women’s clothing publicly to undergoing experimental surgery, her commitment to becoming her true self is unwavering."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": []
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "unknown"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "never",
+          "most_used_swear_word": [""]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": "As a child, Einar was caught by his father kissing a boy (Hans) and was harshly punished, leading to deep internal repression. This experience foreshadowed the lifelong struggle with gender identity."
+        },
+        "socioeconomic": {
+          "income_level": "middle_class",
+          "occupation": "painter"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "partially",
+          "primary_goal": "To live authentically as Lili, fully embracing her gender identity, and undergoing physical transition to match her inner self despite the medical and social risks."
+        }
+      }
+    },
+
+    {
+      "film_info": {
+        "film_name": "Maria",
+        "year": 2024,
+        "genre": ["biography", "drama", "music"],
+        "box_office": 0
+      },
+      "character_analysis": {
+        "metadata": {
+          "character_name": "Maria Callas"
+        },
+        "demographics": {
+          "gender": "female",
+          "age_range": "adult",
+          "ethnicity": "white"
+        },
+        "personality_traits": {
+          "introvert_extrovert": "introvert",
+          "biggest_fear": {
+            "category": "loneliness",
+            "reason_specific_description": "Maria is haunted by solitude, fame's impermanence, and being forgotten. Her vivid memories and hallucinations reflect an intense fear of being alone without voice, purpose, or love."
+          },
+          "biggest_strength": {
+            "category": "determination",
+            "reason_specific_description": "Despite being isolated and physically declining, Maria remains fiercely independent. She resists intervention from others, and even with a fading voice and emotional instability, she remains committed to reclaiming her artistic identity on her terms."
+          },
+          "moral_ambiguity": {
+            "betrays_others": "no",
+            "reason_betrays_others": [
+              "Maria is loyal, especially to those close to her like Ferruccio and Bruna. She is self-destructive but not manipulative or deceptive toward others."
+            ]
+          }
+        },
+        "relationships_family": {
+          "parental_status": "not_parent",
+          "siblings_status": "siblings"
+        },
+        "dialogue_analysis": {
+          "swear_frequency": "rare",
+          "most_used_swear_word": ["fuck"]
+        },
+        "background_history": {
+          "tragic_past": "explicit",
+          "tragic_past_reason": [
+            "Maria recalls traumatic childhood memories, including performing degrading songs for Nazi soldiers under her mother's coercion. Her complex relationships with her sister and Onassis also reflect deep emotional scars."
+          ]
+        },
+        "socioeconomic": {
+          "income_level": "rich",
+          "occupation": "opera singer (retired)"
+        },
+        "narrative_arc": {
+          "goal_achievement": "partially",
+          "success_metrics": "ambiguous",
+          "primary_goal": "To reclaim her sense of self through voice and memory, confronting her past, artistry, and fading fame as she attempts to sing again despite emotional and physical decline."
+        }
+      }
     }
+    
+
+
+    
+    
+
+    
+    
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
   ]
 }
