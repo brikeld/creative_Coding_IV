@@ -33,7 +33,7 @@ function initFirebase() {
 
 
 // Default 3D transform that should be applied consistently to all parallelepipeds
-const DEFAULT_TRANSFORM = 'rotateX(-40deg) rotateY(0deg) ';
+const getBaseTransform = () => `rotateX(-40deg) rotateY(0deg) `;
 
 function initMainApp() {
     // Initialize the bookshelf first
@@ -69,8 +69,8 @@ function initMainApp() {
             films.forEach((film) => {
                 const element = Parallelepiped.create(film);
                 
-                // Explicitly set the initial transform to match our default
-                element.style.transform = DEFAULT_TRANSFORM;
+                // Set the base transform (Y rotation handled by CSS animation)
+                element.style.transform = getBaseTransform();
                 
                 elements.push(element);
                 FilmData.elements[film.id] = element;
@@ -82,8 +82,8 @@ function initMainApp() {
             // Force a slight delay to ensure all elements have their correct transforms
             setTimeout(() => {
                 Object.values(FilmData.elements).forEach(element => {
-                    // Reapply the transform after a short delay to ensure consistency
-                    element.style.transform = DEFAULT_TRANSFORM;
+                    // Apply base transform (Y rotation handled by CSS animation)
+                    element.style.transform = getBaseTransform();
                 });
             }, 100);
             
@@ -117,8 +117,8 @@ function initMainApp() {
                 return buttonInfo;
             };
             
-            // Make the transform constant globally available
-            window.DEFAULT_TRANSFORM = DEFAULT_TRANSFORM;
+            // Make the transform function globally available
+            window.DEFAULT_TRANSFORM = getBaseTransform;
             
             // Setup filter controls
             createFilterUI();

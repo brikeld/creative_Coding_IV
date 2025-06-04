@@ -147,6 +147,12 @@ const GroupFilter = (function() {
                     el.classList.add('group-0');
                 } else {
                     el.classList.add('group-grayscale');
+                    // Reset transform for grayscale elements to ensure clean state
+                    el.style.transform = 'rotateX(-40deg) rotateY(0deg)';
+                    // Clear any GSAP transform properties
+                    gsap.set(el, { clearProps: "transform" });
+                    // Reapply our manual transform after GSAP clear
+                    el.style.transform = 'rotateX(-40deg) rotateY(0deg)';
                 }
                 el.dataset.groupKey = groupKey;
             });
@@ -166,10 +172,19 @@ const GroupFilter = (function() {
                 // Clear shelf first
                 shelf.innerHTML = '';
                 
-                // Add elements directly to shelf (bypass Bookshelf system)
+                // Add elements directly to shelf and apply progressive rotation for grayscale groups
                 for (let j = startIdx; j < endIdx; j++) {
                     if (groupElements[j]) {
                         shelf.appendChild(groupElements[j]);
+                        
+                        // Apply progressive rotation for grayscale groups
+                        if (!isHighestEarning) {
+                            const positionInShelf = j - startIdx;
+                            const baseRotation = 30;
+                            const increment = 1;
+                            const yRotation = baseRotation + (positionInShelf * increment);
+                            groupElements[j].style.transform = `rotateX(-40deg) rotateY(${yRotation}deg)`;
+                        }
                     }
                 }
                 
@@ -209,7 +224,7 @@ const GroupFilter = (function() {
     
     function setInitialAnimationPositions(allElements, startPositions, endPositions) {
         allElements.forEach((el, i) => {
-            el.style.transform = window.DEFAULT_TRANSFORM;
+            // Don't override CSS animation, just set GSAP positions
             const startPos = startPositions[i];
             const endPos = endPositions[i];
             const deltaX = startPos.left - endPos.left;

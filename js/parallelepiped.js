@@ -43,6 +43,13 @@ const Parallelepiped = (function() {
             parallelepiped.appendChild(face);
         });
         
+        // Apply random rotation animation properties
+        const randomDuration = 3 + Math.random() * 4; // 3s to 7s
+        const randomDelay = Math.random() * 2; // 0s to 2s delay
+        
+        parallelepiped.style.setProperty('--rotate-duration', `${randomDuration}s`);
+        parallelepiped.style.setProperty('--rotate-delay', `${randomDelay}s`);
+        
         // Create edges for better 3D effect - adjusted for smaller parallelepiped
         const edgeWidth = 47; // Width of the parallelepiped (reduced from 70)
         const edgeHeight = 73; // Height of the parallelepiped (reduced from 110)

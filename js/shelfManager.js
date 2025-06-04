@@ -112,7 +112,7 @@ const ShelfManager = (function() {
             element.style.removeProperty('--rotate-start');
             
             delete element.dataset.groupKey;
-            element.style.transform = window.DEFAULT_TRANSFORM;
+            // Don't override CSS animation during reset
             
             Bookshelf.addItem(element);
         });

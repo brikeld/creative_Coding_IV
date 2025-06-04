@@ -42,7 +42,7 @@ const BinaryFilter = (function() {
         
         // Set initial positions for animation
         allElements.forEach((el, i) => {
-            el.style.transform = window.DEFAULT_TRANSFORM;
+            // Don't override the CSS animation, just ensure base transform is applied
             const startPos = startPositions[i];
             const endPos = endPositions[i];
             const deltaX = startPos.left - endPos.left;

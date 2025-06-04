@@ -27,6 +27,7 @@ body {
   height: auto;
   align-items: center;
   padding: 10vh 0 90px;
+  margin-left: 15px;
   overflow-y: auto;
   transition: gap 0.5s cubic-bezier(0.4,0,0.2,1);
 }
@@ -104,7 +105,7 @@ body {
   width: 47px; /* Reduced from 70px (1/3 smaller) */
   height: 73px; /* Reduced from 110px (1/3 smaller) */
   transform-style: preserve-3d;
-  transform: rotateX(-44deg) rotateY(0deg);
+  transform: rotateX(-40deg) rotateY(0deg);
   transition: transform 0.5s ease-out;
   flex-shrink: 0;
   margin: 10px 10px 0; /* Reduced from 15px to fit smaller items */
@@ -112,19 +113,48 @@ body {
   will-change: transform;
 }
 
+/* Y rotation for all elements when NOT filtered */
+.bookshelf:not(.filtered) .parallelepiped {
+  animation: rotateY var(--rotate-duration, 4s) ease-in-out infinite;
+  animation-delay: var(--rotate-delay, 0s);
+}
+
+/* Y rotation only for highest earning group when filtered */
+.bookshelf.filtered .parallelepiped.group-0 {
+  animation: rotateY var(--rotate-duration, 4s) ease-in-out infinite;
+  animation-delay: var(--rotate-delay, 0s);
+}
+
+/* Disable Y rotation animation for grayscale groups when filtered */
+.bookshelf.filtered .parallelepiped.group-grayscale {
+  animation: none !important;
+}
+
 @keyframes float {
     0% { 
-        transform: rotateX(-44deg) rotateY(0deg) translateY(0px) rotateZ(var(--rotate-start, 0deg)); 
+        transform: rotateX(-40deg) rotateY(0deg) translateY(0px) rotateZ(var(--rotate-start, 0deg)); 
     }
     100% { 
-        transform: rotateX(-44deg) rotateY(0deg) translateY(var(--translate-end, -2px)) rotateZ(var(--rotate-z-end, 0deg)); 
+        transform: rotateX(-40deg) rotateY(0deg) translateY(var(--translate-end, -2px)) rotateZ(var(--rotate-z-end, 0deg)); 
+    }
+}
+
+@keyframes rotateY {
+    0% { 
+        transform: rotateX(-40deg) rotateY(-40deg); 
+    }
+    50% { 
+        transform: rotateX(-40deg) rotateY(40deg); 
+    }
+    100% { 
+        transform: rotateX(-40deg) rotateY(-40deg); 
     }
 }
 
 /* Infinite floating animation for highest earning group */
 .parallelepiped.group-float {
-    animation: float var(--float-duration, 2s) ease-in-out infinite alternate;
-    animation-delay: var(--float-delay, 0s);
+    animation: float var(--float-duration, 2s) ease-in-out infinite alternate, rotateY var(--rotate-duration, 4s) ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s), var(--rotate-delay, 0s);
 }
 
 .texture-wrapper {
@@ -211,7 +241,7 @@ body {
 
 .filter-category {
     font-weight: bold;
-    color: #fff;
+    /* color: #fff; */
     text-transform: uppercase;
     font-size: 0.7rem;
     margin: 3px 5px 1px 5px;
