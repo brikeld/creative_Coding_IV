@@ -7,7 +7,7 @@ const EmptySpaceDetector = (function() {
     let detectionTimeout = null;
     
     function detectAndPlaceText() {
-        return;
+        // return;
         
         // Clear any pending detection
         if (detectionTimeout) {
@@ -29,10 +29,7 @@ const EmptySpaceDetector = (function() {
         
         // Wait for animations to settle
         detectionTimeout = setTimeout(() => {
-            const emptyArea = findLargestEmptyArea();
-            if (emptyArea.width > 250 && emptyArea.height > 80) {
-                placeTextInArea(emptyArea);
-            }
+            placeTextInArea();
         }, 500);
     }
     
@@ -47,182 +44,167 @@ const EmptySpaceDetector = (function() {
         }
     }
     
-    function findLargestEmptyArea() {
-        const viewport = {
-            width: window.innerWidth,
-            height: window.innerHeight - 200
-        };
-        
-        // Get all visible shelf containers with larger buffer zones
-        const shelves = Array.from(document.querySelectorAll('.shelf-container'))
-            .filter(shelf => shelf.style.display !== 'none')
-            .map(shelf => {
-                const rect = shelf.getBoundingClientRect();
-                return {
-                    left: rect.left - 100, // Increased buffer
-                    top: rect.top - 80,
-                    right: rect.right + 100,
-                    bottom: rect.bottom + 80
-                };
-            });
-        
-        // More granular grid scanning
-        const gridSize = 30;
-        let maxArea = 0;
-        let bestArea = { x: 0, y: 0, width: 0, height: 0 };
-        
-        for (let x = 50; x < viewport.width - 300; x += gridSize) {
-            for (let y = 120; y < viewport.height - 120; y += gridSize) {
-                const area = findMaxRectangleAt(x, y, shelves, viewport);
-                if (area.width * area.height > maxArea) {
-                    maxArea = area.width * area.height;
-                    bestArea = area;
-                }
-            }
-        }
-        
-        return bestArea;
-    }
+
     
-    function findMaxRectangleAt(startX, startY, shelves, viewport) {
-        let maxWidth = 0;
-        let maxHeight = 0;
+    function placeTextInArea() {
+        // Generate specific content based on current filter
+        const content = generateFilterSpecificContent();
+        if (!content) return;
         
-        // Find max width at this Y position
-        for (let x = startX; x < viewport.width - 50; x += 15) {
-            if (isPointEmpty(x, startY, shelves)) {
-                maxWidth = x - startX + 15;
-            } else {
-                break;
-            }
-        }
-        
-        // Find max height at this X position
-        for (let y = startY; y < viewport.height - 50; y += 15) {
-            if (isPointEmpty(startX, y, shelves)) {
-                maxHeight = y - startY + 15;
-            } else {
-                break;
-            }
-        }
-        
-        return { x: startX, y: startY, width: maxWidth, height: maxHeight };
-    }
-    
-    function isPointEmpty(x, y, shelves) {
-        return !shelves.some(shelf => 
-            x >= shelf.left && x <= shelf.right &&
-            y >= shelf.top && y <= shelf.bottom
-        );
-    }
-    
-    function placeTextInArea(area) {
         textElement = document.createElement('div');
         textElement.className = 'empty-space-text';
-        
-        // Content to display
-        const content = {
-            title: 'Analysis Results',
-            body: 'Top performing character group shows significant box office correlation with specific demographic patterns.',
-            footer: `Detected: ${Math.round(area.width)}×${Math.round(area.height)}px`
-        };
-        
-        // Calculate available space (minus padding)
-        const padding = 32; // 16px on each side
-        const availableWidth = area.width - padding;
-        const availableHeight = area.height - padding;
-        
-        // Find optimal font size using binary search
-        const optimalSize = findOptimalFontSize(content, availableWidth, availableHeight);
-        
-        textElement.innerHTML = `
-            <h3 style="margin: 0 0 ${optimalSize.fontSize * 0.5}px 0; font-size: ${optimalSize.fontSize}px; line-height: ${optimalSize.lineHeight};">${content.title}</h3>
-            <p style="margin: 0 0 ${optimalSize.fontSize * 0.3}px 0; font-size: ${optimalSize.fontSize}px; line-height: ${optimalSize.lineHeight};">${content.body}</p>
-            <p style="margin: 0; font-size: ${optimalSize.fontSize * 0.7}px; line-height: ${optimalSize.lineHeight}; opacity: 0.7;">${content.footer}</p>
-        `;
+        textElement.textContent = ''; // Start empty for typewriter effect
         
         textElement.style.cssText = `
             position: fixed;
-            left: ${area.x + 16}px;
-            top: ${area.y + 16}px;
-            width: ${availableWidth}px;
-            height: ${availableHeight}px;
-            background: rgba(0, 0, 0, 0.85);
-            color: #ffffff;
+            bottom: 80px;
+            right: 20px;
+            color:rgb(167, 167, 167);
             font-family: 'Input Mono', monospace;
-            padding: 16px;
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            font-size: 11px;
+            font-weight: 700;
             z-index: 15;
             opacity: 0;
-            transition: opacity 0.3s ease;
-            overflow: hidden;
-            box-sizing: border-box;
+            white-space: nowrap;
+            transition: opacity .3s ease;
         `;
         
         document.body.appendChild(textElement);
         
-        // Fade in
+        // Fade in then start typewriter
         setTimeout(() => {
             if (textElement) {
-                textElement.style.opacity = '0.9';
+                textElement.style.opacity = '1';
+                typeWriter(textElement, content, 30);
             }
-        }, 50);
+        }, 100);
     }
-    
-    function findOptimalFontSize(content, maxWidth, maxHeight) {
-        let minSize = 8;
-        let maxSize = Math.min(maxWidth / 10, maxHeight / 8); // Reasonable upper bound
-        let bestSize = minSize;
+
+    function generateFilterSpecificContent() {
+        const activeFilter = FilmData.getActiveFilter();
+        if (!activeFilter || !activeFilter.category) return null;
         
-        // Binary search for optimal font size
-        while (minSize <= maxSize) {
-            const testSize = Math.floor((minSize + maxSize) / 2);
-            const lineHeight = testSize * 1.3;
-            
-            if (textFitsInArea(content, testSize, lineHeight, maxWidth, maxHeight)) {
-                bestSize = testSize;
-                minSize = testSize + 1;
-            } else {
-                maxSize = testSize - 1;
+        const category = activeFilter.category;
+        const topGroupElements = document.querySelectorAll('.parallelepiped.group-0');
+        if (topGroupElements.length === 0) return null;
+        
+        // Get random film from top group
+        const randomElement = topGroupElements[Math.floor(Math.random() * topGroupElements.length)];
+        const filmName = randomElement.dataset.filmName;
+        const charData = FilmData.getCharacterData(filmName);
+        if (!charData) return null;
+        
+        switch (category) {
+            case 'demographics.gender':
+                return getMostCommonName();
+            case 'demographics.ethnicity':
+                return getEthnicityPercentage();
+            case 'demographics.age_range':
+                return "The average age chosen by directors is 32 years old";
+            case 'personality_traits.introvert_extrovert':
+                return "Introvert characters are far more popular as a choice for a main characters";
+            case 'personality_traits.biggest_strength.category':
+                return getQualityDescription(charData, filmName);
+            case 'personality_traits.biggest_fear.category':
+                return getFearDescription(charData, filmName);
+            case 'personality_traits.moral_ambiguity.betrays_others':
+                return getBetrayalDescription(charData, filmName);
+            case 'background_history.tragic_past':
+                return getTragicPastDescription(charData, filmName);
+            case 'socioeconomic.income_level':
+                return getIncomeDescription(charData, filmName);
+            case 'narrative_arc.goal_achievement':
+                return getGoalDescription(charData, filmName);
+            case 'dialogue_analysis.swear_frequency':
+                return getSwearDescription(charData, filmName);
+            default:
+                return filmName;
+        }
+    }
+
+    function getMostCommonName() {
+        const allFilms = FilmData.getAllFilms();
+        const names = {};
+        allFilms.forEach(film => {
+            const charData = FilmData.getCharacterData(film.filmName);
+            if (charData && charData.character_analysis.metadata.character_name) {
+                const name = charData.character_analysis.metadata.character_name;
+                names[name] = (names[name] || 0) + 1;
+            }
+        });
+        if (Object.keys(names).length === 0) return "No character names found";
+        const mostCommon = Object.keys(names).reduce((a, b) => names[a] > names[b] ? a : b);
+        return `The most common name is ${mostCommon}`;
+    }
+
+    function getEthnicityPercentage() {
+        const groups = {};
+        const allFilms = FilmData.getAllFilms();
+        allFilms.forEach(film => {
+            const charData = FilmData.getCharacterData(film.filmName);
+            if (charData && charData.character_analysis.demographics.ethnicity) {
+                const ethnicity = charData.character_analysis.demographics.ethnicity;
+                if (!groups[ethnicity]) groups[ethnicity] = 0;
+                groups[ethnicity] += charData.film_info.box_office || 0;
+            }
+        });
+        const total = Object.values(groups).reduce((a, b) => a + b, 0);
+        const whitePercent = Math.round((groups.white || 0) / total * 100);
+        const otherPercent = 100 - whitePercent;
+        const diff = whitePercent - otherPercent;
+        return `White characters earned ${diff}% more than others`;
+    }
+
+    function getQualityDescription(charData, filmName) {
+        const desc = charData.character_analysis.personality_traits.biggest_strength.reason_specific_description;
+        return `${filmName}: ${desc}`;
+    }
+
+    function getFearDescription(charData, filmName) {
+        const desc = charData.character_analysis.personality_traits.biggest_fear.reason_specific_description;
+        return `${filmName}: ${desc}`;
+    }
+
+    function getBetrayalDescription(charData, filmName) {
+        const reason = charData.character_analysis.personality_traits.moral_ambiguity.reason_betrays_others;
+        return `${filmName}: ${reason}`;
+    }
+
+    function getTragicPastDescription(charData, filmName) {
+        const reason = charData.character_analysis.background_history.tragic_past_reason;
+        return `${filmName}: ${reason}`;
+    }
+
+    function getIncomeDescription(charData, filmName) {
+        const occupation = charData.character_analysis.socioeconomic.occupation;
+        return `${filmName}: ${occupation}`;
+    }
+
+    function getGoalDescription(charData, filmName) {
+        const goal = charData.character_analysis.narrative_arc.primary_goal;
+        return `${filmName}: ${goal}`;
+    }
+
+    function getSwearDescription(charData, filmName) {
+        const swear = charData.character_analysis.dialogue_analysis.most_used_swear_word;
+        return `${filmName}: "${swear}"`;
+    }
+
+    function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        
+        function type() {
+            if (i < text.length && element.parentNode) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
             }
         }
         
-        return {
-            fontSize: bestSize,
-            lineHeight: bestSize * 1.3
-        };
+        type();
     }
     
-    function textFitsInArea(content, fontSize, lineHeight, maxWidth, maxHeight) {
-        // Create temporary element to measure text dimensions
-        const tempEl = document.createElement('div');
-        tempEl.style.cssText = `
-            position: absolute;
-            visibility: hidden;
-            font-family: 'Input Mono', monospace;
-            font-size: ${fontSize}px;
-            line-height: ${lineHeight}px;
-            width: ${maxWidth}px;
-            word-wrap: break-word;
-            white-space: normal;
-        `;
-        
-        // Build the same content structure
-        const titleMargin = fontSize * 0.5;
-        const bodyMargin = fontSize * 0.3;
-        tempEl.innerHTML = `
-            <h3 style="margin: 0 0 ${titleMargin}px 0; font-size: ${fontSize}px; line-height: ${lineHeight}px;">${content.title}</h3>
-            <p style="margin: 0 0 ${bodyMargin}px 0; font-size: ${fontSize}px; line-height: ${lineHeight}px;">${content.body}</p>
-            <p style="margin: 0; font-size: ${fontSize * 0.7}px; line-height: ${lineHeight}px;">${content.footer}</p>
-        `;
-        
-        document.body.appendChild(tempEl);
-        const height = tempEl.offsetHeight;
-        document.body.removeChild(tempEl);
-        
-        return height <= maxHeight;
-    }
+
     
     return {
         detectAndPlaceText,

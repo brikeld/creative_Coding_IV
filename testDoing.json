@@ -810,9 +810,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [
-            ""
-          ]
+          "most_used_swear_word": 
+            "shit"
+          
         },
         "background_history": {
           "tragic_past": "none",
@@ -874,7 +874,7 @@
         "dialogue_analysis": {
           "swear_frequency": "rare",
           "most_used_swear_word": [
-            ""
+            "fuck"
           ]
         },
         "background_history": {
@@ -1134,7 +1134,7 @@
         "dialogue_analysis": {
           "swear_frequency": "rare",
           "most_used_swear_word": [
-            ""
+            "noone"
           ]
         },
         "background_history": {
@@ -1263,9 +1263,8 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [
-            "shit"
-          ]
+          "most_used_swear_word": "shit"
+          
         },
         "background_history": {
           "tragic_past": "implied",
@@ -1522,9 +1521,8 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [
+          "most_used_swear_word": 
             "shit"
-          ]
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -2687,7 +2685,7 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": []
+          "most_used_swear_word": "fuck"
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -3488,9 +3486,9 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": [
+          "most_used_swear_word": 
             "goddammit"
-          ]
+          
         },
         "background_history": {
           "tragic_past": "none",
