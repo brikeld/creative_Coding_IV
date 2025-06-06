@@ -2040,7 +2040,7 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": "none"
+          "most_used_swear_word": "cazzo"
         },
         "background_history": {
           "tragic_past": "explicit",
@@ -3815,7 +3815,7 @@
 
     {
       "film_info": {
-        "film_name": "The Hunger Games: Catching Fire",
+        "film_name": "The Hunger Games Catching Fire",
         "year": 2013,
         "genre": ["action", "drama", "sci-fi"],
         "box_office": 865000000
@@ -3862,7 +3862,7 @@
         },
         "socioeconomic": {
           "income_level": "poor",
-          "occupation": "hunter / rebel / Hunger Games victor"
+          "occupation": "Hunter"
         },
         "narrative_arc": {
           "goal_achievement": "partially",

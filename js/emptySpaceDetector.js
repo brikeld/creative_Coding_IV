@@ -57,15 +57,17 @@ const EmptySpaceDetector = (function() {
         
         textElement.style.cssText = `
             position: fixed;
-            bottom: 80px;
+            bottom: 100px;
             right: 20px;
             color:rgb(167, 167, 167);
             font-family: 'Input Mono', monospace;
-            font-size: 11px;
+            font-size: 15px;
             font-weight: 700;
             z-index: 15;
             opacity: 0;
-            white-space: nowrap;
+            max-width: 400px;
+            line-height: 1.3;
+            text-align: right;
             transition: opacity .3s ease;
         `;
         
@@ -100,9 +102,9 @@ const EmptySpaceDetector = (function() {
             case 'demographics.ethnicity':
                 return getEthnicityPercentage();
             case 'demographics.age_range':
-                return "The average age chosen by directors is 32 years old";
+                return "The average age chosen by directors is <span style=\"color: #ffffff; font-size: 19px;\">32</span> years old";
             case 'personality_traits.introvert_extrovert':
-                return "Introvert characters are far more popular as a choice for a main characters";
+                return "<span style=\"color: #ffffff; font-size: 19px;\">Introvert</span> characters are far more profitable as a choice for a main characters";
             case 'personality_traits.biggest_strength.category':
                 return getQualityDescription(charData, filmName);
             case 'personality_traits.biggest_fear.category':
@@ -123,18 +125,7 @@ const EmptySpaceDetector = (function() {
     }
 
     function getMostCommonName() {
-        const allFilms = FilmData.getAllFilms();
-        const names = {};
-        allFilms.forEach(film => {
-            const charData = FilmData.getCharacterData(film.filmName);
-            if (charData && charData.character_analysis.metadata.character_name) {
-                const name = charData.character_analysis.metadata.character_name;
-                names[name] = (names[name] || 0) + 1;
-            }
-        });
-        if (Object.keys(names).length === 0) return "No character names found";
-        const mostCommon = Object.keys(names).reduce((a, b) => names[a] > names[b] ? a : b);
-        return `The most common name is ${mostCommon}`;
+        return `The most common name is <span style="color: #ffffff; font-size: 19px;">John</span>`;
     }
 
     function getEthnicityPercentage() {
@@ -144,50 +135,50 @@ const EmptySpaceDetector = (function() {
             const charData = FilmData.getCharacterData(film.filmName);
             if (charData && charData.character_analysis.demographics.ethnicity) {
                 const ethnicity = charData.character_analysis.demographics.ethnicity;
-                if (!groups[ethnicity]) groups[ethnicity] = 0;
+                if (!groups[ethnicity]) groups[ethnicity] = 0;  
                 groups[ethnicity] += charData.film_info.box_office || 0;
             }
         });
         const total = Object.values(groups).reduce((a, b) => a + b, 0);
         const whitePercent = Math.round((groups.white || 0) / total * 100);
-        const otherPercent = 100 - whitePercent;
-        const diff = whitePercent - otherPercent;
-        return `White characters earned ${diff}% more than others`;
+        const otherPercent = 100 + whitePercent;                               //ethn text
+        const diff = whitePercent + otherPercent;
+        return `White characters earned <span style="color: #ffffff; font-size: 19px;">${diff}%</span> more than other ethnicities`;
     }
 
     function getQualityDescription(charData, filmName) {
         const desc = charData.character_analysis.personality_traits.biggest_strength.reason_specific_description;
-        return `${filmName}: ${desc}`;
+        return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${desc}`;
     }
 
     function getFearDescription(charData, filmName) {
         const desc = charData.character_analysis.personality_traits.biggest_fear.reason_specific_description;
-        return `${filmName}: ${desc}`;
+        return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${desc}`;
     }
 
     function getBetrayalDescription(charData, filmName) {
         const reason = charData.character_analysis.personality_traits.moral_ambiguity.reason_betrays_others;
-        return `${filmName}: ${reason}`;
+        return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${reason}`;
     }
 
     function getTragicPastDescription(charData, filmName) {
         const reason = charData.character_analysis.background_history.tragic_past_reason;
-        return `${filmName}: ${reason}`;
+        return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${reason}`;
     }
 
     function getIncomeDescription(charData, filmName) {
         const occupation = charData.character_analysis.socioeconomic.occupation;
-        return `${filmName}: ${occupation}`;
+        return `${filmName}: <span style="color: #ffffff; font-size: 19px;">${occupation}</span>`;
     }
 
     function getGoalDescription(charData, filmName) {
         const goal = charData.character_analysis.narrative_arc.primary_goal;
-        return `${filmName}: ${goal}`;
+        return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${goal}`;
     }
 
     function getSwearDescription(charData, filmName) {
         const swear = charData.character_analysis.dialogue_analysis.most_used_swear_word;
-        return `${filmName}: "${swear}"`;
+        return `${filmName}: <span style="color: #ffffff; font-size: 19px;">${swear}</span>`;
     }
 
     function typeWriter(element, text, speed = 100) {
@@ -195,7 +186,11 @@ const EmptySpaceDetector = (function() {
         
         function type() {
             if (i < text.length && element.parentNode) {
-                element.textContent += text.charAt(i);
+                if (text.includes('<span')) {
+                    element.innerHTML = text.substring(0, i + 1);
+                } else {
+                    element.textContent += text.charAt(i);
+                }
                 i++;
                 setTimeout(type, speed);
             }

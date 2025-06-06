@@ -106,7 +106,7 @@ const FilmData = (function() {
             'Sicario': '/cofanetto/sicario.jpg',
             'The Danish Girl': '/cofanetto/The Danish Girl.jpg',
             'The Devil Wears Prada': '/cofanetto/the devil wears prada.jpg',
-            'The Hunger Games: Catching Fire': '/cofanetto/The Hunger Games Catching Fire.jpg',
+            'The Hunger Games Catching Fire': '/cofanetto/The Hunger Games Catching Fire.jpg',
             'The Killer': '/cofanetto/thekiller2023.jpg',
             'Maria': '/cofanetto/maria.jpg'
             
