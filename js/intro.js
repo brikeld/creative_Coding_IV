@@ -7,7 +7,7 @@ const IntroScreen = (function() {
     let isTypingComplete = false;
     let onComplete = null;
 
-    function typeWriter(element, text, speed = 60) { 
+    function typeWriter(element, text, speed = 1) { 
         let i = 0;
         
         function type() {

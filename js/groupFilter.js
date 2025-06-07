@@ -363,9 +363,10 @@ const GroupFilter = (function() {
             return num.toPrecision(3);
         };
         
+        const borderColor = groupInfo.sortedIndex === 0 ? 'white' : 'rgb(167, 167, 167)';
         label.innerHTML = `
             <span style="color: rgb(167, 167, 167);">${groupInfo.groupKey.toUpperCase()}</span>
-            <span style="color: white;"> - ${formatEarnings(groupInfo.groupEarnings)}</span>
+            <span style="color: green;">  $${formatEarnings(groupInfo.groupEarnings)}</span>
         `;
         label.style.cssText = `
             position: absolute;
@@ -377,7 +378,7 @@ const GroupFilter = (function() {
             font-weight: bold;
             text-align: center;
             white-space: nowrap;
-            border: 2px solid white;
+            border: 2px solid ${borderColor};
             border-radius: 20px;
             padding: 8px 16px;
             max-width: 250px;

@@ -194,9 +194,24 @@ const EmptySpaceDetector = (function() {
         const activeFilter = FilmData.getActiveFilter();
         if (!activeFilter || !activeFilter.category) return;
         
+        const filterDisplayNames = {
+            'demographics.gender': 'GENDERS',
+            'demographics.ethnicity': 'ETHNICITIES', 
+            'demographics.age_range': 'AGE RANGE',
+            'personality_traits.introvert_extrovert': 'PERSONALITY TRAITS',
+            'personality_traits.biggest_strength.category': 'BIGGEST STRENGTHS',
+            'personality_traits.biggest_fear.category': 'BIGGEST FEARS',
+            'personality_traits.moral_ambiguity.betrays_others': 'BETRAYAL',
+            'background_history.tragic_past': 'TRAGIC PAST',
+            'socioeconomic.income_level': 'INCOME LEVEL',
+            'narrative_arc.goal_achievement': 'GOAL ACHIEVEMENT',
+            'relationships_family.parental_status': 'PARENTAL STATUS',
+            'dialogue_analysis.swear_frequency': 'SWEAR FREQUENCY'
+        };
+        
         const indicator = document.createElement('div');
         indicator.className = 'filter-indicator';
-        indicator.textContent = activeFilter.category.replace(/[._]/g, ' ').toUpperCase();
+        indicator.textContent = filterDisplayNames[activeFilter.category] || activeFilter.category.replace(/[._]/g, ' ').toUpperCase();
         indicator.style.cssText = `
             position: fixed;
             top: 20px;
@@ -206,8 +221,9 @@ const EmptySpaceDetector = (function() {
             font-size: .76rem;
             font-weight: bold;
             text-align: center;
-            color: rgb(167, 167, 167);
-            border: 2px solid white;
+            color: black;
+            background: white;
+            // border: 2px solid rgb(0, 0, 0);
             border-radius: 20px;
             padding: 8px 16px;
             z-index: 100;

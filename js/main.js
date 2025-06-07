@@ -154,9 +154,7 @@ function setupFilterAPI() {
         'background_history.tragic_past',
         'socioeconomic.income_level',
         'narrative_arc.goal_achievement',
-        'narrative_arc.success_metrics',
         'relationships_family.parental_status',
-        'relationships_family.siblings_status',
         'dialogue_analysis.swear_frequency'
     ];
 
@@ -177,7 +175,12 @@ function setupFilterAPI() {
     // Category buttons
     priorityOrder.forEach(categoryKey => {
         const btn = document.createElement('button');
-        btn.id = categoryKey.toLowerCase().replace(/\./g, '_').replace(/\s+/g, '_');
+        // Special case for moral_ambiguity to match mobile app expectation
+        if (categoryKey === 'personality_traits.moral_ambiguity.betrays_others') {
+            btn.id = 'moral_ambiguity_betrays_others';
+        } else {
+            btn.id = categoryKey.toLowerCase().replace(/\./g, '_').replace(/\s+/g, '_');
+        }
         btn.addEventListener('click', () => {
             EmptySpaceDetector.clearText();
             const groups = FilmData.groupFilmsByCategory(categoryKey);
