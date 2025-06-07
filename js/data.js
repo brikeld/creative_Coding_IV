@@ -79,7 +79,7 @@ const FilmData = (function() {
             'Her': '/cofanetto/her.jpg',
             'Kill Bill: Vol. 1': '/cofanetto/killbill1.jpg',
             'Kill Bill: Vol. 2': '/cofanetto/killbill2.png',
-            // Adding the missing 22 films
+            // vol2
             'American Hustle': '/cofanetto/AmericanHustle.jpg',
             'Conclave': '/cofanetto/conclave.jpg',
             'Don\'t Look Up': '/cofanetto/dontlookup.jpg',

@@ -363,20 +363,24 @@ const GroupFilter = (function() {
             return num.toPrecision(3);
         };
         
-        label.textContent = `${groupInfo.groupKey} - ${formatEarnings(groupInfo.groupEarnings)}`;
+        label.innerHTML = `
+            <span style="color: rgb(167, 167, 167);">${groupInfo.groupKey.toUpperCase()}</span>
+            <span style="color: white;"> - ${formatEarnings(groupInfo.groupEarnings)}</span>
+        `;
         label.style.cssText = `
             position: absolute;
             top: 50px;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
             font-family: 'Input Mono', monospace;
-            font-size: 0.8rem;
+            font-size: .76rem;
+            font-weight: bold;
             text-align: center;
             white-space: nowrap;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            max-width: 200px;
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 8px 16px;
+            max-width: 250px;
             overflow: hidden;
             text-overflow: ellipsis;
         `;
