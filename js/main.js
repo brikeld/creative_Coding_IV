@@ -120,8 +120,8 @@ function initMainApp() {
             // Make the transform function globally available
             window.DEFAULT_TRANSFORM = getBaseTransform;
             
-            // Setup filter controls
-            createFilterUI();
+            // Setup filter API (no UI, just functionality)
+            setupFilterAPI();
             
             console.log('Film Visualizer initialized successfully');
         });
@@ -140,7 +140,57 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Creates the filter UI at the bottom of the page
+ * Sets up filter API functions for external control (no UI)
+ */
+function setupFilterAPI() {
+    const priorityOrder = [
+        'demographics.gender', 
+        'demographics.ethnicity', 
+        'demographics.age_range',
+        'personality_traits.introvert_extrovert',
+        'personality_traits.biggest_strength.category',
+        'personality_traits.biggest_fear.category',
+        'personality_traits.moral_ambiguity.betrays_others',
+        'background_history.tragic_past',
+        'socioeconomic.income_level',
+        'narrative_arc.goal_achievement',
+        'narrative_arc.success_metrics',
+        'relationships_family.parental_status',
+        'relationships_family.siblings_status',
+        'dialogue_analysis.swear_frequency'
+    ];
+
+    // Create invisible buttons for Firebase integration
+    const hiddenContainer = document.createElement('div');
+    hiddenContainer.style.display = 'none';
+    
+    // Reset button
+    const resetBtn = document.createElement('button');
+    resetBtn.id = 'reset_filters';
+    resetBtn.addEventListener('click', () => {
+        EmptySpaceDetector.clearText();
+        FilmData.clearFilter();
+        FilterEffects.resetShelves();
+    });
+    hiddenContainer.appendChild(resetBtn);
+    
+    // Category buttons
+    priorityOrder.forEach(categoryKey => {
+        const btn = document.createElement('button');
+        btn.id = categoryKey.toLowerCase().replace(/\./g, '_').replace(/\s+/g, '_');
+        btn.addEventListener('click', () => {
+            EmptySpaceDetector.clearText();
+            const groups = FilmData.groupFilmsByCategory(categoryKey);
+            FilterEffects.arrangeShelvesForGroups(groups);
+        });
+        hiddenContainer.appendChild(btn);
+    });
+    
+    document.body.appendChild(hiddenContainer);
+}
+
+/**
+ * Creates the filter UI at the bottom of the page (UNUSED - kept for reference)
  */
 function createFilterUI() {
     const filterContainer = document.createElement('div');

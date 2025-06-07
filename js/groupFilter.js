@@ -242,7 +242,7 @@ const GroupFilter = (function() {
         const shelfHeight = 135; // For inter-group spacing (between different groups)
         const intraGroupShelfHeight = 100; // For intra-group spacing (shelves within same group)
         const startX = 10;
-        const startY = 70;
+        const startY = 140;
         
         // More conservative column height to ensure all groups are visible
         const maxColumnHeight = 700; // Increased slightly for better distribution

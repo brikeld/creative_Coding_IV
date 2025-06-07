@@ -21,11 +21,18 @@ const EmptySpaceDetector = (function() {
             textElement = null;
         }
         
+        // Remove existing filter indicator
+        const existingIndicator = document.querySelector('.filter-indicator');
+        if (existingIndicator) existingIndicator.remove();
+        
         // Only run when filtered
         const bookshelf = document.querySelector('.bookshelf');
         if (!bookshelf || !bookshelf.classList.contains('filtered')) {
             return;
         }
+        
+        // Add filter indicator
+        addFilterIndicator();
         
         // Wait for animations to settle
         detectionTimeout = setTimeout(() => {
@@ -42,6 +49,8 @@ const EmptySpaceDetector = (function() {
             textElement.remove();
             textElement = null;
         }
+        const existingIndicator = document.querySelector('.filter-indicator');
+        if (existingIndicator) existingIndicator.remove();
     }
     
 
@@ -57,7 +66,7 @@ const EmptySpaceDetector = (function() {
         
         textElement.style.cssText = `
             position: fixed;
-            bottom: 100px;
+            bottom: 50px;
             right: 20px;
             color:rgb(167, 167, 167);
             font-family: 'Input Mono', monospace;
@@ -179,6 +188,31 @@ const EmptySpaceDetector = (function() {
     function getSwearDescription(charData, filmName) {
         const swear = charData.character_analysis.dialogue_analysis.most_used_swear_word;
         return `${filmName}: <span style="color: #ffffff; font-size: 19px;">${swear}</span>`;
+    }
+
+    function addFilterIndicator() {
+        const activeFilter = FilmData.getActiveFilter();
+        if (!activeFilter || !activeFilter.category) return;
+        
+        const indicator = document.createElement('div');
+        indicator.className = 'filter-indicator';
+        indicator.textContent = activeFilter.category.replace(/[._]/g, ' ').toUpperCase();
+        indicator.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Input Mono', monospace;
+            font-size: .76rem;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(167, 167, 167);
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 8px 16px;
+            z-index: 100;
+        `;
+        document.body.appendChild(indicator);
     }
 
     function typeWriter(element, text, speed = 100) {
