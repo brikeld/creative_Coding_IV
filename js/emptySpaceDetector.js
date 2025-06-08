@@ -187,7 +187,7 @@ const EmptySpaceDetector = (function() {
 
     function getSwearDescription(charData, filmName) {
         const swear = charData.character_analysis.dialogue_analysis.most_used_swear_word;
-        return `${filmName}: <span style="color: #ffffff; font-size: 19px;">${swear}</span>`;
+        return `The most used swear word in <span style="color: #ffffff; font-size: 19px;">${filmName} </span> is <span style="color: #ffffff; font-size: 19px;">${swear}</span>`;
     }
 
     function addFilterIndicator() {
@@ -251,8 +251,99 @@ const EmptySpaceDetector = (function() {
     
 
     
+    /**
+     * Places text for a specific film instead of random selection
+     */
+    function detectAndPlaceTextForFilm(filmId) {
+        // Clear existing text
+        clearText();
+        
+        // Get the specific film data
+        const allFilms = FilmData.getAllFilms();
+        const film = allFilms.find(f => f.id === filmId);
+        if (!film) return;
+        
+        const charData = FilmData.getCharacterData(film.filmName);
+        if (!charData) return;
+        
+        // Generate content for the specific film
+        const content = generateFilterSpecificContentForFilm(charData, film.filmName);
+        if (!content) return;
+        
+        // Place the text (same as original function)
+        textElement = document.createElement('div');
+        textElement.className = 'empty-space-text';
+        textElement.textContent = '';
+        
+        textElement.style.cssText = `
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            color:rgb(167, 167, 167);
+            font-family: 'Input Mono', monospace;
+            font-size: 15px;
+            font-weight: 700;
+            z-index: 15;
+            opacity: 0;
+            max-width: 400px;
+            line-height: 1.3;
+            text-align: right;
+            transition: opacity .3s ease;
+        `;
+        
+        document.body.appendChild(textElement);
+        
+        // Fade in then start typewriter
+        setTimeout(() => {
+            if (textElement) {
+                textElement.style.opacity = '1';
+                typeWriter(textElement, content, 30);
+            }
+        }, 100);
+    }
+
+    /**
+     * Generates filter-specific content for a given film (not random)
+     */
+    function generateFilterSpecificContentForFilm(charData, filmName) {
+        const activeFilter = FilmData.getActiveFilter();
+        if (!activeFilter || !activeFilter.category) return null;
+        
+        const category = activeFilter.category;
+        
+        switch (category) {
+            case 'demographics.gender':
+                return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${charData.character_analysis.demographics.gender}`;
+            case 'demographics.ethnicity':
+                return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${charData.character_analysis.demographics.ethnicity}`;
+            case 'demographics.age_range':
+                return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${charData.character_analysis.demographics.age_range}`;
+            case 'personality_traits.introvert_extrovert':
+                return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${charData.character_analysis.personality_traits.introvert_extrovert}`;
+            case 'personality_traits.biggest_strength.category':
+                return getQualityDescription(charData, filmName);
+            case 'personality_traits.biggest_fear.category':
+                return getFearDescription(charData, filmName);
+            case 'personality_traits.moral_ambiguity.betrays_others':
+                return getBetrayalDescription(charData, filmName);
+            case 'background_history.tragic_past':
+                return getTragicPastDescription(charData, filmName);
+            case 'socioeconomic.income_level':
+                return getIncomeDescription(charData, filmName);
+            case 'narrative_arc.goal_achievement':
+                return getGoalDescription(charData, filmName);
+            case 'relationships_family.parental_status':
+                return `<span style="color: #ffffff; font-size: 19px;">${filmName}</span>: ${charData.character_analysis.relationships_family.parental_status}`;
+            case 'dialogue_analysis.swear_frequency':
+                return getSwearDescription(charData, filmName);
+            default:
+                return null;
+        }
+    }
+
     return {
         detectAndPlaceText,
+        detectAndPlaceTextForFilm,
         clearText
     };
 })(); 

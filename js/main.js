@@ -15,12 +15,17 @@ initFirebase();
 
 function onFirebaseData(data) {
   console.log("**DATA**", data);
+  // Firebase passes data as array, get first element
+  const receivedData = Array.isArray(data) ? data[0] : data;
+  const buttonId = receivedData.id;
+  
   // Check if the button exists before trying to click it
-  const button = document.getElementById(data.id);
+  const button = document.getElementById(buttonId);
   if (button) {
+    console.log(`🎯 Triggering button: ${buttonId}`);
     button.click();
   } else {
-    console.warn(`Button with ID '${data.id}' not found`);
+    console.warn(`Button with ID '${buttonId}' not found`);
   }
 }
 
@@ -116,6 +121,36 @@ function initMainApp() {
                 console.table(buttonInfo);
                 return buttonInfo;
             };
+
+            // Test function for film communication
+            window.testFilmCommunication = function(filmName) {
+                const filmIds = {
+                    'ANORA': 'film-anora',
+                    'Inception': 'film-inception', 
+                    'Dune': 'film-dune'
+                };
+                const filmId = filmIds[filmName] || filmName;
+                if (firebaseInstance) {
+                    firebaseInstance.sendFilterCommand(filmId);
+                    console.log(`🧪 Testing film communication: ${filmName} → ${filmId}`);
+                    return true;
+                }
+                return false;
+            };
+
+            // Test function for film highlighting (direct)
+            window.testFilmHighlight = function(filmId) {
+                FilmHighlight.highlightFilm(filmId);
+                console.log(`🎯 Testing film highlight: ${filmId}`);
+            };
+
+            // Debug function to list all film buttons
+            window.listFilmButtons = function() {
+                const filmButtons = document.querySelectorAll('[id^="film-"]');
+                console.log(`📋 Found ${filmButtons.length} film buttons:`);
+                filmButtons.forEach(btn => console.log(`  - ${btn.id}`));
+                return Array.from(filmButtons).map(btn => btn.id);
+            };
             
             // Make the transform function globally available
             window.DEFAULT_TRANSFORM = getBaseTransform;
@@ -167,6 +202,7 @@ function setupFilterAPI() {
     resetBtn.id = 'reset_filters';
     resetBtn.addEventListener('click', () => {
         EmptySpaceDetector.clearText();
+        FilmHighlight.clearAllLifts(); // Clear lifted films when resetting
         FilmData.clearFilter();
         FilterEffects.resetShelves();
     });
@@ -183,10 +219,89 @@ function setupFilterAPI() {
         }
         btn.addEventListener('click', () => {
             EmptySpaceDetector.clearText();
+            FilmHighlight.clearAllLifts(); // Clear lifted films before filtering
             const groups = FilmData.groupFilmsByCategory(categoryKey);
             FilterEffects.arrangeShelvesForGroups(groups);
         });
         hiddenContainer.appendChild(btn);
+    });
+
+    // Film buttons for cross-app communication
+    const FILM_IDS = {
+        'ANORA': 'film-anora',
+        'No Country for Old Men': 'film-no-country-for-old-men',
+        '1917': 'film-1917',
+        'Schindler\'s List': 'film-schindler-s-list',
+        'Titanic': 'film-titanic',
+        'American Beauty': 'film-american-beauty',
+        'Gladiator': 'film-gladiator',
+        'A Beautiful Mind': 'film-a-beautiful-mind',
+        'Crash': 'film-crash',
+        'The Departed': 'film-the-departed',
+        'Birdman': 'film-birdman',
+        '12 Years a Slave': 'film-12-years-a-slave',
+        'Spotlight': 'film-spotlight',
+        'Moonlight': 'film-moonlight',
+        'Napoleon': 'film-napoleon',
+        'Shutter Island': 'film-shutter-island',
+        'The Martian': 'film-the-martian',
+        'Amélie': 'film-am-lie',
+        'The Return of the King': 'film-the-return-of-the-king',
+        'The King\'s Speech': 'film-the-king-s-speech',
+        'The Shape of Water': 'film-the-shape-of-water',
+        'Green Book': 'film-green-book',
+        'Parasite': 'film-parasite',
+        'Nomadland': 'film-nomadland',
+        'Anatomy of a Fall': 'film-anatomy-of-a-fall',
+        'All Quiet on the Western Front': 'film-all-quiet-on-the-western-front',
+        'Everything Everywhere All At Once': 'film-everything-everywhere-all-at-once',
+        'CODA': 'film-coda',
+        'Baby Driver': 'film-baby-driver',
+        'House of Gucci': 'film-house-of-gucci',
+        'Inception': 'film-inception',
+        'Ferrari': 'film-ferrari',
+        'Her': 'film-her',
+        'Kill Bill: Vol. 1': 'film-kill-bill--vol--1',
+        'Kill Bill: Vol. 2': 'film-kill-bill--vol--2',
+        'American Hustle': 'film-american-hustle',
+        'Conclave': 'film-conclave',
+        'Don\'t Look Up': 'film-don-t-look-up',
+        'Drive': 'film-drive',
+        'Dunkirk': 'film-dunkirk',
+        'Focus': 'film-focus',
+        'Gladiator 2': 'film-gladiator-2',
+        'Girl with a Pearl Earring': 'film-girl-with-a-pearl-earring',
+        'Ford v Ferrari': 'film-ford-v-ferrari',
+        'Maestro': 'film-maestro',
+        'Moneyball': 'film-moneyball',
+        'Memoirs of a Geisha': 'film-memoirs-of-a-geisha',
+        'Midnight in Paris': 'film-midnight-in-paris',
+        'Mank': 'film-mank',
+        'Oppenheimer': 'film-oppenheimer',
+        'The Brutalist': 'film-the-brutalist',
+        'Arrival': 'film-arrival',
+        'Asteroid City': 'film-asteroid-city',
+        'Barbie': 'film-barbie',
+        'Blade Runner 2049': 'film-blade-runner-2049',
+        'Dune': 'film-dune',
+        'John Wick: Chapter 4': 'film-john-wick--chapter-4',
+        'The Killer': 'film-the-killer',
+        'The Devil Wears Prada': 'film-the-devil-wears-prada',
+        'The Hunger Games': 'film-the-hunger-games',
+        'Sicario': 'film-sicario',
+        'The Danish Girl': 'film-the-danish-girl',
+        'Maria': 'film-maria'
+    };
+
+    // Create buttons for each film
+    Object.entries(FILM_IDS).forEach(([filmName, filmId]) => {
+        const filmBtn = document.createElement('button');
+        filmBtn.id = filmId;
+        filmBtn.addEventListener('click', () => {
+            console.log(`🎬 Film selected from mobile app: ${filmName} (ID: ${filmId})`);
+            FilmHighlight.highlightFilm(filmId);
+        });
+        hiddenContainer.appendChild(filmBtn);
     });
     
     document.body.appendChild(hiddenContainer);

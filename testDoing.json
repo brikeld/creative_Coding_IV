@@ -939,7 +939,7 @@
         "dialogue_analysis": {
           "swear_frequency": "minimal",
           "most_used_swear_word": [
-            "none"
+            "merde"
           ]
         },
         "background_history": {
@@ -1134,7 +1134,7 @@
         "dialogue_analysis": {
           "swear_frequency": "rare",
           "most_used_swear_word": [
-            "noone"
+            "merde"
           ]
         },
         "background_history": {
@@ -1199,7 +1199,7 @@
         "dialogue_analysis": {
           "swear_frequency": "never",
           "most_used_swear_word": [
-            "none"
+            "what the hell"
           ]
         },
         "background_history": {
@@ -2849,7 +2849,6 @@
             "male"
           ],
           "age_range": [
-            "adult",
             "senior"
           ],
           "ethnicity": [
@@ -3491,7 +3490,7 @@
           
         },
         "background_history": {
-          "tragic_past": "none",
+          "tragic_past": "damn",
           "tragic_past_reason": [
             "Barbie does not have a traditional tragic past but experiences an existential unraveling—feelings of death, shame, and emotional depth that disrupt her idyllic plastic life and force her to confront the human condition."
           ]
@@ -3798,7 +3797,7 @@
           "most_used_swear_word": ["damn"]
         },
         "background_history": {
-          "tragic_past": "none",
+          "tragic_past": "fuck them",
           "tragic_past_reason": ["There is no mention of trauma or tragedy in her background; she comes from a supportive middle-class family and recently graduated college."]
         },
         "socioeconomic": {
@@ -3852,7 +3851,7 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": ["none"]
+          "most_used_swear_word": ["fuck off"]
         },
         "background_history": {
           "tragic_past": "explicit",
