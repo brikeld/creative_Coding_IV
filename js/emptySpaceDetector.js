@@ -53,6 +53,20 @@ const EmptySpaceDetector = (function() {
         if (existingIndicator) existingIndicator.remove();
     }
     
+    /**
+     * Clears only the text content without removing the filter indicator
+     * Used when highlighting individual films to preserve category display
+     */
+    function clearTextOnly() {
+        if (detectionTimeout) {
+            clearTimeout(detectionTimeout);
+            detectionTimeout = null;
+        }
+        if (textElement) {
+            textElement.remove();
+            textElement = null;
+        }
+    }
 
     
     function placeTextInArea() {
@@ -255,8 +269,8 @@ const EmptySpaceDetector = (function() {
      * Places text for a specific film instead of random selection
      */
     function detectAndPlaceTextForFilm(filmId) {
-        // Clear existing text
-        clearText();
+        // Clear existing text but keep filter indicator
+        clearTextOnly();
         
         // Get the specific film data
         const allFilms = FilmData.getAllFilms();
@@ -344,6 +358,7 @@ const EmptySpaceDetector = (function() {
     return {
         detectAndPlaceText,
         detectAndPlaceTextForFilm,
-        clearText
+        clearText,
+        clearTextOnly
     };
 })(); 

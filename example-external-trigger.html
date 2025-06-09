@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External App Trigger Example</title>
+</head>
+<body>
+    <h2>External App - Winner Animation Trigger</h2>
+    <p>This demonstrates how to trigger the winner animation from an external app.</p>
+    
+    <button class="answer-rect" id="final-answer">Answer</button>
+    
+    <script>
+        // Method 1: Direct postMessage to the main app (if it's in an iframe or popup)
+        document.getElementById('final-answer').addEventListener('click', function() {
+            // If the main app is in an iframe with id 'main-app-frame'
+            const mainAppFrame = document.getElementById('main-app-frame');
+            if (mainAppFrame) {
+                mainAppFrame.contentWindow.postMessage({type: 'showWinner'}, '*');
+            }
+            
+            // Method 2: If main app is in parent window
+            if (window.parent !== window) {
+                window.parent.postMessage({type: 'showWinner'}, '*');
+            }
+            
+            // Method 3: If main app is in opener window
+            if (window.opener) {
+                window.opener.postMessage({type: 'showWinner'}, '*');
+            }
+            
+            // Method 4: Global window communication (same origin)
+            if (window.top && window.top !== window) {
+                window.top.postMessage({type: 'showWinner'}, '*');
+            }
+        });
+    </script>
+</body>
+</html> 

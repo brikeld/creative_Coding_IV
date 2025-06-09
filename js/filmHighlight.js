@@ -161,7 +161,6 @@ const FilmHighlight = (function() {
         ];
         
         if (targetCategories.includes(activeFilter.category)) {
-            EmptySpaceDetector.clearText();
             EmptySpaceDetector.detectAndPlaceTextForFilm(filmId);
         }
     }

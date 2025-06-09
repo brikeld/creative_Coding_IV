@@ -364,8 +364,9 @@ const GroupFilter = (function() {
         };
         
         const borderColor = groupInfo.sortedIndex === 0 ? 'white' : 'rgb(167, 167, 167)';
+        const nameColor = groupInfo.sortedIndex === 0 ? 'white' : 'rgb(167, 167, 167)';
         label.innerHTML = `
-            <span style="color: rgb(167, 167, 167);">${groupInfo.groupKey.toUpperCase()}</span>
+            <span style="color: ${nameColor};">${groupInfo.groupKey.toUpperCase()}</span>
             <span style="color: green;">  $${formatEarnings(groupInfo.groupEarnings)}</span>
         `;
         label.style.cssText = `

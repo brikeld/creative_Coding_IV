@@ -21,8 +21,8 @@ const Parallelepiped = (function() {
         const textureWrapper = document.createElement('div');
         textureWrapper.className = 'texture-wrapper';
         
-        // Create all necessary sides for 3D effect
-        const sides = ['front', 'back', 'right', 'left'];
+        // Create all necessary sides for 3D effect (including top and bottom)
+        const sides = ['front', 'back', 'right', 'left', 'top', 'bottom'];
         sides.forEach(side => {
             const textureSide = document.createElement('div');
             textureSide.className = `texture-side texture-${side}`;
