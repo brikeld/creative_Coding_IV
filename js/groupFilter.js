@@ -250,6 +250,8 @@ const GroupFilter = (function() {
         
         groupPositions.forEach((groupInfo, index) => {
             const groupHeight = groupInfo.shelfCount * shelfHeight;
+            const extraSpacing = groupInfo.sortedIndex === 0 ? 80 : 0; // Extra gap after highest earning group
+            const totalGroupHeight = groupHeight + extraSpacing;
             let placedInColumn = false;
             
             // Try to place in existing columns first
@@ -257,7 +259,7 @@ const GroupFilter = (function() {
                 if (columns[colIndex] + groupHeight <= maxColumnHeight) {
                     groupInfo.targetColumn = colIndex;
                     groupInfo.targetY = columns[colIndex];
-                    columns[colIndex] += groupHeight;
+                    columns[colIndex] += totalGroupHeight; // Use total height including extra spacing
                     placedInColumn = true;
                     console.log(`📦 Group ${groupInfo.groupKey} → column ${colIndex} at Y=${groupInfo.targetY}`);
                     break;
@@ -268,7 +270,7 @@ const GroupFilter = (function() {
             if (!placedInColumn) {
                 groupInfo.targetColumn = columns.length;
                 groupInfo.targetY = 0;
-                columns.push(groupHeight);
+                columns.push(totalGroupHeight); // Use total height including extra spacing
                 console.log(`🆕 Group ${groupInfo.groupKey} → new column ${groupInfo.targetColumn}`);
             }
         });
