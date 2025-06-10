@@ -107,8 +107,26 @@ const WinnerAnimation = (function() {
         // Create new winner parallelepiped from scratch
         const winnerFilm = FilmData.getAllFilms().find(f => f.id === winner.id);
         if (winnerFilm) {
-            winnerElement = Parallelepiped.create(winnerFilm);
+            // Create a larger version for the winner display
+            const largeWinnerFilm = {
+                ...winnerFilm,
+                id: 'winner-' + winnerFilm.id,
+                // Scale up the dimensions for better quality
+                width: 47 * 4,
+                height: 73 * 4
+            };
+            
+            winnerElement = Parallelepiped.create(largeWinnerFilm);
             winnerElement.classList.add('winner-parallelepiped');
+            
+            // Force high quality rendering
+            const textureSides = winnerElement.querySelectorAll('.texture-side');
+            textureSides.forEach(side => {
+                side.style.imageRendering = 'pixelated';
+                side.style.backgroundSize = '100% 100%';
+                side.style.opacity = '1';
+            });
+            
             document.body.appendChild(winnerElement);
             setTimeout(() => createWinnerText(winner), 500);
         }
@@ -119,20 +137,26 @@ const WinnerAnimation = (function() {
      * @param {Object} winner - The winner film object
      */
     function createWinnerText(winner) {
+        // Get character data to access character name
+        const charData = FilmData.getCharacterData(winner.filmName);
+        if (!charData) return;
+
+        const characterName = charData.character_analysis.metadata.character_name;
+
         winnerTextElement = document.createElement('div');
         winnerTextElement.className = 'winner-text';
         winnerTextElement.innerHTML = `
-            <div class="winner-title">${winner.filmName}</div>
-            <div class="winner-subtitle">is the clear winner</div>
-            <div class="winner-stats">${formatWinnerStats(winner.topGroupCount, winner.totalCategories)}</div>
+            <div class="winner-title">${characterName}</div>
+            <div class="winner-subtitle">in "${winner.filmName}"</div>
+            <div class="winner-stats">is our FAVOURITE type of main character! He was on the most earning shelf ${winner.topGroupCount} out of ${winner.totalCategories} times!</div>
         `;
 
         winnerTextElement.style.cssText = `
             position: fixed;
-            top: calc(65% - 82px);
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+            text-align: left;
             color: white;
             font-family: 'Input Mono', monospace;
             z-index: 1001;
@@ -146,6 +170,7 @@ const WinnerAnimation = (function() {
             font-weight: bold;
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            text-align: left;
         `;
 
         const subtitleStyle = `
@@ -153,12 +178,15 @@ const WinnerAnimation = (function() {
             font-weight: 300;
             margin-bottom: 1rem;
             color: #ccc;
+            text-align: left;
         `;
 
         const statsStyle = `
             font-size: 1.2rem;
             font-weight: normal;
             color: #4CAF50;
+            text-align: left;
+            max-width: 500px;
         `;
 
         winnerTextElement.querySelector('.winner-title').style.cssText = titleStyle;

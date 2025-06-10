@@ -405,16 +405,32 @@ body {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
-    margin-left: -31px !important;
-    margin-top: -60px !important;
+    margin-left: -84px !important; /* Adjusted for 4x width (47 * 4 / 2) */
+    margin-top: -150px !important; /* Adjusted for 4x height (73 * 4 / 2) */
     z-index: 1000 !important;
-    animation: winnerRotateY 4s ease-in-out infinite !important;
+    animation: winnerRotateY 8s ease-in-out infinite !important;
+    will-change: transform !important;
+    transform-origin: center center !important;
+    perspective: 2000px !important;
+    image-rendering: pixelated !important;
+}
+
+.winner-parallelepiped .texture-side {
+    will-change: transform !important;
+    transform-origin: center center !important;
+    image-rendering: pixelated !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    background-size: 100% 100% !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    image-rendering: crisp-edges !important;
+    opacity: 1 !important;
 }
 
 @keyframes winnerRotateY {
-    0% { transform: scale(2) rotateX(0deg) rotateY(-40deg); }
-    50% { transform: scale(2) rotateX(360deg) rotateY(-180deg); }
-    100% { transform: scale(2) rotateX(0deg) rotateY(-40deg); }
+    0% { transform: scale(1) translateZ(100px) rotateX(0deg) rotateY(-40deg); }
+    50% { transform: scale(1) translateZ(100px) rotateX(360deg) rotateY(-180deg); }
+    100% { transform: scale(1) translateZ(100px) rotateX(0deg) rotateY(-40deg); }
 }
 
 .main-app {

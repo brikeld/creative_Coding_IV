@@ -17,6 +17,17 @@ const Parallelepiped = (function() {
         parallelepiped.dataset.filmId = film.id;
         parallelepiped.dataset.filmName = film.filmName;
         
+        // Use custom dimensions if provided, otherwise use defaults
+        const width = film.width || 47;
+        const height = film.height || 73;
+        const depth = Math.floor((film.width || 47) / 6); // Scale depth proportionally
+        
+        // Set custom dimensions if provided
+        if (film.width || film.height) {
+            parallelepiped.style.width = `${width}px`;
+            parallelepiped.style.height = `${height}px`;
+        }
+        
         // Create texture wrapper with all sides
         const textureWrapper = document.createElement('div');
         textureWrapper.className = 'texture-wrapper';
@@ -31,6 +42,34 @@ const Parallelepiped = (function() {
             } else {
                 textureSide.style.backgroundImage = 'none';
             }
+            
+            // Apply custom dimensions to sides
+            if (film.width || film.height) {
+                if (side === 'right' || side === 'left') {
+                    textureSide.style.width = `${depth * 2}px`;
+                    textureSide.style.height = `${height}px`;
+                    if (side === 'right') {
+                        textureSide.style.right = `-${depth}px`;
+                    } else {
+                        textureSide.style.left = `-${depth}px`;
+                    }
+                    textureSide.style.transform = `rotateY(${side === 'right' ? '90deg' : '-90deg'})`;
+                } else if (side === 'top' || side === 'bottom') {
+                    textureSide.style.width = `${width}px`;
+                    textureSide.style.height = `${depth * 2}px`;
+                    if (side === 'top') {
+                        textureSide.style.top = `-${depth}px`;
+                    } else {
+                        textureSide.style.bottom = `-${depth}px`;
+                    }
+                    textureSide.style.transform = `rotateX(${side === 'top' ? '90deg' : '-90deg'})`;
+                } else {
+                    textureSide.style.width = `${width}px`;
+                    textureSide.style.height = `${height}px`;
+                    textureSide.style.transform = `translateZ(${side === 'front' ? depth : -depth}px)${side === 'back' ? ' rotateY(180deg)' : ''}`;
+                }
+            }
+            
             textureWrapper.appendChild(textureSide);
         });
         
@@ -40,40 +79,60 @@ const Parallelepiped = (function() {
         sides.forEach(side => {
             const face = document.createElement('div');
             face.className = `face ${side}`;
+            
+            // Apply custom dimensions to faces
+            if (film.width || film.height) {
+                if (side === 'right' || side === 'left') {
+                    face.style.width = `${depth * 2}px`;
+                    face.style.height = `${height}px`;
+                    face.style.left = `calc(50% - ${depth}px)`;
+                    face.style.transform = `rotateY(${side === 'right' ? '90deg' : '-90deg'}) translateZ(${depth}px)`;
+                } else if (side === 'top' || side === 'bottom') {
+                    face.style.width = `${width}px`;
+                    face.style.height = `${depth * 2}px`;
+                    face.style.transform = `rotateX(${side === 'top' ? '90deg' : '-90deg'})`;
+                } else {
+                    face.style.width = `${width}px`;
+                    face.style.height = `${height}px`;
+                    face.style.transform = `translateZ(${side === 'front' ? depth : -depth}px)${side === 'back' ? ' rotateY(180deg)' : ''}`;
+                }
+            }
+            
             parallelepiped.appendChild(face);
         });
         
         // Apply random rotation animation properties
         const randomDuration = 3 + Math.random() * 4; // 3s to 7s
-        const randomDelay = Math.random() * 2; // 0s to 2s delay
+        const randomDelay = Math.random() * 2;
         
         parallelepiped.style.setProperty('--rotate-duration', `${randomDuration}s`);
         parallelepiped.style.setProperty('--rotate-delay', `${randomDelay}s`);
         
-        // Create edges for better 3D effect - adjusted for smaller parallelepiped
-        const edgeWidth = 47; // Width of the parallelepiped (reduced from 70)
-        const edgeHeight = 73; // Height of the parallelepiped (reduced from 110)
-        const edgeDepth = 8; // Half of the depth of the parallelepiped (reduced from 15 to 8)
-        
+        // Create edges for better 3D effect - adjusted for custom dimensions
         const edges = [
-            // Front face edges
-            { class: 'edge-front-top', width: edgeWidth, height: 2 },
-            { class: 'edge-front-bottom', width: edgeWidth, height: 2 },
-            { class: 'edge-front-left', width: 2, height: edgeHeight },
-            { class: 'edge-front-right', width: 2, height: edgeHeight },
-            // Back face edges
-            { class: 'edge-back-top', width: edgeWidth, height: 2 },
-            { class: 'edge-back-bottom', width: edgeWidth, height: 2 },
-            { class: 'edge-back-left', width: 2, height: edgeHeight },
-            { class: 'edge-back-right', width: 2, height: edgeHeight }
+            { class: 'edge-front-top', width: width, height: 2 },
+            { class: 'edge-front-bottom', width: width, height: 2 },
+            { class: 'edge-front-left', width: 2, height: height },
+            { class: 'edge-front-right', width: 2, height: height },
+            { class: 'edge-back-top', width: width, height: 2 },
+            { class: 'edge-back-bottom', width: width, height: 2 },
+            { class: 'edge-back-left', width: 2, height: height },
+            { class: 'edge-back-right', width: 2, height: height }
         ];
         
         edges.forEach(edge => {
             const edgeElement = document.createElement('div');
             edgeElement.className = `edge ${edge.class}`;
-            // Set size directly in JS to match CSS
-            if (edge.width) edgeElement.style.width = `${edge.width}px`;
-            if (edge.height) edgeElement.style.height = `${edge.height}px`;
+            edgeElement.style.width = `${edge.width}px`;
+            edgeElement.style.height = `${edge.height}px`;
+            
+            // Adjust edge positions for custom dimensions
+            if (film.width || film.height) {
+                if (edge.class.includes('front') || edge.class.includes('back')) {
+                    edgeElement.style.transform = `translateZ(${edge.class.includes('front') ? depth : -depth}px)${edge.class.includes('back') ? ' rotateY(180deg)' : ''}`;
+                }
+            }
+            
             parallelepiped.appendChild(edgeElement);
         });
         

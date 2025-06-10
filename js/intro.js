@@ -3,7 +3,7 @@
  */
 
 const IntroScreen = (function() {
-    const text = "Who are the protagonist that we enjoy the most?";
+    const text = "Who are the characters that we enjoy the most?";
     let isTypingComplete = false;
     let onComplete = null;
 
