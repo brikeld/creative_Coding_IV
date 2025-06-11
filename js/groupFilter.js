@@ -36,7 +36,7 @@ const GroupFilter = (function() {
         
         // Limit groups and sort by earnings
         const groupKeys = Object.keys(groups);
-        const maxGroups = 5;
+        const maxGroups = 6;
         const processedGroups = groupKeys.length > maxGroups ? 
             consolidateGroups(groups, groupKeys, maxGroups) : groups;
         const sortedGroupData = sortGroupsByEarnings(processedGroups, Object.keys(processedGroups));

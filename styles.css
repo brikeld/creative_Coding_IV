@@ -229,14 +229,14 @@ body {
   z-index: 5;
   opacity: 1;
   transform-style: preserve-3d !important;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform .1s ease-out, opacity 0.5s ease-out;
 }
 
 .parallelepiped.non-matching {
   z-index: 1;
   opacity: 1; /* Set to full opacity to match */
   transform-style: preserve-3d !important;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition: transform 0.1s ease-out, opacity 0.5s ease-out;
 }
 
 
@@ -245,7 +245,7 @@ body {
 .parallelepiped.matching:hover,
 .parallelepiped.non-matching:hover {
     animation: none;
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(.1) translateY(-5px);
 }
 
 /* Loading and Error styles */
@@ -424,7 +424,7 @@ body {
     background-size: 100% 100% !important;
     image-rendering: -webkit-optimize-contrast !important;
     image-rendering: crisp-edges !important;
-    opacity: 1 !important;
+    opacity: 0.8 !important;
 }
 
 @keyframes winnerRotateY {
