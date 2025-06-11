@@ -277,7 +277,7 @@ const GroupFilter = (function() {
         
         console.log(`📐 Using grid layout: startX=${startX}, startY=${startY}, columnWidth=${columnWidth}`);
         
-        groupPositions.forEach((groupInfo) => {
+        groupPositions.forEach((groupInfo, groupIndex) => {
             const columnX = startX + (groupInfo.targetColumn * columnWidth);
             const groupStartY = startY + groupInfo.targetY;
             
@@ -300,10 +300,14 @@ const GroupFilter = (function() {
                 // Ensure shelf is visible and properly positioned
                 container.style.display = 'block';
                 
-                // Animate to absolute position instead of setting directly
+                // Add natural staggered delay based on shelf position
+                const naturalDelay = (shelfIndex * Animations.timings.shelfSplit.stagger) + (groupIndex * 0.1);
+                
+                // Animate to absolute position with staggered timing
                 gsap.to(container, {
                     duration: Animations.timings.shelfSplit.duration,
                     ease: Animations.timings.shelfSplit.ease,
+                    delay: naturalDelay,
                     position: 'absolute',
                     left: `${columnX}px`,
                     top: `${shelfY}px`

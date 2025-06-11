@@ -8,9 +8,9 @@ const Animations = (function() {
     const timings = {
         // Shelf movement animations
         shelfSplit: {
-            duration: 0.8,
-            stagger: 0.05,
-            ease: 'back.out(1.0)'
+            duration: 1.5,
+            stagger: 0.15,
+            ease: 'power3.out'
         },
         shelfReset: {
             duration: 0.5,
@@ -19,9 +19,9 @@ const Animations = (function() {
         },
         // Parallelepiped movement animations
         itemsToPosition: {
-            duration: .1,
-            stagger: 0.02,
-            ease: "back.in(1.7)",
+            duration: 1,
+            stagger: 0.01,
+            ease: "power2.out",
         },
         itemsReset: {
             duration: 0.8, // Changed from 1.8 to 0.8 for faster reset
