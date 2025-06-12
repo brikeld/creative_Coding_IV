@@ -19,7 +19,7 @@ const Animations = (function() {
         },
         // Parallelepiped movement animations
         itemsToPosition: {
-            duration: 1,
+            duration: 2,
             stagger: 0.01,
             ease: "power2.out",
         },

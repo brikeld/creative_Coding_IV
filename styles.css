@@ -224,19 +224,69 @@ body {
 
 
 
-/* Animation classes for filtered elements - removing visual differences */
+/* Animation control variables - easy to adjust */
+:root {
+  --filter-transition-duration: 0.8s;
+  --filter-transition-delay: 0s;
+  --filter-transition-easing: cubic-bezier(0.9, 0.9, 0.9, 0);
+  --shelf-cascade-delay: 50.1s;
+  
+  --matching-scale: 1.05;
+  --matching-translateY: -2px;
+  --matching-translateZ: 5px;
+  --matching-rotateX: -40deg;
+  --matching-rotateY: 0deg;
+  --matching-opacity: 1;
+  --matching-z-index: 5;
+  
+  --non-matching-scale: 0.85;
+  --non-matching-translateY: 2px;
+  --non-matching-translateZ: -5px;
+  --non-matching-rotateX: -40deg;
+  --non-matching-rotateY: 0deg;
+  --non-matching-opacity: 0.4;
+  --non-matching-z-index: 1;
+  
+  --hover-scale: 1.15;
+  --hover-translateY: -8px;
+  --hover-translateZ: 10px;
+  --hover-rotateX: -30deg;
+  --hover-rotateY: 5deg;
+  --hover-transition-duration: 0.2s;
+  --hover-transition-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Animation classes for filtered elements */
 .parallelepiped.matching {
-  z-index: 5;
-  opacity: 1;
+  z-index: var(--matching-z-index);
+  opacity: var(--matching-opacity);
   transform-style: preserve-3d !important;
-  transition: transform .1s ease-out, opacity 0.5s ease-out;
+  transform: 
+    scale(var(--matching-scale)) 
+    translateY(var(--matching-translateY)) 
+    translateZ(var(--matching-translateZ))
+    rotateX(var(--matching-rotateX)) 
+    rotateY(var(--matching-rotateY));
+  transition: 
+    transform var(--filter-transition-duration) var(--filter-transition-easing) calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay)),
+    opacity var(--filter-transition-duration) var(--filter-transition-easing) calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay)),
+    z-index 0s calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay));
 }
 
 .parallelepiped.non-matching {
-  z-index: 1;
-  opacity: 1; /* Set to full opacity to match */
+  z-index: var(--non-matching-z-index);
+  opacity: var(--non-matching-opacity);
   transform-style: preserve-3d !important;
-  transition: transform 0.1s ease-out, opacity 0.5s ease-out;
+  transform: 
+    scale(var(--non-matching-scale)) 
+    translateY(var(--non-matching-translateY)) 
+    translateZ(var(--non-matching-translateZ))
+    rotateX(var(--non-matching-rotateX)) 
+    rotateY(var(--non-matching-rotateY));
+  transition: 
+    transform var(--filter-transition-duration) var(--filter-transition-easing) calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay)),
+    opacity var(--filter-transition-duration) var(--filter-transition-easing) calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay)),
+    z-index 0s calc(var(--filter-transition-delay) + var(--shelf-index, 0) * var(--shelf-cascade-delay));
 }
 
 
@@ -244,8 +294,15 @@ body {
 /* When filtered and hovered */
 .parallelepiped.matching:hover,
 .parallelepiped.non-matching:hover {
-    animation: none;
-    transform: scale(.1) translateY(-5px);
+    animation: none !important;
+    transform: 
+        scale(var(--hover-scale)) 
+        translateY(var(--hover-translateY)) 
+        translateZ(var(--hover-translateZ))
+        rotateX(var(--hover-rotateX)) 
+        rotateY(var(--hover-rotateY)) !important;
+    transition: 
+        transform var(--hover-transition-duration) var(--hover-transition-easing) !important;
 }
 
 /* Loading and Error styles */
