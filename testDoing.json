@@ -3485,12 +3485,12 @@
         },
         "dialogue_analysis": {
           "swear_frequency": "rare",
-          "most_used_swear_word": 
-            "goddammit"
-          
+          "most_used_swear_word": [
+            "damn"
+          ]
         },
         "background_history": {
-          "tragic_past": "damn",
+          "tragic_past": "none",
           "tragic_past_reason": [
             "Barbie does not have a traditional tragic past but experiences an existential unraveling—feelings of death, shame, and emotional depth that disrupt her idyllic plastic life and force her to confront the human condition."
           ]
